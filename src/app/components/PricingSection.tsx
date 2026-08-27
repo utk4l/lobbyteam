@@ -31,66 +31,119 @@ const FAQS = [
   },
 ];
 
+const INCLUDED = [
+  { k: 'No setup fee', v: 'The number is live in your sign-up session, not in a project.' },
+  { k: 'No minimum seats', v: 'One owner or ten staff; you pay per conversation, not per seat.' },
+  { k: 'Overage is published', v: 'The per-conversation rate is shown before you subscribe.' },
+  { k: 'Cancel anytime', v: 'No lockup, no notice period. Your full export comes with you.' },
+];
+
+function Check({ className }: { className?: string }) {
+  return (
+    <svg
+      className={`mt-0.5 h-4 w-4 shrink-0 ${className ?? ''}`}
+      viewBox="0 0 16 16"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.8"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <path d="M3 8.5 6.5 12 13 4.5" />
+    </svg>
+  );
+}
+
 export function PricingSection() {
   return (
-    <section id="pricing" className="bg-zinc-50 border-t border-zinc-100 py-24 scroll-mt-16">
-      <div className="max-w-6xl mx-auto px-6">
+    <section id="pricing" className="scroll-mt-16 border-t border-ink/10 py-24 md:py-32">
+      <div className="mx-auto max-w-6xl px-6">
         <Reveal>
-          <p className="text-xs font-medium uppercase tracking-widest text-zinc-400 mb-4">
-            Pricing
-          </p>
-          <h2 className="text-3xl md:text-4xl font-semibold text-zinc-950">
+          <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-ink/40">Pricing</p>
+          <h2 className="mt-6 max-w-2xl font-display text-4xl leading-[1.05] tracking-[-0.01em] md:text-5xl">
             Pay for what it handles.
           </h2>
-          <p className="mt-4 text-lg text-zinc-500 max-w-xl">
-            Priced by usage. No setup fee. No minimum seats. Scale up or down, or cancel at any
+          <p className="mt-6 max-w-xl text-[15px] leading-relaxed text-ink/60">
+            Pricing is usage based. There is no setup fee and no minimum seat count. Scale up or down, or cancel, at any
             time.
           </p>
         </Reveal>
 
-        <div className="mt-12 grid md:grid-cols-2 gap-6 max-w-3xl">
+        {/* Plans */}
+        <div className="mt-14 grid max-w-4xl gap-4 md:grid-cols-2">
           <Reveal>
-            <div className="bg-white border border-zinc-950 rounded-2xl p-8">
-              <p className="text-sm font-semibold text-zinc-950">Early access</p>
-              <p className="mt-1 text-xs text-zinc-400">Limited slots · 40% lifetime discount</p>
-              <div className="mt-6 flex items-baseline gap-2">
-                <span className="text-5xl font-semibold text-zinc-950">$30</span>
-                <span className="text-zinc-500">/month</span>
+            <div className="relative flex h-full flex-col overflow-hidden rounded-md bg-ink p-8 text-paper">
+              <span className="absolute right-4 top-4 rounded-sm bg-moss px-2.5 py-1 font-mono text-[10px] uppercase tracking-[0.12em] text-paper">
+                40% off, lifetime
+              </span>
+              <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-paper/50">
+                Early access
+              </p>
+              <p className="mt-1 text-sm text-paper/50">Limited slots · first cohort</p>
+              <div className="mt-8 flex items-baseline gap-2">
+                <span className="font-display text-7xl leading-none">$30</span>
+                <span className="font-mono text-xs text-paper/50">/month</span>
               </div>
-              <ul className="mt-8 space-y-3 text-base text-zinc-600">
-                <li>All channels: phone, WhatsApp, website chat</li>
-                <li>Support, sales, and escalation agents</li>
-                <li>Zoho CRM sync</li>
-                <li>Live watch, replay, QA, and full export</li>
-                <li>Free for 14 days first, no card</li>
+              <ul className="mt-9 space-y-3.5 text-[15px] text-paper/75">
+                <li className="flex gap-3">
+                  <Check className="text-live" />
+                  All channels: phone, WhatsApp, website chat
+                </li>
+                <li className="flex gap-3">
+                  <Check className="text-live" />
+                  Support, sales &amp; escalation agents
+                </li>
+                <li className="flex gap-3">
+                  <Check className="text-live" />
+                  Zoho CRM sync
+                </li>
+                <li className="flex gap-3">
+                  <Check className="text-live" />
+                  Live watch, replay, QA, and full export
+                </li>
               </ul>
               <a
                 href="#top"
-                className="fluid mt-8 inline-flex w-full justify-center bg-zinc-950 text-white text-base font-semibold px-3 py-2 rounded-lg hover:bg-zinc-800"
+                className="fluid mt-10 inline-flex w-full items-center justify-center rounded-sm bg-paper px-5 py-4 text-base font-medium text-ink hover:bg-live"
               >
                 Get early access
               </a>
+              <p className="mt-4 text-center font-mono text-[10px] uppercase tracking-[0.12em] text-paper/40">
+                Free 14 days first · No card
+              </p>
             </div>
           </Reveal>
 
-          <Reveal delay={100}>
-            <div className="bg-white border border-zinc-200 rounded-2xl p-8">
-              <p className="text-sm font-semibold text-zinc-950">Standard</p>
-              <p className="mt-1 text-xs text-zinc-400">
+          <Reveal delay={80}>
+            <div className="flex h-full flex-col rounded-md border border-ink/10 bg-white p-8">
+              <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-ink/40">
+                Standard
+              </p>
+              <p className="mt-1 text-sm text-ink/45">
                 Regular pricing after the early access wave
               </p>
-              <div className="mt-6 flex items-baseline gap-2">
-                <span className="text-5xl font-semibold text-zinc-950">$50</span>
-                <span className="text-zinc-500">/month</span>
+              <div className="mt-8 flex items-baseline gap-2">
+                <span className="font-display text-7xl leading-none text-ink">$50</span>
+                <span className="font-mono text-xs text-ink/40">/month</span>
               </div>
-              <ul className="mt-8 space-y-3 text-base text-zinc-600">
-                <li>Everything in early access, same features</li>
-                <li>Overage at a published rate per conversation</li>
-                <li>Free for 14 days first, no card</li>
+              <ul className="mt-9 space-y-3.5 text-[15px] text-ink/60">
+                <li className="flex gap-3">
+                  <Check className="text-ink/40" />
+                  Everything in early access, same features
+                </li>
+                <li className="flex gap-3">
+                  <Check className="text-ink/40" />
+                  Overage at a published rate per conversation
+                </li>
+                <li className="flex gap-3">
+                  <Check className="text-ink/40" />
+                  Free for 14 days first, no card
+                </li>
               </ul>
               <a
                 href="#top"
-                className="fluid mt-8 inline-flex w-full justify-center bg-white border border-zinc-300 text-zinc-950 text-base font-semibold px-3 py-2 rounded-lg hover:bg-zinc-50"
+                className="fluid mt-10 inline-flex w-full items-center justify-center rounded-sm border border-ink/25 px-5 py-4 text-base font-medium text-ink hover:border-ink hover:bg-ink hover:text-paper"
               >
                 Start the free trial
               </a>
@@ -98,61 +151,62 @@ export function PricingSection() {
           </Reveal>
         </div>
 
+        {/* Always included */}
         <Reveal>
-          <div className="mt-10 max-w-3xl grid sm:grid-cols-3 gap-6 text-sm text-zinc-500">
-            <p>
-              Overage beyond your plan bills at a published rate per conversation, shown before you
-              sign up. <span className="text-zinc-400">[Exact rate listed at checkout]</span>
-            </p>
-            <p>
-              The trial runs 14 days with full features and no card. On day 13 you see a plain
-              recap of what was handled and what it would cost, with no surprise charges after
-              that.
-            </p>
-            <p>
-              Cancel anytime. Your data comes with you, full export in standard formats.
-            </p>
-          </div>
+          <dl className="mt-10 grid max-w-4xl gap-x-8 sm:grid-cols-2 lg:grid-cols-4">
+            {INCLUDED.map((it) => (
+              <div
+                key={it.k}
+                className="border-ink/10 py-6 pr-4 lg:border-l lg:first:border-l-0 lg:pl-6 lg:first:pl-0"
+              >
+                <dt className="font-mono text-[10px] uppercase tracking-[0.14em] text-ink/40">
+                  {it.k}
+                </dt>
+                <dd className="mt-2 text-sm leading-relaxed text-ink/65">{it.v}</dd>
+              </div>
+            ))}
+          </dl>
         </Reveal>
 
-        {/* Final CTA, identical to the top, with the mini FAQ beside it */}
-        <div className="mt-24 grid lg:grid-cols-2 gap-16 lg:gap-24 items-start">
+        {/* Final CTA + mini FAQ */}
+        <div className="mt-24 grid items-start gap-16 lg:grid-cols-2 lg:gap-24">
           <Reveal>
-            <h3 className="text-3xl font-semibold text-zinc-950">
+            <h3 className="font-display text-4xl leading-[1.05] tracking-[-0.01em] md:text-5xl">
               Your next customer should not hear voicemail.
             </h3>
-            <p className="mt-4 text-base text-zinc-500 max-w-[680px]">
+            <p className="mt-7 max-w-[46ch] text-[15px] leading-relaxed text-ink/60">
               Pick a number, call it, and watch the AI answer. If it is not for you in 14 days,
               walk away with all your data.
             </p>
-            <div className="mt-10">
+            <div className="mt-10 flex flex-col items-start gap-5 sm:flex-row sm:items-center">
               <a
                 href="#top"
-                className="fluid inline-flex items-center bg-zinc-950 text-white text-base font-semibold px-3 py-2 rounded-lg hover:bg-zinc-800"
+                className="fluid inline-flex items-center gap-2 rounded-sm bg-ink px-7 py-4 text-base font-medium text-paper hover:bg-moss"
               >
                 Start free, live in 2 minutes
+                <span aria-hidden="true">→</span>
               </a>
-              <p className="mt-4 text-sm text-zinc-400">
-                Free for 14 days · No credit card · No setup fee
+              <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-ink/45">
+                Free 14 days · No card · No setup fee
               </p>
             </div>
           </Reveal>
 
-          <Reveal delay={100}>
+          <Reveal delay={80}>
             <div id="faq" className="scroll-mt-24">
-              <p className="text-xs font-medium uppercase tracking-widest text-zinc-400 mb-6">
+              <p className="mb-6 font-mono text-[11px] uppercase tracking-[0.18em] text-ink/40">
                 Quick answers
               </p>
-              <div className="divide-y divide-zinc-200 border-t border-zinc-200">
+              <div className="divide-y divide-ink/10 border-t border-ink/10">
                 {FAQS.map(({ q, a }) => (
                   <details key={q} className="group py-4">
-                    <summary className="fluid cursor-pointer list-none flex items-center justify-between gap-4 text-base font-medium text-zinc-950">
+                    <summary className="fluid flex cursor-pointer list-none items-center justify-between gap-4 text-[15px] font-medium [&::-webkit-details-marker]:hidden">
                       {q}
-                      <span className="text-lg leading-none text-zinc-400 transition-transform duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] group-open:rotate-45">
+                      <span className="font-mono text-lg leading-none text-ink/35 transition-transform duration-500 group-open:rotate-45">
                         +
                       </span>
                     </summary>
-                    <p className="mt-3 text-sm text-zinc-500">{a}</p>
+                    <p className="mt-3 max-w-[52ch] text-sm leading-relaxed text-ink/55">{a}</p>
                   </details>
                 ))}
               </div>

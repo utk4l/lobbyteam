@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 
 const WORDS =
-  'Your customers get answered at 2 am. You wake up to a summary, not voicemail.'
+  'Your customers get answered at 2 am. By morning, you have a written summary of every call.'
     .split(' ')
     .map((w, i) => ({ text: w, key: i }));
 
@@ -31,16 +31,15 @@ export function Tagline() {
   }, []);
 
   return (
-    <section className="bg-white py-24">
-      <div className="max-w-6xl mx-auto px-6">
-        <p
-          ref={ref}
-          className="text-4xl md:text-5xl font-semibold text-zinc-950 max-w-[680px]"
-        >
+    <section className="py-24 md:py-32">
+      <div className="mx-auto max-w-6xl px-6">
+        <p className="mb-10 font-mono text-[11px] uppercase tracking-[0.18em] text-ink/40">
+          The point
+        </p>
+        <p ref={ref} className="max-w-4xl text-balance font-display text-4xl leading-[1.12] tracking-[-0.01em] sm:text-5xl md:text-6xl">
           {WORDS.map(({ text, key }) => (
-            <span key={key} className="tl-word whitespace-pre">
-              {text}
-              {' '}
+            <span key={key} className="tl-word">
+              {text}{' '}
             </span>
           ))}
         </p>

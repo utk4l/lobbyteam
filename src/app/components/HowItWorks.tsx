@@ -4,53 +4,67 @@ const STEPS = [
   {
     n: '01',
     title: 'Pick a number',
-    body: 'Sign up with your phone and business name, then choose a local number. It is live right away, no porting wait.',
+    body: 'Sign up with your phone and business name, then choose a local number. It goes live right away, with no wait for porting.',
+    tag: '30 seconds',
   },
   {
     n: '02',
     title: 'Tell it about your business',
     body: 'Paste your website or a few lines about what you do. Or skip it. The agent starts with safe defaults and takes a message.',
+    tag: '0 to 60 s, skippable',
   },
   {
     n: '03',
     title: 'Call it and watch it work',
     body: 'Call your own business number. The AI answers, and you watch the transcript stream in while the ticket and summary write themselves.',
+    tag: '← this is the demo',
   },
 ];
 
 export function HowItWorks() {
   return (
-    <section id="how-it-works" className="bg-zinc-50 border-t border-zinc-100 py-24 scroll-mt-16">
-      <div className="max-w-6xl mx-auto px-6">
-        <Reveal>
-          <p className="text-xs font-medium uppercase tracking-widest text-zinc-400 mb-4">
-            How it works
-          </p>
-          <h2 className="text-3xl md:text-4xl font-semibold text-zinc-950">
-            Live in under two minutes.
-          </h2>
-        </Reveal>
-
-        <div className="mt-16 grid md:grid-cols-3 gap-8 md:gap-16">
-          {STEPS.map((s, i) => (
-            <Reveal key={s.n} delay={i * 100}>
-              <div>
-                <p className="text-sm font-medium text-zinc-300 tabular-nums">{s.n}</p>
-                <h3 className="mt-3 text-lg font-semibold text-zinc-950">{s.title}</h3>
-                <p className="mt-2 text-base text-zinc-500">{s.body}</p>
-              </div>
-            </Reveal>
-          ))}
-        </div>
-
-        <Reveal className="mt-16">
+    <section id="how-it-works" className="scroll-mt-16 border-t border-ink/10 py-24 md:py-32">
+      <div className="mx-auto max-w-6xl px-6">
+        <div className="flex flex-wrap items-end justify-between gap-8">
+          <div>
+            <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-ink/40">
+              How it works
+            </p>
+            <h2 className="mt-6 max-w-xl font-display text-4xl leading-[1.05] tracking-[-0.01em] md:text-5xl">
+              Live in under two minutes.
+            </h2>
+          </div>
           <a
             href="#pricing"
-            className="fluid inline-flex items-center bg-zinc-950 text-white text-base font-semibold px-3 py-2 rounded-lg hover:bg-zinc-800"
+            className="fluid inline-flex items-center gap-2 rounded-sm border border-ink/25 px-5 py-3 text-sm font-medium hover:border-ink hover:bg-ink hover:text-paper"
           >
-            Start free, live in 2 minutes
+            Start free
+            <span aria-hidden="true">→</span>
           </a>
-        </Reveal>
+        </div>
+
+        <ol className="mt-16 border-t border-ink/10">
+          {STEPS.map((s, i) => (
+            <li key={s.n} className="border-b border-ink/10">
+              <Reveal delay={i * 80}>
+                <div className="grid items-baseline gap-4 py-10 md:grid-cols-[130px_1fr_auto] md:gap-8">
+                  <span className="font-display text-6xl leading-none text-ink/20 md:text-7xl">
+                    {s.n}
+                  </span>
+                  <div>
+                    <h3 className="font-display text-2xl md:text-3xl">{s.title}</h3>
+                    <p className="mt-3 max-w-[52ch] text-[15px] leading-relaxed text-ink/60">
+                      {s.body}
+                    </p>
+                  </div>
+                  <span className="whitespace-nowrap font-mono text-[10px] uppercase tracking-[0.14em] text-moss">
+                    {s.tag}
+                  </span>
+                </div>
+              </Reveal>
+            </li>
+          ))}
+        </ol>
       </div>
     </section>
   );

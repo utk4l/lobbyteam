@@ -2,24 +2,35 @@ import { Reveal } from './Reveal';
 
 export function SocialProof() {
   return (
-    <section className="bg-white border-t border-zinc-100 py-24">
-      <div className="max-w-6xl mx-auto px-6">
+    <section className="border-t border-ink/10 py-24 md:py-32">
+      <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 lg:grid-cols-2 lg:gap-20">
         <Reveal>
-          <p className="text-xs font-medium uppercase tracking-widest text-zinc-400 mb-10">
+          <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-ink/40">
             Customer proof
           </p>
-          <div className="border border-dashed border-zinc-300 rounded-2xl px-8 py-12 text-center">
-            <p className="text-lg text-zinc-500">
-              Real customers and real numbers go here: a name, a role, a company, and a specific
-              result.
+          <h2 className="mt-6 font-display text-4xl leading-[1.05] tracking-[-0.01em] md:text-5xl">
+            We publish real quotes.
+            <br />
+            So there are none yet.
+          </h2>
+          <p className="mt-7 max-w-[48ch] text-[15px] leading-relaxed text-ink/60">
+            Converso is onboarding its first cohort now. When their numbers are in (calls
+            answered, leads booked, QA scores), they go here with names attached. We will not use stock
+            testimonials or borrowed logos.
+          </p>
+          <p className="mt-7 font-mono text-[11px] uppercase tracking-[0.14em] text-moss">
+            Early access: limited slots, 40% lifetime discount
+          </p>
+        </Reveal>
+
+        <Reveal delay={100}>
+          <div className="flex min-h-[300px] flex-col items-center justify-center rounded-md border border-dashed border-ink/25 bg-white/60 p-10 text-center">
+            <span className="font-display text-8xl leading-none text-ink/15" aria-hidden="true">
+              “
+            </span>
+            <p className="mt-5 max-w-[32ch] text-[15px] leading-relaxed text-ink/45">
+              Results from the first cohort go here, with a name, a role, and a number.
             </p>
-            <p className="mt-2 text-sm text-zinc-400">
-              Placeholder on purpose. We publish actual quotes only.
-            </p>
-          </div>
-          <div className="mt-8 border border-dashed border-zinc-300 rounded-2xl px-8 py-8 flex flex-wrap items-center justify-center gap-x-10 gap-y-4">
-            <span className="text-sm text-zinc-400">Customer logos go here</span>
-            <span className="text-sm text-zinc-500 font-medium">Syncs with Zoho CRM</span>
           </div>
         </Reveal>
       </div>

@@ -1,18 +1,35 @@
+/* ---------------------------------- */
+/* Converso — "switchboard" design    */
+/* paper + ink + moss, editorial      */
+/* ---------------------------------- */
+
 :root {
   --ease-fluid: cubic-bezier(0.32, 0.72, 0, 1);
 }
 
-body {
-  font-family: 'Geist Variable', ui-sans-serif, system-ui, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-  background: #ffffff;
-  color: #18181b;
+@theme {
+  --color-paper: #f7f5f0;
+  --color-ink: #171512;
+  --color-moss: #1a6b50;
+  --color-live: #2fbf71;
+
+  --font-display: 'Instrument Serif', Georgia, 'Times New Roman', serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
 }
 
-h1,
-h2,
-h3 {
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #f7f5f0;
+  color: #171512;
+  font-family: 'Geist Variable', 'Geist', -apple-system, 'Segoe UI', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4 {
   text-wrap: balance;
 }
 
@@ -20,41 +37,134 @@ p {
   text-wrap: pretty;
 }
 
-/* Fluid motion: every interactive element uses the shared spring curve */
+::selection {
+  background: #171512;
+  color: #f7f5f0;
+}
+
+:where(a, button, summary, input):focus-visible {
+  outline: 2px solid #171512;
+  outline-offset: 2px;
+}
+
+/* Fluid motion: shared spring curve on interactive elements */
 .fluid {
-  transition: all 700ms var(--ease-fluid);
+  transition: all 450ms var(--ease-fluid);
 }
 
 a.fluid:active,
 button.fluid:active {
-  transform: scale(0.98);
+  transform: scale(0.985);
 }
 
-:where(a, button, summary, input):focus-visible {
-  outline: 2px solid #18181b;
-  outline-offset: 2px;
-}
-
-/* Scroll reveal: heavy fade up + de blur, never static on load */
+/* Scroll reveal: quiet rise, no blur */
 .reveal {
   opacity: 0;
-  transform: translateY(64px);
-  filter: blur(12px);
-  transition: all 1000ms var(--ease-fluid);
+  transform: translateY(28px);
+  transition:
+    opacity 900ms var(--ease-fluid),
+    transform 900ms var(--ease-fluid);
 }
 
 .reveal.in-view {
   opacity: 1;
-  transform: translateY(0);
-  filter: blur(0);
+  transform: none;
 }
 
-/* Tagline reveal: words sit at 30% of base text, activate one at a time */
+/* Tagline: words sit dim, activate one at a time */
 .tl-word {
-  opacity: 0.3;
-  transition: opacity 800ms var(--ease-fluid);
+  opacity: 0.16;
+  transition: opacity 700ms var(--ease-fluid);
 }
 
 .tl-word.on {
   opacity: 1;
+}
+
+/* Ticket rows in the live console */
+.tk {
+  opacity: 0;
+  transform: translateY(6px);
+  transition:
+    opacity 500ms var(--ease-fluid),
+    transform 500ms var(--ease-fluid);
+}
+
+.tk-on {
+  opacity: 1;
+  transform: none;
+}
+
+/* Marquee ticker */
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 36s linear infinite;
+}
+
+/* Typing caret */
+@keyframes cursor-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.cursor-blink {
+  animation: cursor-blink 0.9s steps(1) infinite;
+}
+
+/* Audio waveform bars */
+@keyframes wave {
+  0%, 100% { transform: scaleY(0.3); }
+  50% { transform: scaleY(1); }
+}
+
+.wave-bar {
+  transform-origin: center;
+  animation: wave 1s ease-in-out infinite;
+}
+
+/* Chat bubbles / typing pill entrance */
+@keyframes rise {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: none; }
+}
+
+.anim-rise {
+  animation: rise 450ms var(--ease-fluid) both;
+}
+
+/* Hero card deck: front card slides away, back card comes forward */
+.card-swap {
+  transition:
+    transform 800ms var(--ease-fluid),
+    opacity 800ms var(--ease-fluid);
+}
+
+/* Live indicator */
+@keyframes live-ping {
+  0% { box-shadow: 0 0 0 0 rgba(47, 191, 113, 0.45); }
+  70% { box-shadow: 0 0 0 7px rgba(47, 191, 113, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(47, 191, 113, 0); }
+}
+
+.live-dot {
+  animation: live-ping 1.8s var(--ease-fluid) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal, .tk, .tl-word {
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+  .animate-marquee, .live-dot, .cursor-blink, .wave-bar, .anim-rise {
+    animation: none;
+  }
+  .card-swap {
+    transition: none;
+  }
 }
