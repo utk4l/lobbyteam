@@ -1,0 +1,60 @@
+:root {
+  --ease-fluid: cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+body {
+  font-family: 'Geist Variable', ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  background: #ffffff;
+  color: #18181b;
+}
+
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+/* Fluid motion: every interactive element uses the shared spring curve */
+.fluid {
+  transition: all 700ms var(--ease-fluid);
+}
+
+a.fluid:active,
+button.fluid:active {
+  transform: scale(0.98);
+}
+
+:where(a, button, summary, input):focus-visible {
+  outline: 2px solid #18181b;
+  outline-offset: 2px;
+}
+
+/* Scroll reveal: heavy fade up + de blur, never static on load */
+.reveal {
+  opacity: 0;
+  transform: translateY(64px);
+  filter: blur(12px);
+  transition: all 1000ms var(--ease-fluid);
+}
+
+.reveal.in-view {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
+
+/* Tagline reveal: words sit at 30% of base text, activate one at a time */
+.tl-word {
+  opacity: 0.3;
+  transition: opacity 800ms var(--ease-fluid);
+}
+
+.tl-word.on {
+  opacity: 1;
+}
