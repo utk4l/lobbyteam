@@ -102,6 +102,14 @@ const PATHS: Record<string, ReactNode> = {
   spark: <path d="M12 2.5l2.3 7.2 7.2 2.3-7.2 2.3L12 21.5l-2.3-7.2L2.5 12l7.2-2.3z" />,
   star: <path d="M12 2.5l3 6.4 7 .8-5.2 4.8 1.4 6.9L12 17.2 5.8 21.4l1.4-6.9L2 9.7l7-.8z" />,
   bolt: <path d="M13 2L4.5 14H11l-1.5 8L18 10h-6.5z" />,
+  webhook: (
+    <>
+      <circle cx="6" cy="17" r="2.6" />
+      <circle cx="18" cy="17" r="2.6" />
+      <circle cx="12" cy="7" r="2.6" />
+      <path d="M10.9 9.4L7.1 14.6M13.1 9.4l3.8 5.2M8.6 17h6.8" />
+    </>
+  ),
   gem: (
     <>
       <path d="M7 3h10l4 6-9 12L2 9z" />
@@ -113,29 +121,55 @@ const PATHS: Record<string, ReactNode> = {
 
 export type IconName = keyof typeof PATHS;
 
-/* Real brand marks (vendored official SVGs, brand colors). */
-import whatsappUrl from '../brand/whatsapp.svg';
-import imessageUrl from '../brand/imessage.svg';
-import zohoUrl from '../brand/zoho.svg';
-import hubspotUrl from '../brand/hubspot.svg';
-import salesforceUrl from '../brand/salesforce.svg';
-import zapierUrl from '../brand/zapier.svg';
+/* Real brand marks: loaded from the brand folder at build time. */
 
-const BRANDS = {
-  whatsapp: whatsappUrl,
-  imessage: imessageUrl,
-  zoho: zohoUrl,
-  hubspot: hubspotUrl,
-  salesforce: salesforceUrl,
-  zapier: zapierUrl,
+const brandFiles = import.meta.glob('../brand/*.{svg,png,webp}', {
+  eager: true,
+  query: '?url',
+  import: 'default',
+}) as Record<string, string>;
+
+const BRAND_FILES = {
+  whatsapp: 'whatsapp.svg',
+  imessage: 'imessage.svg',
+  zoho: 'zoho.svg',
+  hubspot: 'hubspot.svg',
+  salesforce: 'salesforce.svg',
+  zapier: 'zapier.svg',
+  servicem8: 'servicem8.webp',
+  simpro: 'simpro.png',
+  googlecalendar: 'googlecalendar.svg',
+  outlook: 'outlook.svg',
+  xero: 'xero.svg',
+  quickbooks: 'quickbooks.svg',
+  gmail: 'gmail.svg',
 };
+
+function brandUrl(name: keyof typeof BRAND_FILES): string | undefined {
+  const file = BRAND_FILES[name];
+  return Object.values(brandFiles).find((_, i) => Object.keys(brandFiles)[i].endsWith('/' + file));
+}
 
 export type BrandName = keyof typeof BRANDS;
 
-export function BrandIcon({ name, className }: { name: BrandName; className?: string }) {
+export function BrandIcon({
+  name,
+  fallback,
+  className,
+}: {
+  name: BrandName;
+  fallback?: IconName;
+  className?: string;
+}) {
+  const url = brandUrl(name);
+  if (!url) {
+    // Logo not in the brand folder yet — fall back to the line icon.
+    if (fallback) return <Icon name={fallback} className={className ?? 'h-4 w-4'} />;
+    return null;
+  }
   return (
     <img
-      src={BRANDS[name]}
+      src={url}
       alt=""
       aria-hidden="true"
       className={`shrink-0 ${className ?? 'h-4 w-auto'}`}

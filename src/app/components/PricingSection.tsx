@@ -127,7 +127,6 @@ const COMPARE: { group: string; rows: [string, CompareCell, CompareCell, Compare
     rows: [
       ['Every conversation summarized', true, true, true, true],
       ['Customer history, in one place', true, true, true, true],
-      ['Zoho CRM sync \u00b7 HubSpot & Salesforce next', true, true, true, true],
       ['Watch live & replay any call', true, true, true, true],
     ],
   },
@@ -239,12 +238,7 @@ function CompareTable() {
   );
 }
 
-const EVERY_PLAN = [
-  'Phone, website chat, and WhatsApp',
-  'The whole front desk: greet, sort, book, follow up',
-  'Zoho CRM sync',
-  'Watch live, replay any call, export everything',
-];
+
 
 function Check({ className }: { className?: string }) {
   return (

@@ -1,10 +1,5 @@
 import { BrandIcon, BrandName, Icon, IconName } from './Icons';
 
-const CRMS: { name: string; status: string; icon: IconName; brand?: BrandName }[] = [
-  { name: 'Zoho', status: 'Live', icon: 'zoho', brand: 'zoho' },
-  { name: 'HubSpot', status: 'Live', icon: 'hubspot', brand: 'hubspot' },
-  { name: 'Salesforce', status: 'Live', icon: 'salesforce', brand: 'salesforce' },
-];
 
 const CHANNELS: { name: string; icon: IconName; brand?: BrandName; status?: string }[] = [
   { name: 'Phone', icon: 'phone' },
@@ -26,34 +21,11 @@ export function Integrations() {
               Works with what you already run.
             </h2>
             <p className="mt-5 max-w-[40ch] text-[15px] leading-relaxed text-ink/60">
-              Your phone, your website, your CRM. Converso plugs in where you already are — and
+              Your phone, your website, your calendar, your accounting. Converso plugs in where you already are — and
               your data stays yours.
             </p>
           </div>
           <div className="space-y-8">
-            <div>
-              <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-ink/35">
-                Your CRM
-              </p>
-              <div className="mt-4 flex flex-wrap gap-3">
-                {CRMS.map((c) => (
-                  <span
-                    key={c.name}
-                    className="inline-flex items-center gap-2.5 rounded-sm border border-ink/15 bg-white px-4 py-2.5"
-                  >
-                    {c.brand ? (
-                      <BrandIcon name={c.brand} className="h-4 w-auto max-w-8" />
-                    ) : (
-                      <Icon name={c.icon} className="h-4 w-4 text-ink/55" />
-                    )}
-                    <span className="text-sm font-medium">{c.name}</span>
-                    <span className="font-mono text-[10px] uppercase tracking-[0.1em] text-ink/40">
-                      {c.status}
-                    </span>
-                  </span>
-                ))}
-              </div>
-            </div>
             <div>
               <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-ink/35">
                 Where it answers

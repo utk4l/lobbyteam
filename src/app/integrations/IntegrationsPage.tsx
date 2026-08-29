@@ -15,6 +15,7 @@ type Tool = {
 };
 
 type Group = {
+  id: string;
   group: string;
   blurb: string;
   tools: Tool[];
@@ -22,26 +23,90 @@ type Group = {
 
 const GROUPS: Group[] = [
   {
-    group: 'Your channels',
-    blurb: 'Built in from the moment your number is live — no account, no settings, no project.',
+    id: 'cat-service-management',
+    group: 'Service management',
+    blurb: 'Turn every answered call into a job in the software your team already runs on.',
+    tools: [
+      {
+        name: 'ServiceM8',
+        icon: 'calendar',
+        brand: 'servicem8',
+        line: 'Turn answered calls into ServiceM8 jobs, ready to schedule.',
+        status: 'Live',
+      },
+      {
+        name: 'simPRO',
+        icon: 'calendar',
+        brand: 'simpro',
+        line: 'Turn answered calls into simPRO jobs, ready to schedule.',
+        status: 'Live',
+      },
+    ],
+  },
+  {
+    id: 'cat-calendars',
+    group: 'Calendars',
+    blurb: 'Converso checks your real availability and books straight into your calendar.',
+    tools: [
+      {
+        name: 'Google Calendar',
+        icon: 'calendar',
+        brand: 'googlecalendar',
+        line: 'Converso books jobs against your live Google Calendar availability.',
+        status: 'Live',
+      },
+      {
+        name: 'Outlook Calendar',
+        icon: 'calendar',
+        brand: 'outlook',
+        line: 'Check availability and book straight into Outlook.',
+        status: 'Live',
+      },
+    ],
+  },
+  {
+    id: 'cat-accounting',
+    group: 'Accounting',
+    blurb: 'Send customers and invoices to your accounting tools the moment a job wraps.',
+    tools: [
+      {
+        name: 'Xero',
+        icon: 'note',
+        brand: 'xero',
+        line: 'Raise and send Xero invoices as soon as a job wraps up.',
+        status: 'Live',
+      },
+      {
+        name: 'QuickBooks',
+        icon: 'note',
+        brand: 'quickbooks',
+        line: 'Sync new customers and invoices to QuickBooks Online.',
+        status: 'Live',
+      },
+    ],
+  },
+  {
+    id: 'cat-communication',
+    group: 'Communication',
+    blurb: 'Answer calls and follow up by SMS, WhatsApp, and email, all from one place.',
     tools: [
       {
         name: 'Phone',
         icon: 'phone',
-        line: 'Pick a number or port your own. It answers every call and books the work on the spot.',
+        line: 'Built in, no connection needed: answers every call and books the work on the spot.',
         status: 'Built in',
       },
       {
-        name: 'Website chat',
+        name: 'SMS',
         icon: 'chat',
-        line: 'Paste one script tag and your site answers visitors while you are working.',
+        line: 'Built in, no connection needed: text callers booking confirmations and reminders instantly.',
         status: 'Built in',
       },
       {
         name: 'WhatsApp',
         icon: 'whatsapp',
         brand: 'whatsapp',
-        line: 'Connect your business number through the WhatsApp Business API. Same front desk, same notes.',
+        line: 'Answer enquiries and book jobs on WhatsApp — same front desk, same notes.',
         status: 'Built in',
       },
       {
@@ -51,56 +116,44 @@ const GROUPS: Group[] = [
         line: 'Answer enquiries in iMessage through Apple Business Connect — same front desk, same notes.',
         status: 'Built in',
       },
-    ],
-  },
-  {
-    group: 'Your CRM',
-    blurb: 'Your CRM keeps the profile. Converso adds every conversation, booking, and note to it.',
-    tools: [
       {
-        name: 'Zoho CRM',
-        icon: 'zoho',
-        brand: 'zoho',
-        line: 'Sign in once, map your fields once. Every conversation and customer file lands where it belongs.',
+        name: 'Website chat',
+        icon: 'chat',
+        line: 'Paste one script tag and your site answers visitors while you are working.',
+        status: 'Built in',
+      },
+      {
+        name: 'Gmail',
+        icon: 'chat',
+        brand: 'gmail',
+        line: 'Follow up callers by email from your connected Gmail.',
         status: 'Live',
       },
       {
-        name: 'HubSpot',
-        icon: 'hubspot',
-        brand: 'hubspot',
-        line: 'Same two-way story: profiles stay in HubSpot, every conversation and note lands with them.',
-        status: 'Live',
-      },
-      {
-        name: 'Salesforce',
-        icon: 'salesforce',
-        brand: 'salesforce',
-        line: 'Profiles stay in Salesforce. Every conversation, booking, and note lands where your team works.',
+        name: 'Outlook',
+        icon: 'chat',
+        brand: 'outlook',
+        line: 'Send confirmations and quotes from your Outlook inbox.',
         status: 'Live',
       },
     ],
   },
   {
+    id: 'cat-automation',
     group: 'Automation',
-    blurb: 'Wire the front desk into the rest of your stack — no code, no project.',
+    blurb: 'Wire Converso into thousands of tools with no-code automation and webhooks.',
     tools: [
       {
         name: 'Zapier',
         icon: 'loop',
         brand: 'zapier',
-        line: 'New bookings, notes, and escalations trigger flows in thousands of apps — no code.',
+        line: 'Wire Converso into thousands of apps with Zapier.',
         status: 'Live',
       },
-    ],
-  },
-  {
-    group: 'Your data',
-    blurb: 'You own everything that goes in. All of it comes out, in standard formats, on every plan.',
-    tools: [
       {
-        name: 'Full export',
-        icon: 'export',
-        line: 'Contacts, conversations, notes, and history — exported in standard formats, anytime, including on the way out.',
+        name: 'Webhooks',
+        icon: 'webhook',
+        line: 'Send call and booking events to any endpoint you like.',
         status: 'Live',
       },
     ],
@@ -121,12 +174,8 @@ const FAQS = [
     a: 'We are adding integrations in the order customers ask for them. Tell us what you run your business on and we will prioritise it.',
   },
   {
-    q: 'How do I connect Zoho?',
-    a: 'From settings after sign-up: sign in to Zoho, map your fields once. The first sync takes a few minutes.',
-  },
-  {
     q: 'How long does each connection take?',
-    a: 'Zoho: a few minutes. A new phone number: live in your sign-up session. Porting your existing number: a few days, and the new number runs meanwhile.',
+    a: 'A new phone number: live in your sign-up session. Porting your existing number: a few days, and the new number runs meanwhile.',
   },
   {
     q: 'Is my business data secure?',
@@ -163,8 +212,8 @@ export function IntegrationsPage() {
               with the tools you already run.
             </h1>
             <p className="mt-7 max-w-[52ch] text-lg leading-relaxed text-ink/65">
-              Connect your CRM and your channels, and every conversation lands in the tools you
-              already use. No new app to log into, no second system of record — the work just shows
+              Connect your calendars, accounting, and channels, and every conversation lands in the tools
+              you already use. No new app to log into, no second system of record — the work just shows
               up where you expect it.
             </p>
             <p className="mt-10 max-w-[52ch] border-l-2 border-moss/40 pl-5 text-[15px] leading-relaxed text-ink/55">
@@ -183,11 +232,22 @@ export function IntegrationsPage() {
             <h2 className="mt-6 max-w-xl font-display text-4xl leading-[1.05] tracking-[-0.01em] md:text-5xl">
               Find the software you already use.
             </h2>
+            <div className="mt-8 flex flex-wrap gap-2.5">
+              {GROUPS.map((g) => (
+                <a
+                  key={g.group}
+                  href={`#${g.id}`}
+                  className="rounded-sm border border-ink/15 bg-white px-3.5 py-2 font-mono text-[10px] uppercase tracking-[0.12em] text-ink/55 transition-colors hover:border-ink/40 hover:text-ink"
+                >
+                  {g.group}
+                </a>
+              ))}
+            </div>
           </Reveal>
-          <div className="mt-14 space-y-14">
+          <div className="mt-12 space-y-14">
             {GROUPS.map((g, gi) => (
               <Reveal key={g.group} delay={gi * 40}>
-                <div>
+                <div id={g.id} className="scroll-mt-24">
                   <div className="flex flex-wrap items-baseline justify-between gap-3">
                     <h3 className="font-display text-2xl">{g.group}</h3>
                     <p className="max-w-[44ch] text-sm leading-relaxed text-ink/50">{g.blurb}</p>
