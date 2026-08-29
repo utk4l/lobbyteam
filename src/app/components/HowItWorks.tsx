@@ -4,19 +4,19 @@ const STEPS = [
   {
     n: '01',
     title: 'Pick a number',
-    body: 'Sign up with your phone and business name, then choose a local number. It goes live right away, with no wait for porting.',
+    body: 'Sign up with your phone and business name, then choose a local number. It goes live right away — no waiting for anything to be ported.',
     tag: '30 seconds',
   },
   {
     n: '02',
     title: 'Tell it about your business',
-    body: 'Paste your website or a few lines about what you do. Or skip it. The agent starts with safe defaults and takes a message.',
+    body: 'Paste your website or a few lines about what you do. Or skip it. It starts with safe defaults and takes a message.',
     tag: '0 to 60 s, skippable',
   },
   {
     n: '03',
     title: 'Call it and watch it work',
-    body: 'Call your own business number. The AI answers, and you watch the transcript stream in while the ticket and summary write themselves.',
+    body: 'Call your own business number. Converso answers, you watch what it says appear word for word — and the note about the call writes itself.',
     tag: '← this is the demo',
   },
 ];
@@ -46,7 +46,7 @@ export function HowItWorks() {
         <ol className="mt-16 border-t border-ink/10">
           {STEPS.map((s, i) => (
             <li key={s.n} className="border-b border-ink/10">
-              <Reveal delay={i * 80}>
+              <Reveal delay={i * 40}>
                 <div className="grid items-baseline gap-4 py-10 md:grid-cols-[130px_1fr_auto] md:gap-8">
                   <span className="font-display text-6xl leading-none text-ink/20 md:text-7xl">
                     {s.n}

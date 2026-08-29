@@ -1,17 +1,31 @@
+import { useEffect, useState } from 'react';
 import { Navigation } from './components/Navigation';
 import { Hero } from './components/Hero';
-import { Ticker } from './components/Ticker';
-import { Tagline } from './components/Tagline';
+import { Problem } from './components/Problem';
 import { Stats } from './components/Stats';
-import { Transformation } from './components/Transformation';
 import { HowItWorks } from './components/HowItWorks';
-import { Benefits } from './components/Benefits';
+import { Pillars } from './components/Pillars';
+import { WhoItsFor } from './components/WhoItsFor';
+import { Integrations } from './components/Integrations';
 import { SocialProof } from './components/SocialProof';
 import { PricingSection } from './components/PricingSection';
 import { Legal } from './components/Legal';
 import { Footer } from './components/Footer';
+import { Product } from './product/Product';
+
+const isProductPath = () => window.location.pathname.replace(/\/+$/, '').endsWith('/app');
 
 export default function App() {
+  const [view, setView] = useState<'site' | 'product'>(() => (isProductPath() ? 'product' : 'site'));
+
+  useEffect(() => {
+    const onPop = () => setView(isProductPath() ? 'product' : 'site');
+    window.addEventListener('popstate', onPop);
+    return () => window.removeEventListener('popstate', onPop);
+  }, []);
+
+  if (view === 'product') return <Product />;
+
   return (
     <div className="min-h-screen bg-paper text-ink">
       <a
@@ -23,12 +37,12 @@ export default function App() {
       <Navigation />
       <main id="main">
         <Hero />
-        <Ticker />
-        <Tagline />
+        <Problem />
         <Stats />
-        <Transformation />
         <HowItWorks />
-        <Benefits />
+        <Pillars />
+        <WhoItsFor />
+        <Integrations />
         <SocialProof />
         <PricingSection />
         <Legal />

@@ -3,31 +3,23 @@ import { Reveal } from './Reveal';
 const FAQS = [
   {
     q: 'How fast until my number is live?',
-    a: 'Under two minutes. You pick a local number during sign up, then call it and watch the AI answer.',
+    a: 'Under two minutes. Pick a number when you sign up, then call it — watching it answer is part of the sign-up.',
   },
   {
-    q: 'Does it work with my CRM?',
-    a: 'Zoho first: your CRM keeps profile fields, and we add every conversation, ticket, and summary. HubSpot and Salesforce are on the roadmap.',
+    q: 'What does it cost?',
+    a: 'Per conversation, at a rate published before you subscribe. Your first 14 days are free, no card.',
   },
   {
-    q: 'What happens when the AI gets something wrong?',
-    a: 'It escalates to you as a ticket with the full transcript, a summary, and a suggested resolution. You can take over any conversation at any moment.',
+    q: 'What happens when it gets something wrong?',
+    a: 'It tells you — with everything it checked and what it suggests you do. And you can jump into any conversation at any moment; it steps back.',
   },
   {
     q: 'Do I need technical setup?',
-    a: 'No. It works from the first call with safe default agents. Add your business knowledge and it improves; nothing blocks launch.',
-  },
-  {
-    q: 'Which channels does it start on?',
-    a: 'Phone, WhatsApp, and website chat. Pick one or all three.',
-  },
-  {
-    q: 'Who owns the data?',
-    a: 'You do. Full export in standard formats, anytime, including on the way out.',
+    a: 'No. It works from the first call with safe defaults. Add your business details and it gets better — but nothing blocks going live.',
   },
   {
     q: 'Can I cancel?',
-    a: 'Anytime. No setup fee, no lockup, no notice period.',
+    a: 'Anytime, with no notice period and no lockup. Your full data export comes with you.',
   },
 ];
 
@@ -65,8 +57,8 @@ export function PricingSection() {
             Pay for what it handles.
           </h2>
           <p className="mt-6 max-w-xl text-[15px] leading-relaxed text-ink/60">
-            Pricing is usage based. There is no setup fee and no minimum seat count. Scale up or down, or cancel, at any
-            time.
+            Per conversation, not per seat. No setup fee, no lock-in. Scale up, down, or stop —
+            anytime.
           </p>
         </Reveal>
 
@@ -92,7 +84,7 @@ export function PricingSection() {
                 </li>
                 <li className="flex gap-3">
                   <Check className="text-live" />
-                  Support, sales &amp; escalation agents
+                  Support, sales, and handoff when a human is needed
                 </li>
                 <li className="flex gap-3">
                   <Check className="text-live" />
@@ -100,7 +92,7 @@ export function PricingSection() {
                 </li>
                 <li className="flex gap-3">
                   <Check className="text-live" />
-                  Live watch, replay, QA, and full export
+                  Watch any call live, replay it, and export everything
                 </li>
               </ul>
               <a
@@ -115,7 +107,7 @@ export function PricingSection() {
             </div>
           </Reveal>
 
-          <Reveal delay={80}>
+          <Reveal delay={40}>
             <div className="flex h-full flex-col rounded-md border border-ink/10 bg-white p-8">
               <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-ink/40">
                 Standard
@@ -192,7 +184,7 @@ export function PricingSection() {
             </div>
           </Reveal>
 
-          <Reveal delay={80}>
+          <Reveal delay={40}>
             <div id="faq" className="scroll-mt-24">
               <p className="mb-6 font-mono text-[11px] uppercase tracking-[0.18em] text-ink/40">
                 Quick answers
@@ -202,7 +194,7 @@ export function PricingSection() {
                   <details key={q} className="group py-4">
                     <summary className="fluid flex cursor-pointer list-none items-center justify-between gap-4 text-[15px] font-medium [&::-webkit-details-marker]:hidden">
                       {q}
-                      <span className="font-mono text-lg leading-none text-ink/35 transition-transform duration-500 group-open:rotate-45">
+                      <span className="font-mono text-lg leading-none text-ink/35 transition-transform duration-300 ease-[var(--ease-fluid)] group-open:rotate-45">
                         +
                       </span>
                     </summary>

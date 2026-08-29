@@ -1,11 +1,12 @@
 const LINKS = [
   { href: '#top', label: 'Product' },
-  { href: '#proof', label: 'Why it works' },
+  { href: '#problem', label: 'Why it works' },
   { href: '#how-it-works', label: 'How it works' },
   { href: '#pricing', label: 'Pricing' },
   { href: '#faq', label: 'FAQ' },
   { href: '#privacy', label: 'Privacy policy' },
   { href: '#terms', label: 'Terms of service' },
+  { href: '/app', label: 'See it work' },
 ];
 
 export function Footer() {
@@ -32,7 +33,7 @@ export function Footer() {
               <span className="text-[15px] font-semibold tracking-tight">Converso</span>
             </div>
             <p className="mt-4 text-sm leading-relaxed text-ink/50">
-              AI support and sales for small business. Your support team is live in a minute.
+              Every customer answered. Every lead followed up. Built for small businesses that sell by phone and chat.
             </p>
           </div>
 

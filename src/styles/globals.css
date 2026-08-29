@@ -13,6 +13,11 @@
   --color-moss: #1a6b50;
   --color-live: #2fbf71;
 
+  /* Product app — state colors (color = state, never decoration) */
+  --color-warn: #b45309;
+  --color-blocked: #b42318;
+  --color-active: #2456c4;
+
   --font-display: 'Instrument Serif', Georgia, 'Times New Roman', serif;
   --font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
 }
@@ -49,7 +54,12 @@ p {
 
 /* Fluid motion: shared spring curve on interactive elements */
 .fluid {
-  transition: all 450ms var(--ease-fluid);
+  transition:
+    transform 180ms var(--ease-fluid),
+    background-color 300ms var(--ease-fluid),
+    color 300ms var(--ease-fluid),
+    border-color 300ms var(--ease-fluid),
+    box-shadow 300ms var(--ease-fluid);
 }
 
 a.fluid:active,
@@ -122,6 +132,12 @@ button.fluid:active {
   50% { transform: scaleY(1); }
 }
 
+.wave {
+  transition:
+    scale 250ms var(--ease-fluid),
+    opacity 250ms var(--ease-fluid);
+}
+
 .wave-bar {
   transform-origin: center;
   animation: wave 1s ease-in-out infinite;
@@ -140,8 +156,19 @@ button.fluid:active {
 /* Hero card deck: front card slides away, back card comes forward */
 .card-swap {
   transition:
-    transform 800ms var(--ease-fluid),
+    translate 800ms var(--ease-fluid),
+    scale 800ms var(--ease-fluid),
     opacity 800ms var(--ease-fluid);
+}
+
+/* Exits build momentum: ease-in (arrive: ease-out via --ease-fluid) */
+.card-swap-exit {
+  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+}
+
+/* User-driven swaps (hover) land faster than the ambient 800ms auto swap */
+.swap-fast {
+  transition-duration: 300ms;
 }
 
 /* Live indicator */
@@ -168,3 +195,4 @@ button.fluid:active {
     transition: none;
   }
 }
+

@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react';
 
 const LINKS = [
-  { href: '#proof', label: 'Why it works' },
+  { href: '#problem', label: 'Why it works' },
   { href: '#how-it-works', label: 'How it works' },
+  { href: '#who-its-for', label: 'Who it is for' },
+  { href: '/app', label: 'See it work' },
   { href: '#pricing', label: 'Pricing' },
-  { href: '#faq', label: 'FAQ' },
 ];
 
 function Wordmark() {
@@ -61,7 +62,7 @@ export function Navigation() {
             href="#pricing"
             className="fluid hidden rounded-sm bg-ink px-4 py-2 text-sm font-medium text-paper hover:bg-moss sm:inline-flex"
           >
-            Start free
+            Try it free
           </a>
           <button
             type="button"
@@ -71,10 +72,10 @@ export function Navigation() {
             className="fluid relative h-9 w-9 rounded-sm md:hidden"
           >
             <span
-              className={`absolute left-1/2 top-1/2 h-0.5 w-4 -translate-x-1/2 -translate-y-1/2 bg-ink ${open ? 'rotate-45' : ''}`}
+              className={`absolute left-1/2 top-1/2 h-0.5 w-4 -translate-x-1/2 -translate-y-1/2 bg-ink transition-transform duration-300 ease-[var(--ease-fluid)] ${open ? 'rotate-45' : ''}`}
             />
             <span
-              className={`absolute left-1/2 top-1/2 h-0.5 w-4 -translate-x-1/2 -translate-y-1/2 bg-ink ${open ? '-rotate-45' : ''}`}
+              className={`absolute left-1/2 top-1/2 h-0.5 w-4 -translate-x-1/2 -translate-y-1/2 bg-ink transition-transform duration-300 ease-[var(--ease-fluid)] ${open ? '-rotate-45' : ''}`}
             />
           </button>
         </div>
@@ -82,7 +83,7 @@ export function Navigation() {
 
       {/* Mobile sheet */}
       <div
-        className={`fixed inset-0 top-16 z-40 bg-paper/97 backdrop-blur-md transition-opacity duration-500 md:hidden ${
+        className={`fixed inset-0 top-16 z-40 bg-paper/97 backdrop-blur-md transition-opacity duration-300 md:hidden ${
           open ? 'opacity-100' : 'pointer-events-none opacity-0'
         }`}
       >
@@ -92,10 +93,10 @@ export function Navigation() {
               key={l.href}
               href={l.href}
               onClick={() => setOpen(false)}
-              className={`flex items-center justify-between border-b border-ink/10 py-5 font-display text-3xl transition-all duration-700 ${
+              className={`flex items-center justify-between border-b border-ink/10 py-5 font-display text-3xl transition-all duration-300 ease-[var(--ease-fluid)] ${
                 open ? 'translate-y-0 opacity-100' : 'translate-y-6 opacity-0'
               }`}
-              style={{ transitionDelay: open ? `${80 + i * 60}ms` : '0ms' }}
+              style={{ transitionDelay: open ? `${40 + i * 40}ms` : '0ms' }}
             >
               {l.label}
               <span className="font-mono text-xs text-ink/30" aria-hidden="true">
@@ -106,12 +107,12 @@ export function Navigation() {
           <a
             href="#pricing"
             onClick={() => setOpen(false)}
-            className={`fluid mt-8 inline-flex justify-center rounded-sm bg-ink px-4 py-4 text-base font-medium text-paper transition-all duration-700 ${
+            className={`fluid mt-8 inline-flex justify-center rounded-sm bg-ink px-4 py-4 text-base font-medium text-paper transition-all duration-300 ease-[var(--ease-fluid)] ${
               open ? 'translate-y-0 opacity-100' : 'translate-y-6 opacity-0'
             }`}
-            style={{ transitionDelay: open ? '340ms' : '0ms' }}
+            style={{ transitionDelay: '240ms' }}
           >
-            Start free, live in 2 minutes
+            Try it free
           </a>
         </div>
       </div>

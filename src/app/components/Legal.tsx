@@ -22,7 +22,7 @@ export function Legal() {
               Terms
             </h3>
             <p className="mt-4 max-w-[52ch] text-sm leading-relaxed text-ink/55">
-              You pay for what the agents handle, at the rate published before you subscribe.
+              You pay for what Converso handles, at the rate published before you subscribe.
               Cancel anytime from settings. Your full data export stays available on your account
               for 30 days after cancellation.
             </p>
