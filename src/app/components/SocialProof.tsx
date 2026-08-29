@@ -19,7 +19,7 @@ export function SocialProof() {
             have an empty wall than a fake one.
           </p>
           <p className="mt-7 font-mono text-[11px] uppercase tracking-[0.14em] text-moss">
-            Early access: limited slots, 40% off for life
+            Early customers shape the product — and their results go here, with names
           </p>
         </Reveal>
 
