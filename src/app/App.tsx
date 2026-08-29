@@ -12,19 +12,26 @@ import { PricingSection } from './components/PricingSection';
 import { Legal } from './components/Legal';
 import { Footer } from './components/Footer';
 import { Product } from './product/Product';
+import { IntegrationsPage } from './integrations/IntegrationsPage';
 
 const isProductPath = () => window.location.pathname.replace(/\/+$/, '').endsWith('/app');
+const isIntegrationsPath = () => window.location.pathname.replace(/\/+$/, '').endsWith('/integrations');
 
 export default function App() {
-  const [view, setView] = useState<'site' | 'product'>(() => (isProductPath() ? 'product' : 'site'));
+  const [view, setView] = useState<'site' | 'product' | 'integrations'>(
+    () => (isProductPath() ? 'product' : isIntegrationsPath() ? 'integrations' : 'site'),
+  );
 
   useEffect(() => {
-    const onPop = () => setView(isProductPath() ? 'product' : 'site');
+    const onPop = () =>
+      setView(isProductPath() ? 'product' : isIntegrationsPath() ? 'integrations' : 'site');
     window.addEventListener('popstate', onPop);
     return () => window.removeEventListener('popstate', onPop);
   }, []);
 
   if (view === 'product') return <Product />;
+
+  if (view === 'integrations') return <IntegrationsPage />;
 
   return (
     <div className="min-h-screen bg-paper text-ink">

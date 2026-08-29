@@ -22,8 +22,9 @@ function Wordmark() {
   );
 }
 
-export function Navigation() {
+export function Navigation({ remote = false }: { remote?: boolean }) {
   const [open, setOpen] = useState(false);
+  const a = (href: string) => (remote && href.startsWith('#') ? `/${href}` : href);
 
   useEffect(() => {
     document.body.style.overflow = open ? 'hidden' : '';
@@ -49,7 +50,7 @@ export function Navigation() {
           {LINKS.map((l) => (
             <a
               key={l.href}
-              href={l.href}
+              href={a(l.href)}
               className="fluid font-mono text-[11px] uppercase tracking-[0.14em] text-ink/55 hover:text-ink"
             >
               {l.label}
@@ -59,7 +60,7 @@ export function Navigation() {
 
         <div className="flex items-center gap-3">
           <a
-            href="#pricing"
+            href={a('#pricing')}
             className="fluid hidden rounded-sm bg-ink px-4 py-2 text-sm font-medium text-paper hover:bg-moss sm:inline-flex"
           >
             Try it free
@@ -91,7 +92,7 @@ export function Navigation() {
           {LINKS.map((l, i) => (
             <a
               key={l.href}
-              href={l.href}
+              href={a(l.href)}
               onClick={() => setOpen(false)}
               className={`flex items-center justify-between border-b border-ink/10 py-5 font-display text-3xl transition-all duration-300 ease-[var(--ease-fluid)] ${
                 open ? 'translate-y-0 opacity-100' : 'translate-y-6 opacity-0'
@@ -105,7 +106,7 @@ export function Navigation() {
             </a>
           ))}
           <a
-            href="#pricing"
+            href={a('#pricing')}
             onClick={() => setOpen(false)}
             className={`fluid mt-8 inline-flex justify-center rounded-sm bg-ink px-4 py-4 text-base font-medium text-paper transition-all duration-300 ease-[var(--ease-fluid)] ${
               open ? 'translate-y-0 opacity-100' : 'translate-y-6 opacity-0'
