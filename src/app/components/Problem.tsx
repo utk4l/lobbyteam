@@ -1,24 +1,31 @@
+import { Icon, IconName } from './Icons';
 import { Reveal } from './Reveal';
 
-const ROWS = [
+const ROWS: { where: string; icon: IconName; before: string; agitate: string; after: string }[] = [
   {
+    where: 'The door',
+    icon: 'door',
     before:
       'The phone rang three times while you were on another call. You never found out what they wanted.',
     agitate: 'That was probably a job. It went to whoever picked up next.',
     after:
-      'It rings once, and it is answered — any hour. You get a short note of what happened.',
+      'It rings once, and it is answered — any hour. And by the time you see it, it is all written down.',
   },
   {
-    before: 'A lead messaged at 9 pm asking for a quote. You replied in the morning. The deal was gone.',
-    agitate: 'The first business that answers is usually the one that gets the work.',
+    where: 'The middle',
+    icon: 'exchange',
+    before: 'A customer called back and had to explain everything again, because no one remembered the first call.',
+    agitate: "Making a customer repeat themselves is how 'helpful business' becomes 'we'll go elsewhere.'",
     after:
-      'It answers in seconds, works out what they need, and books the callback while they are still asking.',
+      'It knows who they are and what they asked about last time. Every conversation carries the history forward.',
   },
   {
-    before: "You can't listen to every call, so you have no idea how good your support really is.",
-    agitate: 'Problems hide in the calls you never hear — until a customer tells someone else.',
+    where: 'The exit',
+    icon: 'exit',
+    before: "The job went fine. Nobody followed up. You never found out if they were happy — or if they'll come back.",
+    agitate: 'The last impression is the one that decides the next ten customers — and it is the one you are too busy to give.',
     after:
-      'Every call becomes a 30-second note. You read what matters instead of listening to hours of recordings.',
+      'Confirmation the same minute, a check-in the next day, a review request when it is done. The last mile is handled too.',
   },
 ];
 
@@ -29,21 +36,20 @@ export function Problem() {
         {/* Sticky intro */}
         <div className="self-start lg:sticky lg:top-28">
           <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-ink/40">
-            Sound familiar?
+            The in-between
           </p>
           <h2 className="mt-6 font-display text-4xl leading-[1.05] tracking-[-0.01em] md:text-5xl">
-            Your customers are calling.
+            Customers do not leave on the first call.
             <br />
-            Right now, someone is missing them.
+            They leave in the in-between.
           </h2>
           <div className="mt-12 rounded-md border border-ink/10 bg-white p-7">
             <p className="font-display text-6xl leading-none">100%</p>
             <p className="mt-3 text-sm leading-relaxed text-ink/60">
-              of your conversations end with a note: who called, what they needed, what happened
-              next.
+              of your customers get the whole journey — greeted, sorted, booked, followed up.
             </p>
             <p className="mt-4 font-mono text-[10px] uppercase tracking-[0.14em] text-ink/40">
-              A human team listens to 2 to 5%
+              A busy front desk gets the first hello
             </p>
           </div>
         </div>
@@ -53,7 +59,13 @@ export function Problem() {
           {ROWS.map((row, i) => (
             <Reveal key={i} delay={i * 40}>
               <div className="rounded-md border border-ink/10 bg-white p-6 transition-colors duration-500 hover:border-ink/35 md:p-8">
-                <p className="text-[15px] leading-relaxed text-ink/45">{row.before}</p>
+                <p className="flex items-center gap-2.5 font-mono text-[10px] uppercase tracking-[0.16em] text-ink/35">
+                  <span className="grid h-7 w-7 place-items-center rounded-sm border border-ink/10 bg-paper text-ink/45">
+                    <Icon name={row.icon} className="h-3.5 w-3.5" />
+                  </span>
+                  {row.where}
+                </p>
+                <p className="mt-3 text-[15px] leading-relaxed text-ink/45">{row.before}</p>
                 <p className="mt-4 border-l-2 border-ink/15 pl-4 text-[13px] leading-relaxed text-ink/40">
                   {row.agitate}
                 </p>

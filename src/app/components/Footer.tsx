@@ -7,6 +7,7 @@ const LINKS = [
   { href: '#privacy', label: 'Privacy policy' },
   { href: '#terms', label: 'Terms of service' },
   { href: '/app', label: 'See it work' },
+  { href: '/integrations', label: 'Integrations' },
 ];
 
 export function Footer() {
@@ -33,7 +34,7 @@ export function Footer() {
               <span className="text-[15px] font-semibold tracking-tight">Converso</span>
             </div>
             <p className="mt-4 text-sm leading-relaxed text-ink/50">
-              Every customer answered. Every lead followed up. Built for small businesses that sell by phone and chat.
+              Greeted, sorted, booked, followed up — start to finish. Built for small businesses that sell by phone and chat.
             </p>
           </div>
 

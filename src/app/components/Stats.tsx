@@ -1,10 +1,13 @@
 import { useEffect, useRef, useState } from 'react';
+import { Icon, IconName } from './Icons';
 
-const STATS = [
-  { n: 0, suffix: '', label: "missed calls. It rings once, and it's answered. Any hour, any day." },
-  { n: 2, suffix: 'min', label: 'from sign-up to a number that answers your customers.' },
-  { n: 30, suffix: 'sec', label: 'to read any call. Who, what they needed, what happened.' },
-  { n: 14, suffix: 'days', label: 'free, full features, no card. Walk away with your data if it is not for you.' },
+type StatDef = { n: number; suffix: string; label: string; icon: IconName };
+
+const STATS: StatDef[] = [
+  { n: 0, suffix: '', label: "missed calls. It rings once, and it's answered. Any hour, any day.", icon: 'phone' },
+  { n: 2, suffix: 'min', label: 'from sign-up to a number that answers your customers.', icon: 'clock' },
+  { n: 30, suffix: 'sec', label: 'to read any call. Who, what they needed, what happened.', icon: 'note' },
+  { n: 14, suffix: 'days', label: 'free, full features, no card. Walk away with your data if it is not for you.', icon: 'calendar' },
 ];
 
 function useCountUp(target: number, active: boolean, duration = 1000) {
@@ -33,10 +36,13 @@ function useCountUp(target: number, active: boolean, duration = 1000) {
   return value;
 }
 
-function Stat({ n, suffix, label, active }: (typeof STATS)[number] & { active: boolean }) {
+function Stat({ n, suffix, label, active, icon }: StatDef & { active: boolean }) {
   const value = useCountUp(n, active);
   return (
     <div className="border-ink/10 px-2 py-10 sm:px-6 lg:border-l lg:first:border-l-0">
+      <span className="mb-5 inline-grid h-9 w-9 place-items-center rounded-sm border border-ink/10 bg-white text-ink/55">
+        <Icon name={icon} className="h-4 w-4" />
+      </span>
       <p className="flex items-baseline gap-1.5">
         <span className="font-display text-6xl leading-none md:text-7xl">{value}</span>
         {suffix && <span className="font-mono text-sm text-ink/45">{suffix}</span>}
