@@ -1,0 +1,140 @@
+---
+title: LobbyTeam landing page rebrand and legacy route
+tags: [lobbyteam, landing-page, messaging, rebrand]
+type: implementation-plan
+status: active
+---
+
+# LobbyTeam Landing Page And Blog Launch
+
+## Objective
+
+Create a genuinely new, outcome-led LobbyTeam homepage while preserving the current landing page at `/old-landing`. Retain the current page's visual quality as a design reference, but use a new information architecture and persona-led story. Add the WordPress-backed blog experience using the same Devon Blog and post-series approach already proven in At Your Service. LobbyTeam posts must be filtered by the WordPress category slug `lobby-team`.
+
+## Decisions
+
+- The public product name is **LobbyTeam**.
+- `/` will become the new LobbyTeam homepage.
+- `/old-landing` will preserve the current landing-page experience as a legacy reference.
+- The new homepage leads with the business outcome: every customer reaches an answer, completed request, or the right human next step.
+- The new homepage explains that LobbyTeam works across phone, website chat, email, SMS, WhatsApp, and configured kiosk, tablet, or QR-code experiences.
+- LobbyTeam handles defined requests and intelligently routes exceptions to the right human with context.
+- The visual language remains substantially unchanged; this is a messaging and information-architecture improvement, not a visual redesign.
+- The legacy route should be marked `noindex` if it remains publicly reachable, so it does not compete with the new homepage in search.
+- The new homepage is not a copy refresh of the old page; it is a new outcome-led and persona-led experience.
+- The public blog lives at `/blog` and reads from Devon Blog through WordPress REST.
+- LobbyTeam WordPress posts are selected by the `lobby-team` category, not by a copied numeric ID from At Your Service.
+- Blog articles support WordPress post-series, tags, article pages, tag pages, JSON-LD, Open Graph metadata, and sitemap entries.
+- `/who-is-this-for` will be the new persona and use-case directory, not a generic list of verticals.
+- The current Integrations experience will remain available at `/old-integrations`.
+- `/integrations` will be the new outcome-led workflow-fit page.
+- `#pricing` remains a homepage section and will use the working Interaction Unit pricing concept: `$49` for 20 units, `$99` for 75 units, and `$299` for 500 units.
+
+## Proposed Homepage Flow
+
+1. Hero: outcome, audience, and a concise explanation of what LobbyTeam does.
+2. Problem: missed calls, unanswered messages, repetitive front-desk work, and unclear ownership.
+3. Outcome cards: answer, complete, route, and follow through.
+4. Contexts: office front desk, appointment operations, online business, physical lobby, after-hours support, and follow-the-sun routing.
+5. How it works: understand the request, complete configured work, preserve context, and connect the right human.
+6. Human boundary: LobbyTeam works alongside staff and does not replace security, emergency response, or accountable human decisions.
+7. Pricing: show the approved working concept only after pricing is reviewed for production readiness.
+8. FAQ and final CTA.
+
+## Who Is This For Page
+
+Use `/who-is-this-for` as the discoverable natural-language URL. Its job is to answer “which front-door problem are you trying to solve?” rather than publish a generic list of verticals. The page should open with a clear outcome and then present concrete operating contexts:
+
+- **Office front desk:** answer calls, take messages, schedule and reschedule appointments, and route the request with ownership.
+- **Appointment-heavy business:** confirm, remind, reschedule, and recover appointment work without making customers start over.
+- **Online business:** respond to website chat, email, SMS, and WhatsApp inquiries and guide visitors toward a completed request or human next step.
+- **Physical lobby:** provide a kiosk, tablet, or QR-code front door that can answer questions, start a voice interaction, and connect a visitor to a human when needed; clearly state that it is not security or emergency response.
+- **After-hours and multi-location teams:** route by time zone, hours, availability, expertise, urgency, and ownership so the right human receives the context.
+
+Each persona card should follow the same sequence: who is searching, what breaks today, what LobbyTeam changes, and what the customer receives. Avoid creating thin SEO pages for every industry until there is a distinct workflow, proof, and call to action for that industry.
+
+Recommended page CTA: **See how LobbyTeam could handle your front door.**
+
+## Pricing Page And Homepage Pricing Section
+
+The pricing section should explain the outcome before the meter:
+
+> LobbyTeam helps every customer reach an answer, complete a request, or reach the right human next step.
+
+Show the working three-tier structure:
+
+| Plan | Monthly price | Included Interaction Units | Overage |
+|---|---:|---:|---:|
+| Starter | `$49/month` | 20 | `$0.99/unit` |
+| Essential | `$99/month` | 75 | `$0.79/unit` |
+| Full Front Door | `$299/month` | 500 | `$0.59/unit` |
+
+Explain one Interaction Unit in plain language: one connected phone minute, one email up to 300 words, one SMS segment, one WhatsApp message up to 500 characters, or one website chat turn. State that the exact channels and workflows depend on configuration, and do not promise unsupported integrations or unlimited service.
+
+The homepage should show a concise pricing summary and link to a fuller pricing explanation if one is added. Pricing must not lead with “AI actions,” tokens, or implementation details.
+
+## Integrations Page
+
+Keep the existing page unchanged at `/old-integrations`. Build a new `/integrations` page as reassurance that LobbyTeam fits the business's existing operating system:
+
+1. Hero: **Keep the front door connected to the work behind it.**
+2. Explain that customers can reach the business through the configured channels, while completed requests and human handoffs land in the tools the team already uses.
+3. Organize the directory by outcome:
+   - **Where requests arrive:** phone, website chat, email, SMS, WhatsApp, and configured physical-lobby surfaces.
+   - **Where work gets completed:** calendars, service-management tools, accounting, CRM, and workflow tools.
+   - **Where humans take over:** team inboxes, notifications, escalation routes, and webhooks.
+4. Every integration card should say what customer or staff problem it solves, what action occurs, and whether it is actually live, configured, or planned.
+5. Replace all Converso references, AI-first claims, and unsupported “live” labels.
+6. End with a human-centered CTA and an FAQ covering setup, data ownership, fallbacks, and unsupported systems.
+
+## Blog Integration Flow
+
+1. Resolve the WordPress category by slug `lobby-team`, with a production environment override available if needed.
+2. Fetch paginated posts, embedded featured media, tags, and post-series metadata from Devon Blog.
+3. Render `/blog` with the LobbyTeam visual system and links to article, tag, and series views.
+4. Render individual article pages with sanitized WordPress HTML, series dropdown, tags, metadata, and a LobbyTeam CTA.
+5. Include published posts and tag routes in the sitemap; retain graceful empty/error states if WordPress is unavailable.
+6. Add only LobbyTeam-relevant article content to the category; do not mix At Your Service/BoothTeam posts.
+
+## Checklist
+
+- [x] Snapshot the current homepage into a dedicated legacy view available at `/old-landing`. (DONE)
+- [x] Add route detection and rendering for `/old-landing` without breaking `/app` or `/integrations`. (DONE)
+- [x] Replace public-facing Converso labels with LobbyTeam labels on the new homepage and shared navigation/footer surfaces. (DONE)
+- [x] Rewrite homepage copy around customer outcomes, supported contexts, and human handoff boundaries. (DONE)
+- [x] Preserve the current Integrations view at `/old-integrations` and add a new outcome-led `/integrations` page. (DONE)
+- [x] Add a persona/use-case-led `/who-is-this-for` page and link to it from the primary navigation or homepage context section. (DONE)
+- [x] Replace the homepage pricing section with the approved working Interaction Unit tiers and link to the detailed pricing explanation when ready. (DONE)
+- [x] Reposition `/integrations` around workflow fit, outcome, and verified availability while preserving the route. (DONE)
+- [x] Preserve the current visual system while adjusting section hierarchy and content density for the new message. (DONE)
+- [ ] Add the Devon Blog WordPress integration for category slug `lobby-team`.
+- [ ] Add LobbyTeam blog index, article, tag, and post-series rendering using the established At Your Service pattern.
+- [ ] Add blog metadata, JSON-LD, Open Graph values, and dynamic sitemap entries.
+- [ ] Add page title, description, canonical URL, and legacy `noindex` handling.
+- [x] Run the production build and verify both `/` and `/old-landing` locally. (DONE: Vite production build passed.)
+- [x] Review the rendered homepage messaging before committing and pushing. (DONE: route/content review completed.)
+- [ ] Commit and push the approved implementation to the configured Git remote.
+
+## Acceptance Criteria
+
+- A first-time visitor understands within the first screen that LobbyTeam is the business front door for calls, messages, and visitor requests.
+- The first screen states the outcome before describing AI or implementation details.
+- `/old-landing` remains accessible and visually matches the pre-rebrand page.
+- `/blog` shows only posts assigned to the WordPress `lobby-team` category.
+- Blog article pages expose tags and a post-series dropdown when WordPress provides them.
+- No public homepage section calls the product Converso.
+- The new page makes clear that LobbyTeam can answer, complete, or route requests and works with human staff.
+- The homepage does not claim unsupported channels, integrations, service levels, or human staffing.
+- The existing `/app` and `/integrations` views continue to render.
+
+## Validation Before Implementation
+
+- Confirm which channels are production-ready enough to list as supported on the public homepage.
+- Confirm whether pricing should appear on the first implementation or remain in the pricing concept until unit economics are validated.
+- Verify the `lobby-team` category from the Manas-reachable WordPress environment during implementation; use the slug as the application-level source of truth.
+
+## Glossary
+
+- **Outcome-led messaging:** Lead with the customer result rather than the technology used to produce it.
+- **Legacy route:** A preserved page retained for reference but not positioned as the primary public experience.
+- **Human handoff:** Passing a request to an accountable person with the conversation context needed to continue it.
