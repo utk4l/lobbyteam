@@ -1,6 +1,7 @@
 import { Reveal } from '../components/Reveal';
 import { LobbyFooter } from './LobbyFooter';
 import { LobbyNavigation } from './LobbyNavigation';
+import { FrontDoorDemo } from './FrontDoorDemo';
 
 const OUTCOMES = [
   ['01', 'Answer', 'Give people a useful answer instead of a voicemail, form receipt, or dead end.'],
@@ -29,20 +30,11 @@ export function LandingPage() {
             <Reveal>
               <p className="flex items-center gap-2.5 font-mono text-[11px] uppercase tracking-[0.18em] text-ink/50"><span className="live-dot h-2 w-2 rounded-full bg-live" />The business front door</p>
               <h1 className="mt-7 max-w-3xl font-display text-[clamp(3.2rem,7vw,6.6rem)] leading-[.91] tracking-[-0.045em]">Make sure every customer reaches the <em>right next step.</em></h1>
-              <p className="mt-8 max-w-[49ch] text-lg leading-relaxed text-ink/65">LobbyTeam answers calls and messages, handles the requests you define, and routes the rest to the right human with the context they need.</p>
+              <p className="mt-8 max-w-[49ch] text-lg leading-relaxed text-ink/65">LobbyTeam answers calls and messages, handles the requests you define, and routes the rest to the right human with the context they need. If a chat or email needs a phone conversation, it can initiate a configured callback. If a voice call needs a person, it routes accordingly.</p>
               <div className="mt-10 flex flex-wrap items-center gap-4"><a href="/who-is-this-for" className="fluid inline-flex items-center gap-2 rounded-sm bg-ink px-6 py-3.5 text-[15px] font-medium text-paper hover:bg-moss">Find your use case <Arrow /></a><a href="#how-it-works" className="fluid inline-flex items-center gap-2 rounded-sm border border-ink/20 px-6 py-3.5 text-[15px] font-medium hover:border-ink">See how it works <Arrow /></a></div>
               <p className="mt-6 font-mono text-[10px] uppercase tracking-[0.13em] text-ink/40">Works alongside your people. Never asks customers to start over.</p>
             </Reveal>
-            <Reveal delay={100}>
-              <div className="relative rounded-md border border-ink/10 bg-white p-5 shadow-[0_30px_80px_-50px_rgba(23,21,18,.55)] md:p-7">
-                <div className="flex items-center justify-between border-b border-ink/10 pb-4"><span className="font-mono text-[10px] uppercase tracking-[0.15em] text-ink/45">Incoming request</span><span className="rounded-full bg-moss/10 px-2.5 py-1 font-mono text-[9px] uppercase tracking-[0.1em] text-moss">In progress</span></div>
-                <p className="mt-6 font-display text-2xl leading-tight md:text-3xl">“I need to move my appointment, but I’m not sure who handles it.”</p>
-                <div className="mt-7 space-y-3">
-                  {['Understands the request', 'Checks the approved next step', 'Routes with the full context'].map((step, index) => <div key={step} className="flex items-center gap-3 rounded-sm border border-ink/10 bg-paper/65 px-3.5 py-3"><span className="grid h-6 w-6 place-items-center rounded-full bg-ink font-mono text-[10px] text-paper">0{index + 1}</span><span className="text-sm text-ink/70">{step}</span><span className="ml-auto text-moss">✓</span></div>)}
-                </div>
-                <div className="mt-6 border-t border-ink/10 pt-5"><p className="font-mono text-[9px] uppercase tracking-[0.15em] text-ink/40">Next step</p><p className="mt-2 text-sm font-medium">Connect to the scheduling team with the request attached.</p></div>
-              </div>
-            </Reveal>
+            <Reveal delay={100}><FrontDoorDemo /></Reveal>
           </div>
         </section>
 

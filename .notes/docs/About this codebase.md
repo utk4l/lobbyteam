@@ -21,3 +21,7 @@ LobbyTeam is an AI-native support and sales front door for phone, website chat, 
 - Product design source: [product-design.md](../../product-design.md)
 - Presentation: `https://show.iqwyk.com/sophimind/lobbyteam-by-sophimind`
 - AEO-first editorial program: [LobbyTeam AEO-first post series plan](../messaging/LobbyTeam%20AEO-first%20post%20series%20plan.md)
+
+## Homepage Outcome Demonstration
+
+The homepage hero uses `src/app/lobby/FrontDoorDemo.tsx` to show website chat, email, and voice interactions moving through a decision into a configured callback or human handoff. Each scenario ends in a shared interaction log, and reduced-motion users receive a stable selected state. The implementation plan is [TODO_lobbyteam_outcome-in-motion.md](../plans/TODO_lobbyteam_outcome-in-motion.md).

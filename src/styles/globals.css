@@ -153,6 +153,15 @@ button.fluid:active {
   animation: rise 450ms var(--ease-fluid) both;
 }
 
+@keyframes lobby-demo-enter {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: none; }
+}
+
+.lobby-demo-scene {
+  animation: lobby-demo-enter 550ms var(--ease-fluid) both;
+}
+
 /* Hero card deck: front card slides away, back card comes forward */
 .card-swap {
   transition:
@@ -188,7 +197,7 @@ button.fluid:active {
     opacity: 1;
     transform: none;
   }
-  .animate-marquee, .live-dot, .cursor-blink, .wave-bar, .anim-rise {
+  .animate-marquee, .live-dot, .cursor-blink, .wave-bar, .anim-rise, .lobby-demo-scene {
     animation: none;
   }
   .card-swap {

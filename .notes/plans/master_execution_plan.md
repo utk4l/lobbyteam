@@ -20,6 +20,7 @@ Bring LobbyTeam to a coherent, discoverable, outcome-led public launch while pre
 | C | Manas deployment and Cloudflare coexistence | Done | DONE_lobbyteam_manas_coexistence.md |
 | D | AEO-first editorial program | Active | ../messaging/LobbyTeam AEO-first post series plan.md |
 | E | Pricing validation | Active | TODO_lobbyteam_pricing_concept.md |
+| F | Multi-channel outcome animation | Coded, deploy-QA pending | TODO_lobbyteam_outcome-in-motion.md |
 
 ## Current Product Truth
 
@@ -62,6 +63,7 @@ Bring LobbyTeam to a coherent, discoverable, outcome-led public launch while pre
 - Build-generated sitemap, robots.txt, and llms.txt.
 - Cached same-origin WordPress runtime and dynamic sitemap endpoint, pending Manas service installation.
 - Canonical messaging guide and comprehensive buyer FAQ.
+- Multi-channel hero demo showing callback, human routing, and interaction logging, pending deployment verification.
 
 ## Deferred Or Open Work
 
