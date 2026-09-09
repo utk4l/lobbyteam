@@ -184,7 +184,7 @@ Keep the existing page unchanged at `/old-integrations`. Build a new `/integrati
 - [x] Add `/about` presentation destination and public `/llms.txt` discovery summary. (DONE.)
 - [x] Run the production build and verify both `/` and `/old-landing` locally. (DONE: Vite production build passed.)
 - [x] Review the rendered homepage messaging before committing and pushing. (DONE: route/content review completed.)
-- [ ] Commit and push the approved implementation to the configured Git remote.
+- [x] Commit and push the approved implementation to the configured Git remote. DONE: current implementation is pushed to `origin/main` through commit `f164c83`.
 - [ ] Pull the pushed commit on `manas-prod` under `/root/lobby-team`.
 - [ ] Run the production build on Manas and install `dist` into `/var/www/lobby-team`.
 - [ ] Verify the homepage, `/faqs`, `/blog`, `/sitemap.xml`, `/robots.txt`, `/llms.txt`, `/about`, `/who-is-this-for`, `/integrations`, `/old-landing`, and `/old-integrations` through the Cloudflare edge.

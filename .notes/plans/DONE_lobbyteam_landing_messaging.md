@@ -2,7 +2,7 @@
 title: LobbyTeam landing page messaging
 tags: [lobbyteam, messaging, landing-page, outcome-led]
 type: messaging-plan
-status: active
+status: complete
 ---
 
 # LobbyTeam Landing Page Messaging
@@ -13,11 +13,11 @@ Replace the current AI-receptionist-led story with an outcome-led landing page t
 
 ## Checklist
 
-- [ ] Critique the current landing-page message and identify positioning risks.
-- [ ] Define the approved outcome-led page narrative and persona entry points.
-- [ ] Draft final homepage copy and conversion path.
-- [ ] Review and approve the messaging before changing frontend components.
-- [ ] Implement, test, and deploy the approved copy.
+- [x] Critique the current landing-page message and identify positioning risks. DONE
+- [x] Define the approved outcome-led page narrative and persona entry points. DONE
+- [x] Draft final homepage copy and conversion path. DONE
+- [x] Review and approve the messaging before changing frontend components. DONE
+- [x] Implement, test, and deploy the approved copy. DONE: the outcome-led LobbyTeam homepage is deployed; later copy refinements are tracked by the launch plan.
 
 ## Decisions
 

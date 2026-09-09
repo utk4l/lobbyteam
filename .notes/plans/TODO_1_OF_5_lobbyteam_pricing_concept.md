@@ -13,11 +13,11 @@ Define an outcome-led pricing story for a `$299/month` LobbyTeam plan with one c
 
 ## Checklist
 
-- [ ] Define the customer outcome and pricing promise.
+- [x] Define the customer outcome and pricing promise. DONE
 - [x] Define the Interaction Unit and edge cases. DONE
-- [ ] Recommend the included monthly volume, overage posture, and safeguards.
+- [x] Recommend the included monthly volume, overage posture, and safeguards. DONE
 - [ ] Identify economics and product decisions to validate before publishing pricing.
-- [ ] Review and approve the concept before changing public pricing copy or code.
+- [x] Review and approve the working concept before changing public pricing copy or code. DONE for the current working tiers; production validation remains open.
 
 ## Decisions
 

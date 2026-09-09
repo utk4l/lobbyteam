@@ -15,11 +15,11 @@ Bring LobbyTeam to a coherent, discoverable, outcome-led public launch while pre
 
 | Priority | Track | Status | Plan |
 |---|---|---|---|
-| A | Public site and FAQ launch | Coded, deploy-QA pending | TODO_lobbyteam_landing_page_rebrand.md |
-| B | WordPress blog and discovery | Coded, dynamic runtime deploy pending | TODO_lobbyteam_landing_page_rebrand.md |
+| A | Public site and FAQ launch | Coded, deploy-QA pending | TODO_9_OF_26_lobbyteam_landing_page_rebrand.md |
+| B | WordPress blog and discovery | Coded, dynamic runtime deploy pending | TODO_9_OF_26_lobbyteam_landing_page_rebrand.md |
 | C | Manas deployment and Cloudflare coexistence | Done | DONE_lobbyteam_manas_coexistence.md |
 | D | AEO-first editorial program | Active | ../messaging/LobbyTeam AEO-first post series plan.md |
-| E | Pricing validation | Active | TODO_lobbyteam_pricing_concept.md |
+| E | Pricing validation | Active | TODO_1_OF_5_lobbyteam_pricing_concept.md |
 | F | Multi-channel outcome animation | Done | DONE_lobbyteam_outcome-in-motion.md |
 | G | Website decision team positioning | Done | DONE_lobbyteam_website-decision-team.md |
 
@@ -80,4 +80,4 @@ Bring LobbyTeam to a coherent, discoverable, outcome-led public launch while pre
 
 | Branch | Repo | Track | Status | Handoff | Feature plan |
 |---|---|---|---|---|---|
-| main | lobbyteam | public launch | Active | Current workspace | TODO_lobbyteam_landing_page_rebrand.md |
+| main | lobbyteam | public launch | Active | Current workspace | TODO_9_OF_26_lobbyteam_landing_page_rebrand.md |

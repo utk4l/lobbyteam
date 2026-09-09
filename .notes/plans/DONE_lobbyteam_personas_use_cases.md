@@ -2,7 +2,7 @@
 title: LobbyTeam personas and use cases
 tags: [lobbyteam, messaging, personas, use-cases]
 type: messaging-plan
-status: active
+status: complete
 ---
 
 # LobbyTeam Personas And Use Cases
@@ -13,10 +13,10 @@ Define the business contexts, buyer personas, operating personas, and customer s
 
 ## Checklist
 
-- [ ] Document the confirmed office and online-business contexts.
-- [ ] Map missing use cases and rank them as core, adjacent, or later.
-- [ ] Identify buyer, operator, and end-customer personas for the messaging framework.
-- [ ] Review the working map with the product owner before changing public site copy.
+- [x] Document the confirmed office and online-business contexts. DONE
+- [x] Map missing use cases and rank them as core, adjacent, or later. DONE
+- [x] Identify buyer, operator, and end-customer personas for the messaging framework. DONE
+- [x] Review the working map with the product owner before changing public site copy. DONE
 
 ## Decisions
 
