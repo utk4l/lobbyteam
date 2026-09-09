@@ -18,7 +18,7 @@ Bring LobbyTeam to a coherent, discoverable, outcome-led public launch while pre
 | A | Public site and FAQ launch | Coded, deploy-QA pending | TODO_9_OF_26_lobbyteam_landing_page_rebrand.md |
 | B | WordPress blog and discovery | Coded, dynamic runtime deploy pending | TODO_9_OF_26_lobbyteam_landing_page_rebrand.md |
 | C | Manas deployment and Cloudflare coexistence | Done | DONE_lobbyteam_manas_coexistence.md |
-| D | AEO-first editorial program | Active | ../messaging/LobbyTeam AEO-first post series plan.md |
+| D | AEO-first editorial program | Done | DONE_lobbyteam-foundational-blog-series.md |
 | E | Pricing validation | Active | TODO_1_OF_5_lobbyteam_pricing_concept.md |
 | F | Multi-channel outcome animation | Done | DONE_lobbyteam_outcome-in-motion.md |
 | G | Website decision team positioning | Done | DONE_lobbyteam_website-decision-team.md |
@@ -64,6 +64,7 @@ Bring LobbyTeam to a coherent, discoverable, outcome-led public launch while pre
 - Build-generated sitemap, robots.txt, and llms.txt.
 - Cached same-origin WordPress runtime and dynamic sitemap endpoint, pending Manas service installation.
 - Canonical messaging guide and comprehensive buyer FAQ.
+- First five foundational “Why The Business Front Door Matters” articles published under WordPress category `lobby-team` with post-series ID `765` and intent tags.
 - Multi-channel hero demo showing callback, human routing, and interaction logging, pending deployment verification.
 
 ## Deferred Or Open Work
