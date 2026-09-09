@@ -1,0 +1,275 @@
+/* Canonical Sophimind Reveal theme for iqwyk Show. */
+@import url("https://fonts.googleapis.com/css2?family=Monoton&family=Raleway:ital,wght@0,400..700;1,400..700&display=swap");
+
+:root {
+  --sophimind-ink: #171b32;
+  --sophimind-paper: #eef2f3;
+  --sophimind-night: #10152b;
+  --sophimind-warm: #f4f0e8;
+  --sophimind-display-font: "Monoton", cursive;
+  --sophimind-body-font: "Raleway", ui-sans-serif, system-ui, sans-serif;
+  --r-main-font: var(--sophimind-body-font);
+  --r-heading-font: var(--sophimind-body-font);
+  /* Fluid type uses wide-screen whitespace without allowing mobile overflow. */
+  --r-main-font-size: clamp(32px, 2.35vw, 44px);
+  --r-heading1-size: clamp(2.65em, 5.2vw, 3.35em);
+  --r-heading2-size: clamp(1.7em, 3.4vw, 2.15em);
+  --r-heading3-size: clamp(1.25em, 2.4vw, 1.55em);
+  --r-background-color: var(--sophimind-night);
+  --r-main-color: var(--sophimind-warm);
+  --r-heading-color: var(--sophimind-warm);
+  --r-link-color: #8dd8d2;
+  --r-heading-text-transform: none;
+  --r-heading-font-weight: 400;
+  --r-heading-line-height: 1.08;
+}
+
+.reveal,
+.reveal p,
+.reveal li,
+.reveal table {
+  font-family: var(--r-main-font) !important;
+}
+
+.sophimind-wordmark,
+.sophimind-cover-title {
+  font-family: var(--sophimind-body-font) !important;
+  font-weight: 400;
+}
+
+.sophimind-wordmark {
+  font-family: var(--sophimind-display-font) !important;
+  display: inline-block;
+}
+
+.sophimind-closing-card {
+  display: grid;
+  justify-items: center;
+  gap: 0.45em;
+  text-align: center;
+}
+
+.sophimind-closing-card img {
+  width: clamp(7rem, 18vw, 12rem);
+  height: clamp(7rem, 18vw, 12rem);
+  margin-bottom: 0.5em;
+}
+
+.sophimind-closing-product {
+  font-family: var(--sophimind-body-font);
+  font-size: clamp(1.4em, 3vw, 2.2em);
+  font-weight: 600;
+}
+
+.sophimind-closing-powered {
+  font-family: var(--sophimind-body-font);
+  font-size: clamp(0.8em, 1.5vw, 1.05em);
+  font-weight: 400;
+  letter-spacing: 0.04em;
+}
+
+/* Reveal scales the slide canvas, so keep its content predictable before the
+   transform is applied. These rules also protect long words and URLs. */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+.reveal {
+  color: var(--r-main-color);
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+  color: var(--r-heading-color);
+  font-weight: var(--r-heading-font-weight);
+  line-height: var(--r-heading-line-height);
+  letter-spacing: -0.02em;
+  text-transform: var(--r-heading-text-transform);
+}
+
+.reveal p,
+.reveal li { line-height: 1.35; }
+
+.reveal .slides section,
+.reveal .slides section > section {
+  min-width: 0;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6,
+.reveal p,
+.reveal li {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
+/* Keep markers attached while centering lists as content-sized blocks. */
+.reveal .slides section > ol,
+.reveal .slides section > ul {
+  display: block !important;
+  width: fit-content !important;
+  max-width: min(88%, 100%);
+  margin: 0.6em auto !important;
+  padding-inline-start: 1.5em;
+  text-align: left !important;
+}
+
+.reveal .slides section li::marker { color: currentColor; }
+
+.reveal .slides section {
+  color: var(--r-main-color);
+}
+
+.reveal .slides section h1,
+.reveal .slides section h2,
+.reveal .slides section h3,
+.reveal .slides section h4,
+.reveal .slides section h5,
+.reveal .slides section h6 {
+  color: var(--r-heading-color);
+}
+
+.reveal img,
+.reveal video,
+.reveal iframe {
+  width: auto;
+  max-width: 100%;
+  max-height: 78vh;
+  object-fit: contain;
+}
+
+.reveal table {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+/* Value slides use a small inline grid on wide screens. Stack it before the
+   cards become unreadable instead of relying on Reveal's canvas scaling. */
+.reveal .slides section > div[style*="grid-template-columns"] {
+  max-width: 100%;
+  min-width: 0;
+}
+
+/* Keep persistent branding outside Reveal's transformed slide tree. */
+.sophimind-viewport-logo {
+  position: fixed;
+  top: 1rem;
+  right: 1.25rem;
+  z-index: 100;
+  width: 3.1rem;
+  height: 3.1rem;
+  margin: 0;
+  pointer-events: none;
+}
+
+.sophimind-viewport-logo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.sophimind-viewport-logo img[hidden] {
+  display: none !important;
+}
+
+.sophimind-viewport-logo[hidden] {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  :root {
+    --r-main-font-size: clamp(28px, 3.1vw, 38px);
+    --r-heading1-size: clamp(2.2em, 5.2vw, 3em);
+    --r-heading2-size: clamp(1.5em, 3.4vw, 2em);
+    --r-heading3-size: clamp(1.15em, 2.4vw, 1.45em);
+  }
+
+  .sophimind-viewport-logo {
+    top: 0.75rem;
+    right: 0.85rem;
+    width: 4.5rem;
+    height: 4.5rem;
+  }
+
+}
+
+@media (max-width: 700px) {
+  :root {
+    --r-main-font-size: clamp(23px, 5.4vw, 31px);
+    --r-heading1-size: clamp(1.7em, 8.3vw, 2.25em);
+    --r-heading2-size: clamp(1.2em, 5.8vw, 1.55em);
+    --r-heading3-size: clamp(1.05em, 4.8vw, 1.25em);
+  }
+
+  .reveal .slides section > ol,
+  .reveal .slides section > ul {
+    width: calc(100% - 1rem) !important;
+    max-width: 100% !important;
+    padding-inline-start: 1.25em;
+  }
+
+  .reveal .slides section > div[style*="grid-template-columns"] {
+    grid-template-columns: 1fr !important;
+    gap: 0.8rem !important;
+    margin-top: 1rem !important;
+  }
+
+  .reveal p,
+  .reveal li { line-height: 1.25; }
+
+  .sophimind-viewport-logo {
+    top: 0.55rem;
+    right: 0.55rem;
+    width: 2.65rem;
+    height: 2.65rem;
+  }
+}
+
+@media (max-width: 420px) {
+  :root {
+    --r-main-font-size: clamp(20px, 5.8vw, 25px);
+    --r-heading1-size: clamp(1.55em, 8.8vw, 1.9em);
+    --r-heading2-size: clamp(1.1em, 6.2vw, 1.35em);
+    --r-heading3-size: clamp(1em, 5.2vw, 1.15em);
+  }
+
+  .sophimind-viewport-logo {
+    width: 2.25rem;
+    height: 2.25rem;
+  }
+}
+
+/* Landscape phones have very little vertical room. */
+@media (max-height: 600px) and (orientation: landscape) {
+  :root {
+    --r-main-font-size: clamp(20px, 3.2vw, 28px);
+    --r-heading1-size: clamp(1.55em, 5vw, 2.2em);
+    --r-heading2-size: clamp(1.1em, 3.3vw, 1.5em);
+    --r-heading3-size: clamp(1em, 2.5vw, 1.2em);
+  }
+
+  .reveal img,
+  .reveal video,
+  .reveal iframe { max-height: 62vh; }
+
+  .sophimind-viewport-logo {
+    top: 0.4rem;
+    right: 0.45rem;
+    width: 2.25rem;
+    height: 2.25rem;
+  }
+}
