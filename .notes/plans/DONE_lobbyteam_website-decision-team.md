@@ -2,7 +2,7 @@
 title: LobbyTeam website decision team positioning
 tags: [lobbyteam, website, messaging, decision-team, conversion]
 type: implementation-plan
-status: active
+status: complete
 ---
 
 # LobbyTeam Website Decision Team Positioning
@@ -33,25 +33,25 @@ Make **A digital decision team for your website** a primary LobbyTeam story. The
 - [x] Add a visual homepage story showing visitor question → clarification → relevant path → resource or human next step. (DONE: `WebsiteDecisionDemo`.)
 - [x] Add or revise homepage CTA language around helping visitors decide what fits. (DONE: `See what fits` and `See it in action`.)
 - [x] Verify authority boundaries, unsupported claims, accessibility, responsive layout, and reduced-motion behavior. (DONE by implementation review.)
-- [x] Run production build, diff checks, and public-route smoke tests. (Coded/Deploy-QA pending; production build and diff checks passed.)
-- [ ] Commit, push, deploy the exact release to Manas, and verify `/` plus `/old-landing`.
+- [x] Run production build, diff checks, and public-route smoke tests. (DONE: build and diff checks passed; `/`, `/old-landing`, `/faqs`, and `/sitemap.xml` returned HTTP 200.)
+- [x] Commit, push, deploy the exact release to Manas, and verify `/` plus `/old-landing`. (DONE: commit `759a01b` is active at `/var/www/releases/lobbyteam/759a01b`; Caddy and content proxy are active.)
 
 ## Revised Visual Direction
 
-The current `FrontDoorDemo` should be replaced, not lightly polished. It reads as a dashboard because the visitor, decision, and handoff are presented as separate static cards with manual tabs. The new hero should borrow the stronger mechanics from the preserved legacy `LiveConversation` animation:
+The previous `FrontDoorDemo` read as a dashboard because the visitor, decision, and handoff were presented as separate static cards with manual tabs. The new hero borrows the stronger mechanics from the preserved legacy `LiveConversation` animation:
 
 - A timed narrative rather than a tabbed panel
 - Visitor messages typing into a live website conversation
 - A visible “thinking team” moment where context is gathered and the relevant path changes
-- Product or service options appearing as the visitor clarifies what they need
-- A clear transition from question to recommendation, resource, booking, or human handoff
+- A relevant path appearing as the visitor clarifies what they need
+- A clear transition from question to recommendation, resource, or human handoff
 - A visible interaction timeline showing what LobbyTeam understood and why it chose the next step
 - Motion that feels like work happening, not decorative floating cards
 - Reduced-motion behavior that freezes on a complete, understandable state
 
-The scene should feel like a small operating room behind the website: one agent talks to the visitor while the team interprets the need, finds the relevant path, and prepares the next action.
+The scene feels like a small operating room behind the website: one agent talks to the visitor while the team interprets the need, finds the relevant path, and prepares the next action.
 
-## Suggested Visual Flow
+## Public Visual Flow
 
 1. Visitor arrives on the website with a broad question.
 2. The website conversation visibly types the visitor's question.
@@ -69,8 +69,10 @@ The scene should feel like a small operating room behind the website: one agent 
 - Preserve the coordinated-team explanation: one agent engages while specialized agents interpret, apply guidance, and guide the next step.
 - Keep the website decision flow distinct from clinical, legal, financial, security, or other accountable decisions.
 
-## Decisions Needed Before Implementation
+## Production Verification
 
-- Should the new phrase appear as the primary homepage headline or as the first supporting outcome beside the existing front-door story?
-- Which product-neutral example should the visual use: choosing a service, comparing solutions, requesting a resource, or asking for a human?
-- Should the main CTA be “See what fits,” “Start a conversation,” or “Build your digital decision team”?
+- Local Vite production build passed.
+- `git diff --check` passed.
+- Manas release `/var/www/releases/lobbyteam/759a01b` is active.
+- Caddy and `lobbyteam-content.service` are active.
+- Cloudflare smoke checks returned HTTP 200 for `/`, `/old-landing`, `/faqs`, and `/sitemap.xml`.

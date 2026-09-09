@@ -21,7 +21,7 @@ Bring LobbyTeam to a coherent, discoverable, outcome-led public launch while pre
 | D | AEO-first editorial program | Active | ../messaging/LobbyTeam AEO-first post series plan.md |
 | E | Pricing validation | Active | TODO_lobbyteam_pricing_concept.md |
 | F | Multi-channel outcome animation | Done | DONE_lobbyteam_outcome-in-motion.md |
-| G | Website decision team positioning | Coded, deploy-QA pending | TODO_1_OF_8_lobbyteam_website-decision-team.md |
+| G | Website decision team positioning | Done | DONE_lobbyteam_website-decision-team.md |
 
 ## Current Product Truth
 
