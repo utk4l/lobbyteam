@@ -35,3 +35,4 @@ status: active
 13. [DONE] Publish and verify the five-article Modern Office Front Desk series.
 14. [DONE] Publish and verify the seven-article Appointment Operations Without Phone Tag series; prepare Series 5 next.
 15. [DONE] Fix stale empty browser cache behavior on `/blog` and verify the live WordPress content endpoint.
+16. [DONE] Remove duplicate WordPress series text from LobbyTeam article rendering and verify the live article route.

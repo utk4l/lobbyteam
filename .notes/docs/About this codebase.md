@@ -31,3 +31,5 @@ The homepage also uses `src/app/lobby/WebsiteDecisionDemo.tsx` to show a website
 ## Blog Runtime Cache
 
 The browser WordPress client in `src/app/blog/wordpress.ts` uses a versioned localStorage namespace and validates an empty post response against WordPress's total-count header. If a cached empty page conflicts with a non-zero category, it retries without the cache. This prevents an old empty blog response from hiding published content while preserving stale-content behavior for genuine upstream outages.
+
+The same client removes the WordPress-generated `.wp-post-series-box` before rendering excerpts and article bodies. The LobbyTeam article page owns the visible series dropdown, so the plugin's rendered navigation is not shown a second time.

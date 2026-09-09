@@ -68,6 +68,7 @@ Bring LobbyTeam to a coherent, discoverable, outcome-led public launch while pre
 - Five `Modern Office Front Desk` articles published under `lobby-team` in post-series ID `774` as posts `1615`–`1619`; source and verification are tracked in `DONE_lobbyteam-modern-office-front-desk-series.md`.
 - Seven `Appointment Operations Without Phone Tag` articles published under `lobby-team` in post-series ID `778` as posts `1620`–`1626`; source and verification are tracked in `DONE_lobbyteam-appointment-operations-series.md`.
 - Blog display cache fix shipped in `fa13d3d`: browser cache namespace versioned and contradictory empty post responses retried; Manas blog content endpoint and production build verified.
+- Blog series rendering cleanup shipped in `7788ec9`: generated WordPress series markup is removed from article summaries and bodies while the native LobbyTeam series dropdown remains visible once.
 - Multi-channel hero demo showing callback, human routing, and interaction logging, pending deployment verification.
 
 ## Deferred Or Open Work
