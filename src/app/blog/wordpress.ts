@@ -191,13 +191,20 @@ export function getFeaturedImage(post: WordPressPost): { sourceUrl: string; altT
   return media?.source_url ? { sourceUrl: media.source_url, altText: media.alt_text || stripHtml(post.title.rendered) } : null;
 }
 
+function removeGeneratedSeriesMarkup(value: string): string {
+  const documentParser = new DOMParser();
+  const documentNode = documentParser.parseFromString(value, 'text/html');
+  documentNode.querySelectorAll('.wp-post-series-box').forEach((element) => element.remove());
+  return documentNode.body.innerHTML;
+}
+
 export function stripHtml(value: string): string {
-  return value.replace(/<[^>]*>/g, '').replace(/&nbsp;/g, ' ').replace(/&#8217;/g, "'").replace(/&amp;/g, '&').trim();
+  return removeGeneratedSeriesMarkup(value).replace(/<[^>]*>/g, '').replace(/&nbsp;/g, ' ').replace(/&#8217;/g, "'").replace(/&amp;/g, '&').trim();
 }
 
 export function sanitizeHtml(value: string): string {
   const documentParser = new DOMParser();
-  const documentNode = documentParser.parseFromString(value, 'text/html');
+  const documentNode = documentParser.parseFromString(removeGeneratedSeriesMarkup(value), 'text/html');
   documentNode.querySelectorAll('script, style, iframe, .wp-post-series-box').forEach((element) => element.remove());
   documentNode.querySelectorAll('*').forEach((element) => {
     for (const attribute of [...element.attributes]) {
