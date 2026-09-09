@@ -43,5 +43,7 @@ Implement the next AEO-first batch from the LobbyTeam editorial strategy: seven 
  - WordPress category: `lobby-team` (ID `764`).
  - WordPress series: `appointment-operations-without-phone-tag` (ID `778`).
  - Published posts: `1620`–`1626`.
- - Public checks from Manas: `/blog`, all seven article routes, and `/sitemap.xml` returned HTTP 200; all seven article URLs appear in the sitemap.
- - Source of truth: the pushed Git commit recorded in the final chat-log entry.
+- Public checks from Manas: `/blog`, all seven article routes, and `/sitemap.xml` returned HTTP 200; all seven article URLs, appointment tags, and the series URL appear in the dynamic sitemap.
+- Git release: `bec0923` (`content: publish LobbyTeam appointment operations series`).
+- Manas release: `/root/lobby-team` is synced to `bec0923`; the static build is installed at `/var/www/lobby-team` and `lobbyteam-content.service` is active.
+- Operational note: the disposable content cache was refreshed after publication so the dynamic sitemap picked up the new WordPress posts.
