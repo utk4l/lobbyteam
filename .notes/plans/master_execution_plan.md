@@ -15,8 +15,8 @@ Bring LobbyTeam to a coherent, discoverable, outcome-led public launch while pre
 
 | Priority | Track | Status | Plan |
 |---|---|---|---|
-| A | Public site and FAQ launch | Active | TODO_lobbyteam_landing_page_rebrand.md |
-| B | WordPress blog and discovery | Coded, pending FAQ integration | TODO_lobbyteam_landing_page_rebrand.md |
+| A | Public site and FAQ launch | Coded, deploy-QA pending | TODO_lobbyteam_landing_page_rebrand.md |
+| B | WordPress blog and discovery | Coded, dynamic runtime deploy pending | TODO_lobbyteam_landing_page_rebrand.md |
 | C | Manas deployment and Cloudflare coexistence | Done | DONE_lobbyteam_manas_coexistence.md |
 | D | AEO-first editorial program | Active | ../messaging/LobbyTeam AEO-first post series plan.md |
 | E | Pricing validation | Active | TODO_lobbyteam_pricing_concept.md |
@@ -60,11 +60,13 @@ Bring LobbyTeam to a coherent, discoverable, outcome-led public launch while pre
 - Cloudflare Origin CA coexistence on Manas.
 - WordPress blog client with category isolation, article, tag, and series routes.
 - Build-generated sitemap, robots.txt, and llms.txt.
+- Cached same-origin WordPress runtime and dynamic sitemap endpoint, pending Manas service installation.
 - Canonical messaging guide and comprehensive buyer FAQ.
 
 ## Deferred Or Open Work
 
-- Homepage FAQ and full /faqs implementation.
+- Manas installation and Cloudflare route verification for the FAQ and dynamic content runtime.
+- Prerendered HTML for public marketing routes if crawl testing shows client rendering is insufficient.
 - Production verification of every public capability claim.
 - Final pricing validation against real channel economics.
 - Publish and maintain the editorial program.

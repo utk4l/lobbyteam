@@ -33,6 +33,9 @@ Create a genuinely new, outcome-led LobbyTeam homepage while preserving the curr
 - The homepage will include a concise FAQ section with a link to the comprehensive `/faqs` page.
 - The full FAQ page will be based on [LobbyTeam comprehensive buyer FAQ](../messaging/LobbyTeam%20comprehensive%20buyer%20FAQ.md), with public answers reviewed against production capability.
 - FAQ copy will explain that LobbyTeam is a coordinated digital front-door team, not a generic AI receptionist, chatbot, call center, or security replacement.
+- The public FAQ is curated into eight external-audience categories with five non-duplicate questions per category; internal implementation questions remain unpublished.
+- WordPress content is served through a same-origin cached runtime with a 10-minute fresh window and up to 7 days of stale fallback.
+- `/sitemap.xml` is served dynamically by the same runtime and includes current `lobby-team` posts, tags, and post-series.
 - `#pricing` remains a homepage section and will use the working Interaction Unit pricing concept: `$49` for 20 units, `$99` for 75 units, and `$299` for 500 units.
 
 ## Recommended Execution Sequence
@@ -172,10 +175,12 @@ Keep the existing page unchanged at `/old-integrations`. Build a new `/integrati
 - [x] Add the Devon Blog WordPress integration for category slug `lobby-team`. (DONE: category resolved by slug at runtime.)
 - [x] Add LobbyTeam blog index, article, tag, and post-series rendering using the established At Your Service pattern. (DONE.)
 - [x] Add blog metadata, JSON-LD, Open Graph values, and build-generated sitemap entries. (DONE.)
-- [ ] Add page title, description, canonical URL, and legacy `noindex` handling.
-- [ ] Add homepage FAQ preview with eight high-intent buyer questions and a `Full FAQ` link.
-- [ ] Add `/faqs` using the comprehensive buyer FAQ structure, with public-safe answers and section anchors.
-- [ ] Add FAQPage JSON-LD, metadata, sitemap inclusion, and `llms.txt` link for `/faqs`.
+- [x] Add page title, description, canonical URL, and legacy `noindex` handling. (DONE for the new FAQ route and legacy client routes; deploy-QA remains below.)
+- [x] Add homepage FAQ preview with six high-intent buyer questions and a `Full FAQ` link. (Coded/Deploy-QA pending.)
+- [x] Add `/faqs` using the comprehensive buyer FAQ structure, with public-safe answers and section anchors. (Coded/Deploy-QA pending.)
+- [x] Add FAQPage JSON-LD, metadata, sitemap inclusion, and `llms.txt` link for `/faqs`. (Coded/Deploy-QA pending.)
+- [x] Add cached same-origin WordPress content runtime with stale fallback. (Coded/Deploy-QA pending.)
+- [x] Add dynamic sitemap runtime and Manas runbook. (Coded/Deploy-QA pending.)
 - [x] Add `/about` presentation destination and public `/llms.txt` discovery summary. (DONE.)
 - [x] Run the production build and verify both `/` and `/old-landing` locally. (DONE: Vite production build passed.)
 - [x] Review the rendered homepage messaging before committing and pushing. (DONE: route/content review completed.)

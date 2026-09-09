@@ -1,4 +1,4 @@
-const WORDPRESS_API_URL = import.meta.env.VITE_DEVONBLOG_WP_API_URL || 'https://dblog.4xn.in/wp-json/wp/v2';
+const WORDPRESS_API_URL = import.meta.env.VITE_DEVONBLOG_WP_API_URL || '/content/wp-json/wp/v2';
 const CATEGORY_SLUG = import.meta.env.VITE_DEVONBLOG_CATEGORY_SLUG || 'lobby-team';
 
 export type WordPressTerm = {
@@ -27,14 +27,61 @@ export type WordPressPost = {
 
 type WordPressResponse<T> = { value: T; headers: Headers };
 
+type CachedResponse = {
+  value: unknown;
+  storedAt: number;
+  headers: Record<string, string>;
+};
+
+const FRESH_CACHE_MS = 10 * 60 * 1000;
+const MAX_STALE_CACHE_MS = 7 * 24 * 60 * 60 * 1000;
+const CACHE_PREFIX = 'lobbyteam:wordpress:';
+
 let categoryIdPromise: Promise<number> | undefined;
 
 async function request<T>(path: string): Promise<WordPressResponse<T>> {
-  const response = await fetch(`${WORDPRESS_API_URL}${path}`, {
-    headers: { Accept: 'application/json' },
-  });
-  if (!response.ok) throw new Error(`WordPress request failed: ${response.status}`);
-  return { value: await response.json() as T, headers: response.headers };
+  const cacheKey = `${CACHE_PREFIX}${WORDPRESS_API_URL}${path}`;
+  const cachedResponse = readCachedResponse(cacheKey);
+  if (cachedResponse && Date.now() - cachedResponse.storedAt < FRESH_CACHE_MS) {
+    return { value: cachedResponse.value as T, headers: new Headers(cachedResponse.headers) };
+  }
+
+  const controller = new AbortController();
+  const timeout = window.setTimeout(() => controller.abort(), 8_000);
+  try {
+    const response = await fetch(`${WORDPRESS_API_URL}${path}`, {
+      headers: { Accept: 'application/json' },
+      signal: controller.signal,
+    });
+    if (!response.ok) throw new Error(`WordPress request failed: ${response.status}`);
+    const value = await response.json() as T;
+    writeCachedResponse(cacheKey, { value, storedAt: Date.now(), headers: Object.fromEntries(response.headers.entries()) });
+    return { value, headers: response.headers };
+  } catch (error) {
+    if (cachedResponse && Date.now() - cachedResponse.storedAt < MAX_STALE_CACHE_MS) {
+      return { value: cachedResponse.value as T, headers: new Headers(cachedResponse.headers) };
+    }
+    throw error;
+  } finally {
+    window.clearTimeout(timeout);
+  }
+}
+
+function readCachedResponse(cacheKey: string): CachedResponse | null {
+  try {
+    const stored = window.localStorage.getItem(cacheKey);
+    return stored ? JSON.parse(stored) as CachedResponse : null;
+  } catch {
+    return null;
+  }
+}
+
+function writeCachedResponse(cacheKey: string, response: CachedResponse): void {
+  try {
+    window.localStorage.setItem(cacheKey, JSON.stringify(response));
+  } catch {
+    // Storage can be unavailable or full; the live request remains usable.
+  }
 }
 
 async function getCategoryId(): Promise<number> {

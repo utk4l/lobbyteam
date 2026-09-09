@@ -7,6 +7,7 @@ import { LobbyIntegrationsPage } from './lobby/LobbyIntegrationsPage';
 import { WhoIsThisForPage } from './lobby/IndustriesPage';
 import { AboutPage } from './AboutPage';
 import { BlogPostRoute, BlogRoute } from './blog/BlogPages';
+import { FaqPage } from './faq/FaqPage';
 
 const isProductPath = () => window.location.pathname.replace(/\/+$/, '').endsWith('/app');
 const isIntegrationsPath = () => window.location.pathname.replace(/\/+$/, '').endsWith('/integrations');
@@ -22,21 +23,37 @@ const getBlogRoute = () => {
   return null;
 };
 const isAboutPath = () => window.location.pathname.replace(/\/+$/, '') === '/about';
+const isFaqPath = () => window.location.pathname.replace(/\/+$/, '') === '/faqs';
 
 export default function App() {
   const [view, setView] = useState(() => {
     const blog = getBlogRoute();
-    return isProductPath() ? 'product' : isLegacyLandingPath() ? 'legacy' : isLegacyIntegrationsPath() ? 'legacy-integrations' : isIntegrationsPath() ? 'integrations' : isWhoIsThisForPath() ? 'who-is-this-for' : isAboutPath() ? 'about' : blog ? blog.kind : 'site';
+    return isProductPath() ? 'product' : isLegacyLandingPath() ? 'legacy' : isLegacyIntegrationsPath() ? 'legacy-integrations' : isIntegrationsPath() ? 'integrations' : isWhoIsThisForPath() ? 'who-is-this-for' : isAboutPath() ? 'about' : isFaqPath() ? 'faqs' : blog ? blog.kind : 'site';
   });
 
   useEffect(() => {
     const onPop = () => {
       const blog = getBlogRoute();
-      setView(isProductPath() ? 'product' : isLegacyLandingPath() ? 'legacy' : isLegacyIntegrationsPath() ? 'legacy-integrations' : isIntegrationsPath() ? 'integrations' : isWhoIsThisForPath() ? 'who-is-this-for' : isAboutPath() ? 'about' : blog ? blog.kind : 'site');
+      setView(isProductPath() ? 'product' : isLegacyLandingPath() ? 'legacy' : isLegacyIntegrationsPath() ? 'legacy-integrations' : isIntegrationsPath() ? 'integrations' : isWhoIsThisForPath() ? 'who-is-this-for' : isAboutPath() ? 'about' : isFaqPath() ? 'faqs' : blog ? blog.kind : 'site');
     };
     window.addEventListener('popstate', onPop);
     return () => window.removeEventListener('popstate', onPop);
   }, []);
+
+  useEffect(() => {
+    const legacyRoute = view === 'legacy' || view === 'legacy-integrations';
+    let robots = document.head.querySelector<HTMLMetaElement>('meta[name="robots"]');
+    if (legacyRoute) {
+      if (!robots) {
+        robots = document.createElement('meta');
+        robots.name = 'robots';
+        document.head.appendChild(robots);
+      }
+      robots.content = 'noindex,nofollow';
+    } else if (robots?.content === 'noindex,nofollow') {
+      robots.remove();
+    }
+  }, [view]);
 
   if (view === 'product') return <Product />;
 
@@ -49,6 +66,8 @@ export default function App() {
   if (view === 'who-is-this-for') return <WhoIsThisForPage />;
 
   if (view === 'about') return <AboutPage />;
+
+  if (view === 'faqs') return <FaqPage />;
 
   const blog = getBlogRoute();
   if (view === 'index') return <BlogRoute kind="index" />;

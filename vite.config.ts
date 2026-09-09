@@ -33,4 +33,14 @@ export default defineConfig({
 
   // File types to support raw imports. Never add .css, .tsx, or .ts files to this.
   assetsInclude: ['**/*.svg', '**/*.csv'],
+  server: {
+    proxy: {
+      '/content': {
+        target: 'https://dblog.4xn.in',
+        changeOrigin: true,
+        rewrite: (requestPath) => requestPath.replace(/^\/content/, ''),
+        headers: { 'devon-req-identifier': 'c3cf9e2d70acd6817807426b8cfb73b3f263f178' },
+      },
+    },
+  },
 })

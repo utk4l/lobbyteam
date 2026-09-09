@@ -3,11 +3,12 @@ import { mkdir, writeFile } from 'node:fs/promises';
 const apiUrl = process.env.DEVONBLOG_WP_API_URL || 'https://dblog.4xn.in/wp-json/wp/v2';
 const categorySlug = process.env.DEVONBLOG_CATEGORY_SLUG || 'lobby-team';
 const siteUrl = process.env.SITE_URL || 'https://lobbyteam.sophimind.com';
+const devonReqIdentifier = 'c3cf9e2d70acd6817807426b8cfb73b3f263f178';
 
 const escapeXml = (value) => String(value).replace(/[<>&'\"]/g, (character) => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;', "'": '&apos;', '"': '&quot;' })[character]);
 
 async function fetchJson(path) {
-  const response = await fetch(`${apiUrl}${path}`);
+  const response = await fetch(`${apiUrl}${path}`, { headers: { 'devon-req-identifier': devonReqIdentifier } });
   if (!response.ok) throw new Error(`WordPress request failed: ${response.status}`);
   return response.json();
 }
@@ -18,6 +19,7 @@ const urls = new Map([
   ['/integrations', 'monthly'],
   ['/about', 'yearly'],
   ['/blog', 'weekly'],
+  ['/faqs', 'monthly'],
 ]);
 
 try {

@@ -9,8 +9,10 @@ Key pages:
 - Who is this for: https://lobbyteam.sophimind.com/who-is-this-for
 - Integrations: https://lobbyteam.sophimind.com/integrations
 - Blog: https://lobbyteam.sophimind.com/blog
+- FAQs: https://lobbyteam.sophimind.com/faqs
 - About and presentation: https://lobbyteam.sophimind.com/about
 - Sitemap: https://lobbyteam.sophimind.com/sitemap.xml
+- Dynamic content is filtered to the WordPress category slug lobby-team and served with cached stale-content fallback when the publishing backend is temporarily unavailable.
 
 Working pricing concept:
 - Starter: $49/month for 20 Interaction Units; $0.99 per additional unit.

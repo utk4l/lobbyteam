@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "build": "node scripts/generate-sitemap.mjs && vite build",
+    "start:content-proxy": "node server/content-proxy.mjs",
     "dev": "vite"
   },
   "dependencies": {
