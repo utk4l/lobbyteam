@@ -211,3 +211,27 @@ button.fluid:active {
   -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, black 20%, transparent 75%);
   mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, black 20%, transparent 75%);
 }
+ .prose-lobby {
+  color: rgb(23 21 18 / 0.72);
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.prose-lobby h2,
+.prose-lobby h3,
+.prose-lobby h4 {
+  color: rgb(23 21 18);
+  font-family: var(--font-display, Georgia, serif);
+  line-height: 1.1;
+  margin: 2.2em 0 0.6em;
+}
+
+.prose-lobby h2 { font-size: 2rem; }
+.prose-lobby h3 { font-size: 1.5rem; }
+.prose-lobby p,
+.prose-lobby ul,
+.prose-lobby ol { margin: 1.1em 0; }
+.prose-lobby ul,
+.prose-lobby ol { padding-left: 1.4em; }
+.prose-lobby a { color: #52745b; text-decoration: underline; text-underline-offset: 3px; }
+.prose-lobby blockquote { border-left: 2px solid #52745b; margin: 2em 0; padding-left: 1.25em; }

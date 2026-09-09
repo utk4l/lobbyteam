@@ -1,0 +1,18 @@
+# LobbyTeam by SophiMind
+
+LobbyTeam helps brick-and-mortar and online businesses make sure every customer reaches an answer, a completed request, or the right human next step. It can work across phone, website chat, email, SMS, WhatsApp, and configured kiosk, tablet, or QR-code experiences.
+
+LobbyTeam is designed to work alongside staff. It handles the requests a business defines, preserves conversation context, and routes exceptions to the right human based on availability, expertise, urgency, time zone, and ownership.
+
+Key pages:
+- Homepage: https://lobbyteam.sophimind.com/
+- Who is this for: https://lobbyteam.sophimind.com/who-is-this-for
+- Integrations: https://lobbyteam.sophimind.com/integrations
+- Blog: https://lobbyteam.sophimind.com/blog
+- About and presentation: https://lobbyteam.sophimind.com/about
+- Sitemap: https://lobbyteam.sophimind.com/sitemap.xml
+
+Working pricing concept:
+- Starter: $49/month for 20 Interaction Units; $0.99 per additional unit.
+- Essential: $99/month for 75 Interaction Units; $0.79 per additional unit.
+- Full Front Door: $299/month for 500 Interaction Units; $0.59 per additional unit.

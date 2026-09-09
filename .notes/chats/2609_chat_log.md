@@ -29,3 +29,5 @@ status: active
 - Expanded `DONE_lobbyteam_manas_coexistence.md` with the chronological Manas action log, exact artifact/certificate paths, permission correction, Caddy backups, validation steps, smoke-test results, and local Git commit record.
 - Implemented the new LobbyTeam route architecture: outcome-led homepage at `/`, preserved homepage at `/old-landing`, preserved integrations at `/old-integrations`, new workflow-fit integrations at `/integrations`, and persona/use-case page at `/who-is-this-for`.
 - Updated site metadata and shared LobbyTeam navigation/footer labels, replaced the homepage with outcome-led messaging, applied the working 20/75/500 Interaction Unit pricing, and passed the Vite production build.
+- Added the public discovery layer: WordPress-backed `/blog`, article routes, tag routes, post-series routes, category isolation by the `lobby-team` slug, JSON-LD/Open Graph/canonical metadata, build-generated `/sitemap.xml`, `/robots.txt`, and `/llms.txt`.
+- Added `/about` as the LobbyTeam presentation destination at `https://show.iqwyk.com/sophimind/lobbyteam-by-sophimind` and linked Blog/About from shared navigation and footer.

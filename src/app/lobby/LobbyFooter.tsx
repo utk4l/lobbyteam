@@ -9,6 +9,8 @@ export function LobbyFooter() {
         <nav aria-label="Footer" className="grid grid-cols-2 gap-x-12 gap-y-3">
           <a href="/who-is-this-for" className="font-mono text-[11px] uppercase tracking-[0.14em] text-ink/50 hover:text-ink">Who it is for</a>
           <a href="/integrations" className="font-mono text-[11px] uppercase tracking-[0.14em] text-ink/50 hover:text-ink">Integrations</a>
+          <a href="/blog" className="font-mono text-[11px] uppercase tracking-[0.14em] text-ink/50 hover:text-ink">Blog</a>
+          <a href="/about" className="font-mono text-[11px] uppercase tracking-[0.14em] text-ink/50 hover:text-ink">About</a>
           <a href="/#pricing" className="font-mono text-[11px] uppercase tracking-[0.14em] text-ink/50 hover:text-ink">Pricing</a>
           <a href="/old-landing" className="font-mono text-[11px] uppercase tracking-[0.14em] text-ink/50 hover:text-ink">Legacy site</a>
         </nav>

@@ -4,6 +4,8 @@ const LINKS = [
   { href: '/who-is-this-for', label: 'Who it is for' },
   { href: '/#how-it-works', label: 'How it works' },
   { href: '/integrations', label: 'Integrations' },
+  { href: '/blog', label: 'Blog' },
+  { href: '/about', label: 'About' },
   { href: '/#pricing', label: 'Pricing' },
 ];
 

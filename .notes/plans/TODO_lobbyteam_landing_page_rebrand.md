@@ -28,6 +28,8 @@ Create a genuinely new, outcome-led LobbyTeam homepage while preserving the curr
 - `/who-is-this-for` will be the new persona and use-case directory, not a generic list of verticals.
 - The current Integrations experience will remain available at `/old-integrations`.
 - `/integrations` will be the new outcome-led workflow-fit page.
+- `/about` will point visitors to the LobbyTeam presentation at `https://show.iqwyk.com/sophimind/lobbyteam-by-sophimind`.
+- The public discovery layer includes `/blog`, article pages, tag pages, post-series context, `/sitemap.xml`, and `/llms.txt`.
 - `#pricing` remains a homepage section and will use the working Interaction Unit pricing concept: `$49` for 20 units, `$99` for 75 units, and `$299` for 500 units.
 
 ## Proposed Homepage Flow
@@ -107,10 +109,11 @@ Keep the existing page unchanged at `/old-integrations`. Build a new `/integrati
 - [x] Replace the homepage pricing section with the approved working Interaction Unit tiers and link to the detailed pricing explanation when ready. (DONE)
 - [x] Reposition `/integrations` around workflow fit, outcome, and verified availability while preserving the route. (DONE)
 - [x] Preserve the current visual system while adjusting section hierarchy and content density for the new message. (DONE)
-- [ ] Add the Devon Blog WordPress integration for category slug `lobby-team`.
-- [ ] Add LobbyTeam blog index, article, tag, and post-series rendering using the established At Your Service pattern.
-- [ ] Add blog metadata, JSON-LD, Open Graph values, and dynamic sitemap entries.
+- [x] Add the Devon Blog WordPress integration for category slug `lobby-team`. (DONE: category resolved by slug at runtime.)
+- [x] Add LobbyTeam blog index, article, tag, and post-series rendering using the established At Your Service pattern. (DONE.)
+- [x] Add blog metadata, JSON-LD, Open Graph values, and build-generated sitemap entries. (DONE.)
 - [ ] Add page title, description, canonical URL, and legacy `noindex` handling.
+- [x] Add `/about` presentation destination and public `/llms.txt` discovery summary. (DONE.)
 - [x] Run the production build and verify both `/` and `/old-landing` locally. (DONE: Vite production build passed.)
 - [x] Review the rendered homepage messaging before committing and pushing. (DONE: route/content review completed.)
 - [ ] Commit and push the approved implementation to the configured Git remote.
