@@ -35,6 +35,20 @@ Create a genuinely new, outcome-led LobbyTeam homepage while preserving the curr
 - FAQ copy will explain that LobbyTeam is a coordinated digital front-door team, not a generic AI receptionist, chatbot, call center, or security replacement.
 - `#pricing` remains a homepage section and will use the working Interaction Unit pricing concept: `$49` for 20 units, `$99` for 75 units, and `$299` for 500 units.
 
+## Recommended Execution Sequence
+
+The launch sequence is correct only when it includes a content and capability lock before code changes and a public crawl after deployment:
+
+1. Lock production-safe capability claims, pricing, FAQ answers, and authority boundaries.
+2. Implement the homepage FAQ preview and full `/faqs` page.
+3. Add FAQPage JSON-LD, metadata, navigation/footer links, sitemap inclusion, and `llms.txt` coverage.
+4. Build locally and validate routes, schema, metadata, and generated discovery files.
+5. Commit and push the approved implementation to Git.
+6. Pull the exact commit on Manas, build there, and install `dist`.
+7. Verify Caddy and Cloudflare coexistence without changing BoothTeam routes.
+8. Smoke-test all public pages and crawl the deployed discovery surfaces.
+9. Publish the first LobbyTeam articles under the `lobby-team` category.
+
 ## Proposed Homepage Flow
 
 1. Hero: outcome, audience, and a concise explanation of what LobbyTeam does.
