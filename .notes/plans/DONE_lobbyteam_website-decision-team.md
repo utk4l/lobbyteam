@@ -76,3 +76,7 @@ The scene feels like a small operating room behind the website: one agent talks 
 - Manas release `/var/www/releases/lobbyteam/759a01b` is active.
 - Caddy and `lobbyteam-content.service` are active.
 - Cloudflare smoke checks returned HTTP 200 for `/`, `/old-landing`, `/faqs`, and `/sitemap.xml`.
+
+## Follow-Up Visual Refinement
+
+The original decision-team demo was replaced with a communication-first deck inspired by `/old-landing`. It now animates a website chat conversation, a decision to use a phone call, a live waveform and transcript, and a handoff to Derek with the prior context preserved. The revised component passed the production build and diff checks; its deployment is tracked in the follow-up chat log.
