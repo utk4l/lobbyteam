@@ -36,14 +36,30 @@ Make **A digital decision team for your website** a primary LobbyTeam story. The
 - [ ] Run production build, diff checks, and public-route smoke tests.
 - [ ] Commit, push, deploy the exact release to Manas, and verify `/` plus `/old-landing`.
 
+## Revised Visual Direction
+
+The current `FrontDoorDemo` should be replaced, not lightly polished. It reads as a dashboard because the visitor, decision, and handoff are presented as separate static cards with manual tabs. The new hero should borrow the stronger mechanics from the preserved legacy `LiveConversation` animation:
+
+- A timed narrative rather than a tabbed panel
+- Visitor messages typing into a live website conversation
+- A visible “thinking team” moment where context is gathered and the relevant path changes
+- Product or service options appearing as the visitor clarifies what they need
+- A clear transition from question to recommendation, resource, booking, or human handoff
+- A visible interaction timeline showing what LobbyTeam understood and why it chose the next step
+- Motion that feels like work happening, not decorative floating cards
+- Reduced-motion behavior that freezes on a complete, understandable state
+
+The scene should feel like a small operating room behind the website: one agent talks to the visitor while the team interprets the need, finds the relevant path, and prepares the next action.
+
 ## Suggested Visual Flow
 
-1. Visitor arrives with a broad question.
-2. LobbyTeam identifies the visitor's goal and asks one useful clarifying question.
-3. LobbyTeam connects the need to a relevant product, service, or workflow.
-4. LobbyTeam provides an approved answer or resource.
-5. If human judgment is useful, LobbyTeam routes the visitor to the correct human with context.
-6. The decision and next action remain visible in the interaction record.
+1. Visitor arrives on the website with a broad question.
+2. The website conversation visibly types the visitor's question.
+3. LobbyTeam asks one useful clarifying question while specialist signals appear behind it.
+4. The relevant product, service, or workflow card comes forward.
+5. LobbyTeam provides an approved answer or resource and offers the right next action.
+6. If human judgment is useful, the scene visibly routes to the correct human with context.
+7. The decision and next action remain visible in the interaction record.
 
 ## Proof And Guardrails
 
