@@ -28,10 +28,10 @@ export function LandingPage() {
           <div className="dot-grid pointer-events-none absolute inset-0" aria-hidden="true" />
           <div className="relative mx-auto grid max-w-6xl items-center gap-16 px-6 lg:grid-cols-[1.05fr_0.95fr] lg:gap-20">
             <Reveal>
-              <p className="flex items-center gap-2.5 font-mono text-[11px] uppercase tracking-[0.18em] text-ink/50"><span className="live-dot h-2 w-2 rounded-full bg-live" />A digital decision team for your website</p>
-              <h1 className="mt-7 max-w-3xl font-display text-[clamp(3.2rem,7vw,6.6rem)] leading-[.91] tracking-[-0.045em]">Help every visitor find the <em>right way forward.</em></h1>
-              <p className="mt-8 max-w-[49ch] text-lg leading-relaxed text-ink/65">LobbyTeam helps visitors understand what you offer, find what fits, and take the next step. It answers approved questions, guides decisions, shares relevant resources, and brings in the right human when the conversation needs one.</p>
-              <div className="mt-10 flex flex-wrap items-center gap-4"><a href="/who-is-this-for" className="fluid inline-flex items-center gap-2 rounded-sm bg-ink px-6 py-3.5 text-[15px] font-medium text-paper hover:bg-moss">See what fits <Arrow /></a><a href="#how-it-works" className="fluid inline-flex items-center gap-2 rounded-sm border border-ink/20 px-6 py-3.5 text-[15px] font-medium hover:border-ink">See it in action <Arrow /></a></div>
+              <p className="flex items-center gap-2.5 font-mono text-[11px] uppercase tracking-[0.18em] text-ink/50"><span className="live-dot h-2 w-2 rounded-full bg-live" />Your digital team for every customer conversation</p>
+              <h1 className="mt-7 max-w-3xl font-display text-[clamp(3.2rem,7vw,6.6rem)] leading-[.91] tracking-[-0.045em]">One digital team for every way customers <em>reach you.</em></h1>
+              <p className="mt-8 max-w-[49ch] text-lg leading-relaxed text-ink/65">LobbyTeam answers phone calls, responds to emails and chats, calls back when a conversation needs a voice, and routes to the right human when that is the best next step. Behind every interaction, coordinated agents interpret the request, apply your business rules, and guide the customer toward a useful outcome.</p>
+              <div className="mt-10 flex flex-wrap items-center gap-4"><a href="/who-is-this-for" className="fluid inline-flex items-center gap-2 rounded-sm bg-ink px-6 py-3.5 text-[15px] font-medium text-paper hover:bg-moss">See how it fits <Arrow /></a><a href="#how-it-works" className="fluid inline-flex items-center gap-2 rounded-sm border border-ink/20 px-6 py-3.5 text-[15px] font-medium hover:border-ink">See it in action <Arrow /></a></div>
               <p className="mt-6 font-mono text-[10px] uppercase tracking-[0.13em] text-ink/40">Works alongside your people. Never asks customers to start over.</p>
             </Reveal>
             <Reveal delay={100}><WebsiteDecisionDemo /></Reveal>

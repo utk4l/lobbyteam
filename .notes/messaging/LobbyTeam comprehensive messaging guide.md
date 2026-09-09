@@ -25,6 +25,12 @@ The guide answers:
 
 > **LobbyTeam is a coordinated digital front-door team for your business. It helps every customer reach an answer, a completed request, or the right human next step.**
 
+Umbrella website headline:
+
+> **One digital team for every way customers reach you.**
+
+LobbyTeam answers phone calls, responds to emails and chats, calls back when a conversation needs a voice, and routes to the right human when that is the best next step. Behind every interaction, coordinated agents interpret the request, apply the business rules, and guide the customer toward a useful outcome.
+
 Website-specific category:
 
 > **A digital decision team for your website.**
@@ -517,7 +523,7 @@ LobbyTeam uses business rules to help determine:
 
 Use this order in public messaging:
 
-1. **Outcome:** every customer reaches the right next step.
+1. **Outcome:** every customer gets a useful outcome or a clearly owned next step.
 2. **Problem:** missed calls, unanswered messages, repetitive work, and unclear ownership.
 3. **Product category:** a coordinated digital front-door team.
 4. **How it works:** one agent engages while specialists interpret, check, route, and preserve context.
@@ -530,11 +536,11 @@ Do not reverse this order by leading with agents, models, orchestration, or auto
 
 ### Hero headline
 
-> **Make sure every customer reaches the right next step.**
+> **One digital team for every way customers reach you.**
 
 ### Hero support copy
 
-> **LobbyTeam is a coordinated digital front-door team for your business. It answers calls and messages, handles the requests you define, and routes the rest to the right human with the context they need.**
+> **LobbyTeam answers phone calls, responds to emails and chats, calls back when a conversation needs a voice, and routes to the right human when that is the best next step. Behind every interaction, coordinated agents interpret the request, apply your business rules, and guide the customer toward a useful outcome.**
 
 ### Differentiator section
 
