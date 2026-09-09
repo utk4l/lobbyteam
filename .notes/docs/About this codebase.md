@@ -16,3 +16,4 @@ LobbyTeam is an AI-native support and sales front door for phone, website chat, 
 - Working persona and use-case map: [LobbyTeam personas and use cases](../messaging/LobbyTeam%20personas%20and%20use%20cases.md)
 - Product design source: [product-design.md](../../product-design.md)
 - Presentation: `https://show.iqwyk.com/sophimind/lobbyteam-by-sophimind`
+- AEO-first editorial program: [LobbyTeam AEO-first post series plan](../messaging/LobbyTeam%20AEO-first%20post%20series%20plan.md)
