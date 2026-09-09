@@ -34,3 +34,4 @@ status: active
 12. [DONE] Deploy and verify the website decision-team homepage animation.
 13. [DONE] Publish and verify the five-article Modern Office Front Desk series.
 14. [DONE] Publish and verify the seven-article Appointment Operations Without Phone Tag series; prepare Series 5 next.
+15. [DONE] Fix stale empty browser cache behavior on `/blog` and verify the live WordPress content endpoint.

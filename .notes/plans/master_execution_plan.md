@@ -67,6 +67,7 @@ Bring LobbyTeam to a coherent, discoverable, outcome-led public launch while pre
 - First five foundational “Why The Business Front Door Matters” articles published under WordPress category `lobby-team` with post-series ID `765` and intent tags.
 - Five `Modern Office Front Desk` articles published under `lobby-team` in post-series ID `774` as posts `1615`–`1619`; source and verification are tracked in `DONE_lobbyteam-modern-office-front-desk-series.md`.
 - Seven `Appointment Operations Without Phone Tag` articles published under `lobby-team` in post-series ID `778` as posts `1620`–`1626`; source and verification are tracked in `DONE_lobbyteam-appointment-operations-series.md`.
+- Blog display cache fix shipped in `fa13d3d`: browser cache namespace versioned and contradictory empty post responses retried; Manas blog content endpoint and production build verified.
 - Multi-channel hero demo showing callback, human routing, and interaction logging, pending deployment verification.
 
 ## Deferred Or Open Work

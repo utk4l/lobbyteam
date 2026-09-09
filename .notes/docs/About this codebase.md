@@ -27,3 +27,7 @@ LobbyTeam is an AI-native support and sales front door for phone, website chat, 
 The homepage hero uses `src/app/lobby/FrontDoorDemo.tsx` to show website chat, email, and voice interactions moving through a decision into a configured callback or human handoff. Each scenario ends in a shared interaction log, and reduced-motion users receive a stable selected state. The shipped implementation is tracked in [DONE_lobbyteam_outcome-in-motion.md](../plans/DONE_lobbyteam_outcome-in-motion.md).
 
 The homepage also uses `src/app/lobby/WebsiteDecisionDemo.tsx` to show a website visitor moving from a broad question through clarification, coordinated specialist signals, a relevant path, and an owned next step. The animation is timed, reduced-motion aware, and intentionally separate from the preserved `/old-landing` experience. Its shipped implementation is tracked in [DONE_lobbyteam_website-decision-team.md](../plans/DONE_lobbyteam_website-decision-team.md).
+
+## Blog Runtime Cache
+
+The browser WordPress client in `src/app/blog/wordpress.ts` uses a versioned localStorage namespace and validates an empty post response against WordPress's total-count header. If a cached empty page conflicts with a non-zero category, it retries without the cache. This prevents an old empty blog response from hiding published content while preserving stale-content behavior for genuine upstream outages.
