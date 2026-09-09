@@ -19,6 +19,12 @@ The channel may be a phone call, website chat, email, SMS, WhatsApp, or physical
 
 The important distinction is that LobbyTeam is not limited to taking a message. It can determine who should own the next step and route the interaction to the right human or team when the business has defined the routing rules.
 
+For an online business, LobbyTeam is also:
+
+> **A digital decision team for your website.**
+
+It helps a visitor who is thinking “this could be useful” understand what the business offers, connect it to their own need, and choose the right next step. The visitor may receive an answer, a comparison, a resource, a booking path, or a human handoff with context.
+
 ## Coordinated Digital Team Positioning
 
 LobbyTeam is not just an AI receptionist. It is a coordinated team of digital agents that runs the business front door.
@@ -68,6 +74,12 @@ The story: outbound work should not depend on a busy receptionist remembering ev
 The business operates primarily online. LobbyTeam responds through website chat, email, or both, and may also handle phone, SMS, or WhatsApp conversations.
 
 The story: a form, email, or chat should not end at “we received your message.” LobbyTeam answers approved questions, gathers missing information, qualifies the request, books the next step, opens a ticket, or routes a useful handoff.
+
+The stronger website story is decision support:
+
+> **A website visitor should not have to decode your product map alone. LobbyTeam helps them explain what they are trying to accomplish, find what fits, and move forward.**
+
+This is useful when visitors arrive with curiosity but are not ready to submit a formal contact request. LobbyTeam can ask one or two focused questions, connect the need to an approved product or service path, share a relevant resource, and offer a human conversation when the visitor needs expertise or reassurance.
 
 ## Missing Contexts To Consider
 

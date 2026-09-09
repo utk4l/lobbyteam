@@ -50,6 +50,16 @@ No, but solopreneurs and small businesses are important use cases. A solo operat
 
 LobbyTeam helps each engaged request move toward one of four outcomes: an approved answer, a completed configured task, a route to the right owner, or visible follow-through. The central promise is: your customer gets progress, your team gets context, and someone knows what should happen next.
 
+### What is a digital decision team for a website?
+
+A digital decision team helps website visitors understand what a business offers, connect it to their own situation, and choose the right next step. LobbyTeam can ask clarifying questions, explain approved options, share relevant resources, start a booking or inquiry workflow, and route the visitor to a human with context when the decision needs expertise.
+
+It does not make unrestricted decisions for the visitor or replace accountable judgment. The business defines the approved knowledge, recommendations, workflows, and human-only boundaries.
+
+### Can LobbyTeam help a visitor decide which product or service fits?
+
+Yes, when the business provides the approved product, service, audience, and problem guidance. LobbyTeam can learn what the visitor is trying to accomplish, ask focused follow-up questions, explain relevant paths, and offer a resource, conversation, booking, or human handoff. It should guide the decision rather than claim certainty beyond the business rules.
+
 ### Is LobbyTeam an AI receptionist?
 
 LobbyTeam can support receptionist workflows, but “AI receptionist” is too narrow. A receptionist usually describes one conversational front-desk function. LobbyTeam is a coordinated digital team that can engage a customer while specialized agents help interpret the request, apply business rules, select a next step, and prepare a human handoff.

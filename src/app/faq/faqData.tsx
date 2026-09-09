@@ -21,6 +21,14 @@ export const FAQ_CATEGORIES: FaqCategory[] = [
         answer: 'LobbyTeam is a coordinated digital front-door team for your business. It helps customers, visitors, prospects, and callers reach an answer, a completed request, or the right human next step across configured channels such as phone, website chat, email, SMS, WhatsApp, and physical-lobby experiences.',
       },
       {
+        question: 'What is a digital decision team for a website?',
+        answer: 'A digital decision team helps website visitors understand what a business offers, connect it to their own situation, and choose the right next step. LobbyTeam can ask clarifying questions, explain approved options, share relevant resources, and route the visitor to a human with context when the decision needs expertise.',
+      },
+      {
+        question: 'Can LobbyTeam help a visitor decide which product or service fits?',
+        answer: 'Yes, when the business provides approved product, service, audience, and problem guidance. LobbyTeam can learn what the visitor is trying to accomplish, ask focused questions, explain relevant paths, and offer a resource, conversation, booking, or human handoff without claiming certainty beyond the configured rules.',
+      },
+      {
         question: 'What problem does LobbyTeam solve?',
         answer: 'LobbyTeam helps businesses close the gap between first contact and useful progress. It addresses missed calls, unanswered messages, repetitive front-desk work, appointment phone tag, unclear ownership, and handoffs that lose the customer context.',
       },
@@ -239,4 +247,3 @@ export function buildFaqJsonLd(): Record<string, unknown> {
 export function FaqAnswer({ answer }: { answer: string }): ReactNode {
   return <p className="mt-4 max-w-3xl text-[15px] leading-relaxed text-ink/65">{answer}</p>;
 }
-

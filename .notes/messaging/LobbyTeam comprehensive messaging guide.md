@@ -25,6 +25,12 @@ The guide answers:
 
 > **LobbyTeam is a coordinated digital front-door team for your business. It helps every customer reach an answer, a completed request, or the right human next step.**
 
+Website-specific category:
+
+> **A digital decision team for your website.**
+
+When a visitor arrives with a broad question, LobbyTeam helps them understand what the business offers, find what fits, and choose a useful next step. It can ask a clarifying question, compare approved paths, share a relevant resource, schedule or request a conversation, and bring in the right human with context.
+
 LobbyTeam works across the channels through which people arrive:
 
 - Phone
@@ -234,6 +240,12 @@ LobbyTeam helps by:
 Core message:
 
 > **Turn online inquiries into answers and owned next steps instead of another unread inbox.**
+
+Website decision-team message:
+
+> **Your website should help people decide, not just display information. LobbyTeam helps each visitor connect their need to the right product, service, resource, or human next step.**
+
+The visitor does not need to know the company's internal product map. LobbyTeam can ask what they are trying to accomplish, clarify the situation, explain relevant options using approved guidance, and keep the next action visible. The business defines what may be recommended, what resources may be shared, and which decisions require a person.
 
 ### Field-service businesses
 

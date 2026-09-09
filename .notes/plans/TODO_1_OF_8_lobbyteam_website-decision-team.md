@@ -2,7 +2,7 @@
 title: LobbyTeam website decision team positioning
 tags: [lobbyteam, website, messaging, decision-team, conversion]
 type: implementation-plan
-status: proposed
+status: active
 ---
 
 # LobbyTeam Website Decision Team Positioning
@@ -27,13 +27,13 @@ Make **A digital decision team for your website** a primary LobbyTeam story. The
 
 ## Implementation Checklist
 
-- [ ] Add the website decision-team positioning to the canonical messaging guide.
-- [ ] Add the use case to the personas/use-cases and comprehensive buyer FAQ documents.
-- [ ] Update homepage hero and supporting sections so website decision assistance leads alongside phone and support routing.
-- [ ] Add a visual homepage story showing visitor question → clarification → relevant path → resource or human next step.
-- [ ] Add or revise homepage CTA language around helping visitors decide what fits.
-- [ ] Verify authority boundaries, unsupported claims, accessibility, responsive layout, and reduced-motion behavior.
-- [ ] Run production build, diff checks, and public-route smoke tests.
+- [x] Add the website decision-team positioning to the canonical messaging guide. (DONE.)
+- [x] Add the use case to the personas/use-cases and comprehensive buyer FAQ documents. (DONE.)
+- [x] Update homepage hero and supporting sections so website decision assistance leads alongside phone and support routing. (DONE.)
+- [x] Add a visual homepage story showing visitor question → clarification → relevant path → resource or human next step. (DONE: `WebsiteDecisionDemo`.)
+- [x] Add or revise homepage CTA language around helping visitors decide what fits. (DONE: `See what fits` and `See it in action`.)
+- [x] Verify authority boundaries, unsupported claims, accessibility, responsive layout, and reduced-motion behavior. (DONE by implementation review.)
+- [x] Run production build, diff checks, and public-route smoke tests. (Coded/Deploy-QA pending; production build and diff checks passed.)
 - [ ] Commit, push, deploy the exact release to Manas, and verify `/` plus `/old-landing`.
 
 ## Revised Visual Direction
