@@ -32,6 +32,8 @@ boothteam.sophimind.com/api/v1/* -> localhost:5001
   - `/etc/caddy/certs/sophimind.key`
 - The certificate covers `*.sophimind.com` and `sophimind.com`.
 - The private key is owned by `root:caddy` with mode `0640`; it is not stored in Git.
+- Caddy's global `auto_https disable_certs` policy is enabled on Manas, so Caddy will not request or renew Let's Encrypt certificates for these sites.
+- Every current and future Caddy site block must import the shared `cloudflare_origin_tls` snippet. A site must not define its own automatic certificate issuer.
 - Do not run the legacy At Your Service `setup-caddy.sh`; it overwrites the shared Caddyfile.
 
 ## Caddy Site Block
@@ -47,6 +49,20 @@ lobbyteam.sophimind.com {
     file_server
 }
 ```
+
+The shared Caddyfile also contains the global policy:
+
+```caddyfile
+{
+    auto_https disable_certs
+}
+
+(cloudflare_origin_tls) {
+    tls /etc/caddy/certs/sophimind.crt /etc/caddy/certs/sophimind.key
+}
+```
+
+When adding another `*.sophimind.com` hostname, add a site block and import `cloudflare_origin_tls`. The wildcard Origin CA certificate covers that hostname. A future domain outside `*.sophimind.com` requires a separate Cloudflare Origin CA certificate before it can be added.
 
 ## Deployment Steps
 
@@ -81,4 +97,5 @@ Remove only the LobbyTeam Caddy block, restore the previous Caddyfile if needed,
 - Caddy reload succeeded.
 - Cloudflare edge returned `200` for LobbyTeam `/` and `/industries`.
 - Existing BoothTeam host returned `200` after the reload.
-
+- AYS redirects to BoothTeam with `301`, while BoothTeam and LobbyTeam return `200` through Cloudflare.
+- Caddy logs confirm automated certificate management is disabled.
