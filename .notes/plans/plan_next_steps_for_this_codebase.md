@@ -32,4 +32,5 @@ status: active
 10. [DONE] Deploy and verify the multi-channel outcome animation and legacy route preservation.
 11. Review and approve the website decision-team positioning plan before implementation.
 12. [DONE] Deploy and verify the website decision-team homepage animation.
-13. [DONE] Publish and verify the five-article Modern Office Front Desk series; prepare Series 3 next.
+13. [DONE] Publish and verify the five-article Modern Office Front Desk series.
+14. [DONE] Publish and verify the seven-article Appointment Operations Without Phone Tag series; prepare Series 5 next.

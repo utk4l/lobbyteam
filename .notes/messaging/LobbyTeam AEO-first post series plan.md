@@ -401,7 +401,9 @@ Publish Series 2 and Series 3 first if the initial commercial focus is office an
 - The Series 2 office wedge is now shipped as `Modern Office Front Desk`: five articles are published under `lobby-team` in series ID `774` as posts `1615` through `1619`.
 - Source drafts for both published batches live in `.notes/messaging/lobbyteam-blog-series/` and are maintained in Git before deployment.
 - The execution record for the Series 2 batch is [DONE_lobbyteam-modern-office-front-desk-series.md](../plans/DONE_lobbyteam-modern-office-front-desk-series.md).
-- Next recommended batch: Series 3, `Appointment Operations Without Phone Tag`, followed by Series 5 for after-hours and overflow demand.
+- Series 3 is now shipped as `Appointment Operations Without Phone Tag`: seven articles are published under `lobby-team` in series ID `778` as posts `1620` through `1626`.
+- The execution record for the Series 3 batch is [DONE_lobbyteam-appointment-operations-series.md](../plans/DONE_lobbyteam-appointment-operations-series.md).
+- Next recommended batch: Series 5, `After-Hours, Overflow, And Follow-The-Sun Coverage`, followed by Series 4 for online businesses and support.
 
 ### Phase 3: Expand into adjacent demand
 
