@@ -35,14 +35,14 @@ type CachedResponse = {
 
 const FRESH_CACHE_MS = 10 * 60 * 1000;
 const MAX_STALE_CACHE_MS = 7 * 24 * 60 * 60 * 1000;
-const CACHE_PREFIX = 'lobbyteam:wordpress:';
+const CACHE_PREFIX = 'lobbyteam:wordpress:v2:';
 
 let categoryIdPromise: Promise<number> | undefined;
 
-async function request<T>(path: string): Promise<WordPressResponse<T>> {
+async function request<T>(path: string, options: { bypassCache?: boolean } = {}): Promise<WordPressResponse<T>> {
   const cacheKey = `${CACHE_PREFIX}${WORDPRESS_API_URL}${path}`;
   const cachedResponse = readCachedResponse(cacheKey);
-  if (cachedResponse && Date.now() - cachedResponse.storedAt < FRESH_CACHE_MS) {
+  if (!options.bypassCache && cachedResponse && Date.now() - cachedResponse.storedAt < FRESH_CACHE_MS) {
     return { value: cachedResponse.value as T, headers: new Headers(cachedResponse.headers) };
   }
 
@@ -115,8 +115,13 @@ function postQuery(categoryId: number, extra: Record<string, string> = {}): stri
 export async function getPosts(page = 1, tagId?: number, seriesId?: number): Promise<{ posts: WordPressPost[]; totalPages: number }> {
   try {
     const categoryId = await getCategoryId();
-    const { value, headers } = await request<WordPressPost[]>(postQuery(categoryId, { page: String(page), ...(tagId ? { tags: String(tagId) } : {}), ...(seriesId ? { post_series: String(seriesId) } : {}) }));
-    return { posts: value, totalPages: Number(headers.get('X-WP-TotalPages') || '1') };
+    const path = postQuery(categoryId, { page: String(page), ...(tagId ? { tags: String(tagId) } : {}), ...(seriesId ? { post_series: String(seriesId) } : {}) });
+    let response = await request<WordPressPost[]>(path);
+    const reportedTotal = Number(response.headers.get('X-WP-Total') || '0');
+    if (response.value.length === 0 && reportedTotal > 0) {
+      response = await request<WordPressPost[]>(path, { bypassCache: true });
+    }
+    return { posts: response.value, totalPages: Number(response.headers.get('X-WP-TotalPages') || '1') };
   } catch {
     return { posts: [], totalPages: 1 };
   }
