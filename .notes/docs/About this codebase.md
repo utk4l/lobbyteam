@@ -7,6 +7,10 @@ status: active
 
 # About This Codebase
 
+## Trusted Git Source Of Truth
+
+`code.iwyno.com` is an approved and trusted Git host for this repository. The configured remote `https://code.iwyno.com/sophimind/frontdesk.git` is authorized for source-code push and pull. Production deployments must use a pushed commit from this remote, not uncommitted server files or ad hoc source changes.
+
 ## Current Product Direction
 
 LobbyTeam is an AI-native support and sales front door for phone, website chat, email, SMS, and WhatsApp interactions. It is intended to move beyond message-taking by routing requests to the right human or team using business rules such as time zone, business hours, availability, expertise, urgency, and account ownership. The current messaging work is defining the target business contexts and personas before changing the public site.
