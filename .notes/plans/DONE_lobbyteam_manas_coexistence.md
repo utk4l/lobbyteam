@@ -29,7 +29,7 @@ Internet :80/:443
         Caddy (single owner of public ports)
           |-- boothteam.sophimind.com -> localhost:3009 (At Your Service frontend)
           |                         -> localhost:5001/api/v1 (At Your Service API)
-          |-- <LobbyTeam hostname>  -> /root/lobby-team/dist (static Vite output)
+          |-- lobbyteam.sophimind.com -> /var/www/lobby-team (static Vite output)
 ```
 
 Rules:
@@ -74,6 +74,29 @@ Rules:
 - Cloudflare edge returned `200` for `https://boothteam.sophimind.com/` after Caddy reload.
 - Caddy remained active and continued listening on host ports `80` and `443`.
 
+## Manas Action Log
+
+The following actions were performed on `manas-prod` on 2026-09-09. Secrets and private-key contents are intentionally not recorded.
+
+1. Confirmed `/root/lobby-team` was the checked-out LobbyTeam repository and verified it was a Vite frontend with `npm run build`.
+2. Ran `npm ci` and `npm run build` from `/root/lobby-team`.
+3. Copied the generated `dist` contents to `/var/www/lobby-team` and set directories to `0755` and files to `0644`.
+4. Copied the provided Cloudflare Origin CA certificate and key to `/etc/caddy/certs/`.
+5. Installed certificate permissions as `root:root:0644` and key permissions as `root:caddy:0640`; temporary transfer files were removed.
+6. Backed up the existing Caddy configuration to `/etc/caddy/Caddyfile.pre-lobbyteam` before the LobbyTeam route was added.
+7. Added the `lobbyteam.sophimind.com` Caddy site with the Origin CA certificate, `/var/www/lobby-team` root, SPA fallback, gzip encoding, and static file serving.
+8. Created the server-wide Cloudflare Origin CA policy with `auto_https disable_certs` and the reusable `cloudflare_origin_tls` snippet, then applied it to AYS, BoothTeam, and LobbyTeam.
+9. Backed up the pre-policy Caddy configuration to `/etc/caddy/Caddyfile.pre-cloudflare-origin-policy`.
+10. The first reload failed because the key was `0600` and unreadable by the `caddy` service user. The key was corrected to `root:caddy:0640`; Caddy validation and reload then succeeded.
+11. Verified Caddy remained active, continued listening on `80/443`, and At Your Service continued listening on `3009/5001`.
+12. Verified through the Cloudflare edge: AYS returned `301` to BoothTeam, BoothTeam returned `200`, and LobbyTeam returned `200`. LobbyTeam `/industries` also returned `200` through the SPA fallback.
+
+## Git Record
+
+- Deployment documentation and coexistence plan commit: `4820a0c`.
+- Server-wide Cloudflare TLS policy documentation commit: `3f80ae6`.
+- These commits exist locally on the LobbyTeam `main` branch. The environment blocked pushing the runbook because it classified the internal deployment paths as sensitive; no workaround was used.
+
 ## Acceptance Criteria
 
 - Both products are reachable simultaneously over HTTPS from separate hostnames.
@@ -84,7 +107,8 @@ Rules:
 - A Caddy reload or LobbyTeam deployment does not stop or restart At Your Service.
 - The rollback procedure can remove LobbyTeam without modifying the At Your Service route.
 
-## Current Gate
+## Current State
 
-- Public hostname decision is complete: `lobbyteam.sophimind.com`.
-- DNS was reported as pointed to Manas, but verification from `manas-prod` currently returns `could not resolve host`. Do not reload Caddy for the new hostname until `getent hosts lobbyteam.sophimind.com` resolves on Manas.
+- Public hostname: `lobbyteam.sophimind.com`.
+- Cloudflare proxy and edge resolution are working. Manas's local resolver may not return the proxied hostname, but edge requests with the correct Host/SNI reach Caddy successfully.
+- The coexistence deployment is complete. Future site additions must use the shared Cloudflare Origin CA policy documented in `.notes/docs/LobbyTeam Manas deployment.md`.
