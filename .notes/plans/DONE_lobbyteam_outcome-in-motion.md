@@ -2,7 +2,7 @@
 title: LobbyTeam multi-channel outcome animation
 tags: [lobbyteam, homepage, animation, callbacks, human-handoff]
 type: implementation-plan
-status: active
+status: complete
 ---
 
 # LobbyTeam Multi-Channel Outcome Animation
@@ -23,13 +23,13 @@ Make the homepage show LobbyTeam making a decision across channels instead of on
 
 ## Checklist
 
-- [x] Add the multi-channel scenario component and explicit decision states. (Coded/Deploy-QA pending.)
-- [x] Replace the static homepage request card with the visual demo. (Coded/Deploy-QA pending.)
-- [x] Add callback, human-routing, and interaction-log copy with capability boundaries. (Coded/Deploy-QA pending.)
-- [x] Add motion and reduced-motion styling without adding a new dependency. (Coded/Deploy-QA pending.)
+- [x] Add the multi-channel scenario component and explicit decision states. (DONE.)
+- [x] Replace the static homepage request card with the visual demo. (DONE.)
+- [x] Add callback, human-routing, and interaction-log copy with capability boundaries. (DONE.)
+- [x] Add motion and reduced-motion styling without adding a new dependency. (DONE.)
 - [x] Run the production build and diff checks. (DONE: `npm run build`; `git diff --check` passed.)
-- [ ] Push the commit and deploy the exact release on Manas. (Todo/ACTIVE.)
-- [ ] Verify the homepage and legacy `/old-landing` route through Cloudflare. (Todo/ACTIVE.)
+- [x] Push the commit and deploy the exact release on Manas. (DONE: commit `ce0aae3` is active at `/var/www/releases/lobbyteam/ce0aae3`.)
+- [x] Verify the homepage and legacy `/old-landing` route through Cloudflare. (DONE: both returned HTTP 200; content proxy and Caddy are active.)
 
 ## Public Story
 

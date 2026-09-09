@@ -15,7 +15,7 @@ status: active
 | B | Git and Manas deployment | Active | TODO_lobbyteam_landing_page_rebrand.md |
 | C | Blog publishing | Active | ../messaging/LobbyTeam AEO-first post series plan.md |
 | D | Pricing validation | Active | TODO_lobbyteam_pricing_concept.md |
-| E | Multi-channel outcome animation | Coded, deploy-QA pending | TODO_lobbyteam_outcome-in-motion.md |
+| E | Multi-channel outcome animation | Done | DONE_lobbyteam_outcome-in-motion.md |
 
 ## Ordered Actions
 
@@ -28,4 +28,4 @@ status: active
 7. Pull the exact commit on Manas and deploy atomically.
 8. Run Cloudflare edge smoke tests and a public discovery crawl.
 9. Publish the first five foundational LobbyTeam articles.
-10. Deploy and verify the multi-channel outcome animation and legacy route preservation.
+10. [DONE] Deploy and verify the multi-channel outcome animation and legacy route preservation.

@@ -24,4 +24,4 @@ LobbyTeam is an AI-native support and sales front door for phone, website chat, 
 
 ## Homepage Outcome Demonstration
 
-The homepage hero uses `src/app/lobby/FrontDoorDemo.tsx` to show website chat, email, and voice interactions moving through a decision into a configured callback or human handoff. Each scenario ends in a shared interaction log, and reduced-motion users receive a stable selected state. The implementation plan is [TODO_lobbyteam_outcome-in-motion.md](../plans/TODO_lobbyteam_outcome-in-motion.md).
+The homepage hero uses `src/app/lobby/FrontDoorDemo.tsx` to show website chat, email, and voice interactions moving through a decision into a configured callback or human handoff. Each scenario ends in a shared interaction log, and reduced-motion users receive a stable selected state. The shipped implementation is tracked in [DONE_lobbyteam_outcome-in-motion.md](../plans/DONE_lobbyteam_outcome-in-motion.md).
