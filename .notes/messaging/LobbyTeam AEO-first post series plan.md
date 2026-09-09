@@ -34,6 +34,24 @@ Use the broader, outcome-led definition consistently:
 
 > LobbyTeam turns first contact into progress: an answer, a completed request, a scheduled next step, or a useful handoff with clear ownership.
 
+### Coordinated Digital Team Differentiator
+
+The public story should make clear that LobbyTeam is not a single AI receptionist or passive message-taking bot. It is a coordinated digital team working behind the business front door.
+
+One agent may engage the customer by phone, email, chat, SMS, WhatsApp, or a configured physical-lobby surface. Specialized agents work behind that interaction to help interpret the request, check the business guidance, identify the next step, and prepare a useful human handoff when needed.
+
+This explanation is part of the public positioning, not hidden secret sauce. It gives buyers a concrete reason LobbyTeam is different from a generic receptionist bot while keeping the outcome first.
+
+Use the following copy consistently:
+
+> **Not just an AI receptionist. LobbyTeam is a coordinated digital front-door team. One agent engages the customer while specialized agents help interpret the request, apply your rules, and guide what happens next.**
+
+Follow it with the outcome:
+
+> **Your customer gets progress. Your team gets context. Someone always knows what should happen next.**
+
+Do not imply unrestricted autonomous decision-making. The business defines the knowledge, workflows, routing rules, escalation rules, and approved actions. LobbyTeam applies those rules within the configured workflow. Humans remain accountable for sensitive, technical, commercial, security, emergency, clinical, legal, and other judgment-heavy decisions.
+
 ## Audience Map
 
 ### Economic buyer

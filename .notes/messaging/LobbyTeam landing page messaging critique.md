@@ -88,6 +88,18 @@ If LobbyTeam is the public product name, the page cannot continue to make Conver
 
 > **It works across the office, phone, website, email, SMS, and WhatsApp, so your customers get one clear path forward even when your team, channels, and schedules are spread out.**
 
+### Coordinated team explanation
+
+This is a public differentiator, not secret sauce. Buyers need to understand why LobbyTeam is more than a single receptionist bot, but the explanation should follow the outcome rather than lead the hero.
+
+> **Not just an AI receptionist. LobbyTeam is a coordinated digital front-door team. One agent engages the customer while specialized agents help interpret the request, apply your rules, and guide what happens next.**
+
+Supporting outcome:
+
+> **Your customer gets progress. Your team gets context. Someone always knows what should happen next.**
+
+The site should say that the business defines the knowledge, workflows, routing rules, escalation rules, and approved actions. Avoid implying that agents make unrestricted decisions. Humans remain accountable for sensitive, technical, commercial, security, emergency, clinical, legal, and other judgment-heavy decisions.
+
 ### Human boundary
 
 > **LobbyTeam does not replace your people. It makes sure the right request reaches the right person at the right time, with the conversation already understood.**

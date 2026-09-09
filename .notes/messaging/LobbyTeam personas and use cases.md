@@ -19,6 +19,28 @@ The channel may be a phone call, website chat, email, SMS, WhatsApp, or physical
 
 The important distinction is that LobbyTeam is not limited to taking a message. It can determine who should own the next step and route the interaction to the right human or team when the business has defined the routing rules.
 
+## Coordinated Digital Team Positioning
+
+LobbyTeam is not just an AI receptionist. It is a coordinated team of digital agents that runs the business front door.
+
+One agent may be speaking with the customer, answering an email, or handling a message. Behind the scenes, specialized agents help interpret what the customer needs, check the business guidance, identify the appropriate next step, and prepare the interaction for the right human when needed.
+
+This is useful for a solopreneur as well as a growing business. The customer gets progress, the owner or staff gets context, and someone has visibility into what should happen next.
+
+Use this distinction publicly, but describe the authority boundary accurately:
+
+- The business defines the knowledge, workflows, routing rules, escalation rules, and approved actions.
+- The coordinated agents apply those rules and recommend or initiate the next step within the configured workflow.
+- Humans remain accountable for sensitive, technical, commercial, security, emergency, clinical, legal, or otherwise judgment-heavy decisions.
+
+Recommended short explanation:
+
+> **Not just an AI receptionist. LobbyTeam is a coordinated digital front-door team. One agent engages the customer while specialized agents help interpret the request, apply your rules, and guide what happens next.**
+
+Recommended outcome-led explanation:
+
+> **Your customer gets progress. Your team gets context. Someone always knows what should happen next.**
+
 ## Confirmed Contexts
 
 ### 1. Brick-and-mortar office with an inbound front desk
