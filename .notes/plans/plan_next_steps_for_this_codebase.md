@@ -13,7 +13,7 @@ status: active
 |---|---|---|---|
 | A | Homepage and full FAQ | Coded, deploy-QA pending | TODO_9_OF_26_lobbyteam_landing_page_rebrand.md |
 | B | Git and Manas deployment | Active | TODO_9_OF_26_lobbyteam_landing_page_rebrand.md |
-| C | Blog publishing | Done | DONE_lobbyteam-foundational-blog-series.md |
+| C | Blog publishing | Done | DONE_lobbyteam-modern-office-front-desk-series.md |
 | D | Pricing validation | Active | TODO_1_OF_5_lobbyteam_pricing_concept.md |
 | E | Multi-channel outcome animation | Done | DONE_lobbyteam_outcome-in-motion.md |
 | F | Website decision team positioning | Done | DONE_lobbyteam_website-decision-team.md |
@@ -32,3 +32,4 @@ status: active
 10. [DONE] Deploy and verify the multi-channel outcome animation and legacy route preservation.
 11. Review and approve the website decision-team positioning plan before implementation.
 12. [DONE] Deploy and verify the website decision-team homepage animation.
+13. [DONE] Publish and verify the five-article Modern Office Front Desk series; prepare Series 3 next.

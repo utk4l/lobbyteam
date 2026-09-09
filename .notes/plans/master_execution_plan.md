@@ -65,6 +65,7 @@ Bring LobbyTeam to a coherent, discoverable, outcome-led public launch while pre
 - Cached same-origin WordPress runtime and dynamic sitemap endpoint, pending Manas service installation.
 - Canonical messaging guide and comprehensive buyer FAQ.
 - First five foundational “Why The Business Front Door Matters” articles published under WordPress category `lobby-team` with post-series ID `765` and intent tags.
+- Five `Modern Office Front Desk` articles published under `lobby-team` in post-series ID `774` as posts `1615`–`1619`; source and verification are tracked in `DONE_lobbyteam-modern-office-front-desk-series.md`.
 - Multi-channel hero demo showing callback, human routing, and interaction logging, pending deployment verification.
 
 ## Deferred Or Open Work
@@ -73,7 +74,7 @@ Bring LobbyTeam to a coherent, discoverable, outcome-led public launch while pre
 - Prerendered HTML for public marketing routes if crawl testing shows client rendering is insufficient.
 - Production verification of every public capability claim.
 - Final pricing validation against real channel economics.
-- Publish and maintain the editorial program.
+- Publish and maintain the remaining editorial program batches; Series 3 is next.
 - Add analytics and conversion measurement for intent progression.
 - Decide whether the legacy routes should be noindex at the server or document level.
 

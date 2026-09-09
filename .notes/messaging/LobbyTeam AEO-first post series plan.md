@@ -395,6 +395,14 @@ Publish the first five articles from Series 1. These create the shared language:
 
 Publish Series 2 and Series 3 first if the initial commercial focus is office and appointment operations. Follow with Series 5 for after-hours and overflow demand.
 
+## Implementation Status
+
+- Phase 1 is shipped: the five `Why The Business Front Door Matters` articles are published under WordPress category `lobby-team` (ID `764`) in series ID `765`, with intent tags and live article routes.
+- The Series 2 office wedge is now shipped as `Modern Office Front Desk`: five articles are published under `lobby-team` in series ID `774` as posts `1615` through `1619`.
+- Source drafts for both published batches live in `.notes/messaging/lobbyteam-blog-series/` and are maintained in Git before deployment.
+- The execution record for the Series 2 batch is [DONE_lobbyteam-modern-office-front-desk-series.md](../plans/DONE_lobbyteam-modern-office-front-desk-series.md).
+- Next recommended batch: Series 3, `Appointment Operations Without Phone Tag`, followed by Series 5 for after-hours and overflow demand.
+
 ### Phase 3: Expand into adjacent demand
 
 Publish Series 4, Series 6, and Series 7 for online businesses, field service, and inbound sales.
