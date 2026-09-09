@@ -30,6 +30,9 @@ Create a genuinely new, outcome-led LobbyTeam homepage while preserving the curr
 - `/integrations` will be the new outcome-led workflow-fit page.
 - `/about` will point visitors to the LobbyTeam presentation at `https://show.iqwyk.com/sophimind/lobbyteam-by-sophimind`.
 - The public discovery layer includes `/blog`, article pages, tag pages, post-series context, `/sitemap.xml`, and `/llms.txt`.
+- The homepage will include a concise FAQ section with a link to the comprehensive `/faqs` page.
+- The full FAQ page will be based on [LobbyTeam comprehensive buyer FAQ](../messaging/LobbyTeam%20comprehensive%20buyer%20FAQ.md), with public answers reviewed against production capability.
+- FAQ copy will explain that LobbyTeam is a coordinated digital front-door team, not a generic AI receptionist, chatbot, call center, or security replacement.
 - `#pricing` remains a homepage section and will use the working Interaction Unit pricing concept: `$49` for 20 units, `$99` for 75 units, and `$299` for 500 units.
 
 ## Proposed Homepage Flow
@@ -41,7 +44,50 @@ Create a genuinely new, outcome-led LobbyTeam homepage while preserving the curr
 5. How it works: understand the request, complete configured work, preserve context, and connect the right human.
 6. Human boundary: LobbyTeam works alongside staff and does not replace security, emergency response, or accountable human decisions.
 7. Pricing: show the approved working concept only after pricing is reviewed for production readiness.
-8. FAQ and final CTA.
+8. FAQ preview: answer the highest-friction buyer questions and link to `/faqs` for the complete evaluation guide.
+9. Final CTA and footer discovery links.
+
+## Homepage FAQ Section
+
+Place a concise FAQ block after pricing and before the final CTA. It should answer the questions a first-time buyer needs before clicking through:
+
+- What is LobbyTeam?
+- How is LobbyTeam different from an AI receptionist?
+- Does LobbyTeam replace our receptionist or support team?
+- What does the coordinated digital team do?
+- Where can customers interact with LobbyTeam?
+- What happens when LobbyTeam does not know an answer?
+- How does a request reach the right human?
+- Is LobbyTeam useful for a solopreneur or small business?
+
+Each answer should be short, outcome-led, and link to the full FAQ page. The homepage must not become a wall of text; the preview should create confidence and curiosity, while `/faqs` carries the complete buyer evaluation content.
+
+## Full FAQ Page
+
+Create `/faqs` using the comprehensive buyer FAQ as the source document. Organize the public page into these sections:
+
+1. **What LobbyTeam is:** identity, front-door definition, outcome, and target businesses.
+2. **How the coordinated team works:** engaging agent, specialist agents, business rules, authority boundaries, and uncertainty handling.
+3. **Channels and workflows:** phone, website chat, email, SMS, WhatsApp, kiosk, tablet, QR code, appointments, support, sales, and physical visitor assistance.
+4. **Human handoffs and routing:** ownership, context, availability, expertise, urgency, after-hours, regions, backups, and failed handoffs.
+5. **Setup and integrations:** business knowledge, workflows, staff, calendars, CRM, ticketing, webhooks, and launch requirements.
+6. **Safety, privacy, and data:** consent, retention, export, human accountability, security boundaries, and emergency limitations.
+7. **Pricing and measurement:** Interaction Units, overage, usage, and outcome metrics.
+8. **Comparisons and buyer evaluation:** AI receptionist, chatbot, call center, virtual receptionist, voicemail, call forwarding, lead form, and lead scanner.
+
+The page should include a clear CTA to identify the visitor's use case and a link to the LobbyTeam presentation through `/about`.
+
+## FAQ Discovery Requirements
+
+- Use one H1: `LobbyTeam FAQs`.
+- Use problem-shaped H2/H3 questions rather than feature labels.
+- Give every answer a self-contained first paragraph suitable for answer engines to quote.
+- Add `FAQPage` JSON-LD only for questions and answers visible on the page.
+- Add canonical, Open Graph, and descriptive metadata.
+- Link the homepage FAQ preview to the corresponding full-page anchor where useful.
+- Include `/faqs` in `sitemap.xml`, `llms.txt`, navigation, and footer discovery links.
+- Do not claim live transfers, outbound calls, calendar actions, CRM behavior, or channels unless verified for the production account.
+- Keep the FAQ aligned with the comprehensive buyer FAQ document and update both when capability or pricing changes.
 
 ## Who Is This For Page
 
@@ -113,10 +159,17 @@ Keep the existing page unchanged at `/old-integrations`. Build a new `/integrati
 - [x] Add LobbyTeam blog index, article, tag, and post-series rendering using the established At Your Service pattern. (DONE.)
 - [x] Add blog metadata, JSON-LD, Open Graph values, and build-generated sitemap entries. (DONE.)
 - [ ] Add page title, description, canonical URL, and legacy `noindex` handling.
+- [ ] Add homepage FAQ preview with eight high-intent buyer questions and a `Full FAQ` link.
+- [ ] Add `/faqs` using the comprehensive buyer FAQ structure, with public-safe answers and section anchors.
+- [ ] Add FAQPage JSON-LD, metadata, sitemap inclusion, and `llms.txt` link for `/faqs`.
 - [x] Add `/about` presentation destination and public `/llms.txt` discovery summary. (DONE.)
 - [x] Run the production build and verify both `/` and `/old-landing` locally. (DONE: Vite production build passed.)
 - [x] Review the rendered homepage messaging before committing and pushing. (DONE: route/content review completed.)
 - [ ] Commit and push the approved implementation to the configured Git remote.
+- [ ] Pull the pushed commit on `manas-prod` under `/root/lobby-team`.
+- [ ] Run the production build on Manas and install `dist` into `/var/www/lobby-team`.
+- [ ] Verify the homepage, `/faqs`, `/blog`, `/sitemap.xml`, `/robots.txt`, `/llms.txt`, `/about`, `/who-is-this-for`, `/integrations`, `/old-landing`, and `/old-integrations` through the Cloudflare edge.
+- [ ] Confirm Caddy remains the single host-level 80/443 owner and that the shared Cloudflare Origin CA route is unchanged.
 
 ## Acceptance Criteria
 
@@ -125,6 +178,8 @@ Keep the existing page unchanged at `/old-integrations`. Build a new `/integrati
 - `/old-landing` remains accessible and visually matches the pre-rebrand page.
 - `/blog` shows only posts assigned to the WordPress `lobby-team` category.
 - Blog article pages expose tags and a post-series dropdown when WordPress provides them.
+- The homepage answers the highest-friction buyer questions and links to the complete `/faqs` page.
+- `/faqs` provides comprehensive public answers with valid FAQPage JSON-LD and no unsupported capability claims.
 - No public homepage section calls the product Converso.
 - The new page makes clear that LobbyTeam can answer, complete, or route requests and works with human staff.
 - The homepage does not claim unsupported channels, integrations, service levels, or human staffing.
@@ -135,6 +190,7 @@ Keep the existing page unchanged at `/old-integrations`. Build a new `/integrati
 - Confirm which channels are production-ready enough to list as supported on the public homepage.
 - Confirm whether pricing should appear on the first implementation or remain in the pricing concept until unit economics are validated.
 - Verify the `lobby-team` category from the Manas-reachable WordPress environment during implementation; use the slug as the application-level source of truth.
+- Verify every FAQ answer against the production build and configured capabilities before publishing.
 
 ## Glossary
 
