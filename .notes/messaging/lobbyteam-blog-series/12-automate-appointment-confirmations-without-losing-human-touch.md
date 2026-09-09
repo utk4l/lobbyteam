@@ -2,7 +2,7 @@
 title: How to Automate Appointment Confirmations Without Losing the Human Touch
 slug: how-to-automate-appointment-confirmations-without-losing-the-human-touch
 series: appointment-operations-without-phone-tag
-tags: [appointment-confirmations, appointment-reminders, customer-experience, scheduling, human-handoff]
+tags: [appointment-confirmations, appointment-reminders, customer-experience, appointment-scheduling, human-handoff]
 category: lobby-team
 type: blog-draft
 status: ready-to-publish
@@ -27,4 +27,3 @@ status: ready-to-publish
 <p>LobbyTeam can send approved confirmations and reminders through configured channels, answer routine follow-up questions, and route exceptions with their context. It does not invent appointment policies or make professional decisions outside the rules and resources the business has approved.</p>
 
 <p><strong>Good automation preserves the customer’s sense of being helped. It confirms the appointment, explains what happens next, and makes human assistance easy when the standard path is not enough.</strong></p>
-

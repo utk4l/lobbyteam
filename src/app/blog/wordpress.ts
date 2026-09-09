@@ -196,12 +196,17 @@ export function stripHtml(value: string): string {
 }
 
 export function sanitizeHtml(value: string): string {
-  return value
-    .replace(/<script[\s\S]*?<\/script>/gi, '')
-    .replace(/<style[\s\S]*?<\/style>/gi, '')
-    .replace(/<iframe[\s\S]*?<\/iframe>/gi, '')
-    .replace(/\son\w+\s*=\s*(['"]).*?\1/gi, '')
-    .replace(/javascript:/gi, '');
+  const documentParser = new DOMParser();
+  const documentNode = documentParser.parseFromString(value, 'text/html');
+  documentNode.querySelectorAll('script, style, iframe, .wp-post-series-box').forEach((element) => element.remove());
+  documentNode.querySelectorAll('*').forEach((element) => {
+    for (const attribute of [...element.attributes]) {
+      if (attribute.name.toLowerCase().startsWith('on') || attribute.value.toLowerCase().includes('javascript:')) {
+        element.removeAttribute(attribute.name);
+      }
+    }
+  });
+  return documentNode.body.innerHTML;
 }
 
 export { CATEGORY_SLUG };
