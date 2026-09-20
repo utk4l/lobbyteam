@@ -12,6 +12,18 @@ export function FaqPage() {
     let meta = document.head.querySelector<HTMLMetaElement>('meta[name="description"]');
     if (!meta) { meta = document.createElement('meta'); meta.name = 'description'; document.head.appendChild(meta); }
     meta.content = description;
+    let ogTitle = document.head.querySelector<HTMLMetaElement>('meta[property="og:title"]');
+    if (!ogTitle) { ogTitle = document.createElement('meta'); ogTitle.setAttribute('property', 'og:title'); document.head.appendChild(ogTitle); }
+    ogTitle.content = document.title;
+    let ogDescription = document.head.querySelector<HTMLMetaElement>('meta[property="og:description"]');
+    if (!ogDescription) { ogDescription = document.createElement('meta'); ogDescription.setAttribute('property', 'og:description'); document.head.appendChild(ogDescription); }
+    ogDescription.content = description;
+    let ogUrl = document.head.querySelector<HTMLMetaElement>('meta[property="og:url"]');
+    if (!ogUrl) { ogUrl = document.createElement('meta'); ogUrl.setAttribute('property', 'og:url'); document.head.appendChild(ogUrl); }
+    ogUrl.content = `${SITE_URL}/faqs`;
+    let twitterCard = document.head.querySelector<HTMLMetaElement>('meta[name="twitter:card"]');
+    if (!twitterCard) { twitterCard = document.createElement('meta'); twitterCard.name = 'twitter:card'; document.head.appendChild(twitterCard); }
+    twitterCard.content = 'summary_large_image';
     let canonical = document.head.querySelector<HTMLLinkElement>('link[rel="canonical"]');
     if (!canonical) { canonical = document.createElement('link'); canonical.rel = 'canonical'; document.head.appendChild(canonical); }
     canonical.href = `${SITE_URL}/faqs`;

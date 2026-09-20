@@ -15,8 +15,14 @@ function useMetadata(title: string, description: string, path: string, jsonLd?: 
     };
     setMeta('name', 'description', description);
     setMeta('property', 'og:title', title);
+    setMeta('property', 'og:type', path.startsWith('/blog/') ? 'article' : 'website');
     setMeta('property', 'og:description', description);
     setMeta('property', 'og:url', `${SITE_URL}${path}`);
+    setMeta('property', 'og:image', 'https://show.iqwyk.com/brand/sophimind-dark-trans.png');
+    setMeta('name', 'twitter:card', 'summary_large_image');
+    setMeta('name', 'twitter:title', title);
+    setMeta('name', 'twitter:description', description);
+    setMeta('name', 'twitter:image', 'https://show.iqwyk.com/brand/sophimind-dark-trans.png');
     let canonical = document.head.querySelector<HTMLLinkElement>('link[rel="canonical"]');
     if (!canonical) { canonical = document.createElement('link'); canonical.rel = 'canonical'; document.head.appendChild(canonical); }
     canonical.href = `${SITE_URL}${path}`;

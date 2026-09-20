@@ -60,3 +60,13 @@ status: active
 - [main] Deployed commit `bec0923` to Manas for the Appointment Operations Without Phone Tag batch. All seven article routes, `/blog`, `/sitemap.xml`, `/robots.txt`, and `/llms.txt` returned HTTP 200; the dynamic sitemap includes the seven articles, appointment tags, and series route after refreshing the disposable content cache.
 - [main] Fixed LobbyTeam `/blog` rendering in commit `fa13d3d` by versioning the browser WordPress cache namespace and retrying contradictory empty post responses. Manas is deployed to the exact commit; the category endpoint returns 17 posts and the first page returns 12.
 - [main] Fixed duplicate WordPress series text in commit `7788ec9`: the frontend removes the generated series box from both excerpts and article bodies, leaving the native LobbyTeam series dropdown as the only visible series navigation. The affected article route and `/blog` return HTTP 200 on Manas.
+
+## 2026-09-20T15:42:00-05:00 | branch=main | topic=lobbyteam-public-metadata
+
+**Timestamp:** 2026-09-20 15:42:00 CDT (`America/Chicago`)
+**Branch:** `main`
+**Type:** Implemented
+
+**Context:** Cross-repo metadata audit found LobbyTeam had strong route-level JSON-LD for FAQs and field notes but no homepage JSON-LD and incomplete social tags for client-rendered routes.
+**Outcome:** Added homepage Organization/WebSite/SoftwareApplication JSON-LD, stable Open Graph/Twitter image metadata, and route-level social metadata for FAQ and field-note views.
+**Files:** `index.html`, `src/app/faq/FaqPage.tsx`, `src/app/blog/BlogPages.tsx`, `.notes/plans/TODO_lobbyteam_public_metadata_hardening.md`.
