@@ -87,24 +87,28 @@ async function buildSitemap() {
     ['/blog', 'weekly'],
     ['/faqs', 'monthly'],
   ]);
-  const categoryResponse = await fetchCachedJson('/categories?slug=' + encodeURIComponent(CATEGORY_SLUG));
-  const category = JSON.parse(categoryResponse.body)[0];
-  if (category) {
-    const postsResponse = await fetchCachedJson('/posts?categories=' + category.id + '&per_page=100&_embed=1&orderby=date&order=desc');
-    const posts = JSON.parse(postsResponse.body);
-    const tags = new Set();
-    const series = new Set();
-    for (const post of posts) {
-      urls.set('/blog/' + post.slug, 'monthly');
-      for (const terms of post._embedded?.['wp:term'] || []) {
-        for (const term of terms) {
-          if (post.tags?.includes(term.id)) tags.add(term.slug);
-          if (term.taxonomy === 'post_series' && post.post_series?.includes(term.id)) series.add(term.slug);
+  try {
+    const categoryResponse = await fetchCachedJson('/categories?slug=' + encodeURIComponent(CATEGORY_SLUG));
+    const category = JSON.parse(categoryResponse.body)[0];
+    if (category) {
+      const postsResponse = await fetchCachedJson('/posts?categories=' + category.id + '&per_page=100&_embed=1&orderby=date&order=desc');
+      const posts = JSON.parse(postsResponse.body);
+      const tags = new Set();
+      const series = new Set();
+      for (const post of posts) {
+        urls.set('/blog/' + post.slug, 'monthly');
+        for (const terms of post._embedded?.['wp:term'] || []) {
+          for (const term of terms) {
+            if (post.tags?.includes(term.id)) tags.add(term.slug);
+            if (term.taxonomy === 'post_series' && post.post_series?.includes(term.id)) series.add(term.slug);
+          }
         }
       }
+      for (const tag of tags) urls.set('/blog/tag/' + tag, 'monthly');
+      for (const item of series) urls.set('/blog/series/' + item, 'monthly');
     }
-    for (const tag of tags) urls.set('/blog/tag/' + tag, 'monthly');
-    for (const item of series) urls.set('/blog/series/' + item, 'monthly');
+  } catch (error) {
+    console.warn('LobbyTeam sitemap source unavailable; serving cached core routes: ' + error.message);
   }
   const body = [...urls.entries()].map(([path, changeFrequency]) => '  <url><loc>' + escapeXml(SITE_URL + path) + '</loc><changefreq>' + changeFrequency + '</changefreq></url>').join('\n');
   return '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + body + '\n</urlset>\n';
