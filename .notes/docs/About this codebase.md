@@ -22,6 +22,10 @@ LobbyTeam is an AI-native support and sales front door for phone, website chat, 
 - Presentation: `https://show.iqwyk.com/sophimind/lobbyteam-by-sophimind`
 - AEO-first editorial program: [LobbyTeam AEO-first post series plan](../messaging/LobbyTeam%20AEO-first%20post%20series%20plan.md)
 
+## Interaction Unit Pricing Model
+
+The working pricing model treats one Interaction Unit as one handled customer interaction, regardless of channel. The internal [Interaction Unit Counting Specification](LobbyTeam%20Interaction%20Unit%20Counting%20Specification.md) is the billing recipe: connected phone duration, successfully processed message rows, and deterministic chat turn blocks. Customers are not billed by word count, character count, telecom segment count, token count, or hidden agent actions. Pricing remains a working concept until reconciliation, production billing behavior, and voice-heavy economics are validated. The customer-facing sources are the [pricing concept](../pricing/LobbyTeam%20%24299%20pricing%20concept.md), [buyer FAQ](../messaging/LobbyTeam%20comprehensive%20buyer%20FAQ.md), and `src/app/faq/faqData.tsx`.
+
 ## Homepage Outcome Demonstration
 
 The homepage hero uses `src/app/lobby/FrontDoorDemo.tsx` to show website chat, email, and voice interactions moving through a decision into a configured callback or human handoff. Each scenario ends in a shared interaction log, and reduced-motion users receive a stable selected state. The shipped implementation is tracked in [DONE_lobbyteam_outcome-in-motion.md](../plans/DONE_lobbyteam_outcome-in-motion.md).

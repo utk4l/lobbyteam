@@ -14,7 +14,7 @@ status: active
 | A | Homepage and full FAQ | Coded, deploy-QA pending | TODO_9_OF_26_lobbyteam_landing_page_rebrand.md |
 | B | Git and Manas deployment | Active | TODO_9_OF_26_lobbyteam_landing_page_rebrand.md |
 | C | Blog publishing | Done | DONE_lobbyteam-modern-office-front-desk-series.md |
-| D | Pricing validation | Active | TODO_1_OF_5_lobbyteam_pricing_concept.md |
+| D | Pricing validation and Interaction Unit billing | Active | TODO_1_OF_5_lobbyteam_pricing_concept.md; TODO_lobbyteam_interaction_unit_billing_spec.md |
 | E | Multi-channel outcome animation | Done | DONE_lobbyteam_outcome-in-motion.md |
 | F | Website decision team positioning | Done | DONE_lobbyteam_website-decision-team.md |
 

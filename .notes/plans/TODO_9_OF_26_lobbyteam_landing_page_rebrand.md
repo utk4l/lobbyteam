@@ -134,7 +134,7 @@ Show the working three-tier structure:
 | Essential | `$99/month` | 75 | `$0.79/unit` |
 | Full Front Door | `$299/month` | 500 | `$0.59/unit` |
 
-Explain one Interaction Unit in plain language: one connected phone minute, one email up to 300 words, one SMS segment, one WhatsApp message up to 500 characters, or one website chat turn. State that the exact channels and workflows depend on configuration, and do not promise unsupported integrations or unlimited service.
+Explain one Interaction Unit in plain language: one handled customer interaction, whatever the channel. Keep the channel limits as billing guardrails: connected phone minutes round up, messages use published size limits, and one website chat unit covers up to 15 turns. State that the exact channels and workflows depend on configuration, and do not promise unsupported integrations or unlimited service.
 
 The homepage should show a concise pricing summary and link to a fuller pricing explanation if one is added. Pricing must not lead with “AI actions,” tokens, or implementation details.
 

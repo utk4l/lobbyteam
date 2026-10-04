@@ -212,7 +212,7 @@ export const FAQ_CATEGORIES: FaqCategory[] = [
       },
       {
         question: 'What is an Interaction Unit?',
-        answer: 'An Interaction Unit is a plain-language measure of communication: one connected phone minute, one email up to 300 words, one SMS segment, one WhatsApp message up to 500 characters, or one website chat turn under the published counting rules.',
+        answer: 'An Interaction Unit is one handled customer interaction, whatever the channel. It counts when LobbyTeam reaches a useful outcome such as an answer, completed message, scheduled request, or owned human next step. The billing guardrails are one connected phone minute, one email up to 300 words, one text message within the published size limit, one WhatsApp message up to 500 characters, or one website chat conversation up to 15 turns; turn 16 starts a new unit. Phone time rounds up, so 61 seconds is 2 units. Failed connections and misdials do not count.',
       },
       {
         question: 'How should we measure LobbyTeam’s value?',

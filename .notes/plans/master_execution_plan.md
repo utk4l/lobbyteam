@@ -19,7 +19,7 @@ Bring LobbyTeam to a coherent, discoverable, outcome-led public launch while pre
 | B | WordPress blog and discovery | Coded, dynamic runtime deploy pending | TODO_9_OF_26_lobbyteam_landing_page_rebrand.md |
 | C | Manas deployment and Cloudflare coexistence | Done | DONE_lobbyteam_manas_coexistence.md |
 | D | AEO-first editorial program | Done | DONE_lobbyteam-foundational-blog-series.md |
-| E | Pricing validation | Active | TODO_1_OF_5_lobbyteam_pricing_concept.md |
+| E | Pricing validation and Interaction Unit billing | Active | TODO_1_OF_5_lobbyteam_pricing_concept.md; TODO_lobbyteam_interaction_unit_billing_spec.md |
 | F | Multi-channel outcome animation | Done | DONE_lobbyteam_outcome-in-motion.md |
 | G | Website decision team positioning | Done | DONE_lobbyteam_website-decision-team.md |
 

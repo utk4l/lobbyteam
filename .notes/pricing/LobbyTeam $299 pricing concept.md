@@ -113,20 +113,23 @@ Do not gate basic human handoff or clear usage reporting behind the `$299` tier.
 
 ### Customer-facing definition
 
-> **An Interaction Unit is a standard measure of communication: one phone minute, one short email, one SMS, one WhatsApp message, or one website chat turn.**
+> **One Interaction Unit is one handled customer interaction, whatever the channel: a connected phone minute, a message, a scheduled request, or a human handoff that moves the request forward.**
 
-It is intentionally not a token, seat, ticket, API request, or hidden AI action. Each channel has a simple public conversion rule so a customer can understand what usage means.
+It is intentionally not a token, seat, ticket, API request, or hidden AI action. A unit counts when LobbyTeam handles the arrival and reaches a useful outcome—an answer, completed message, scheduled request, or owned human next step. A misdial, failed connection, or other unsuccessful attempt does not count.
+
+The channel rules below are billing guardrails, not a new kind of customer math. They make the meter predictable when a phone call runs long or a message is unusually large.
 
 ### Examples
 
-Each of these counts as one Interaction Unit:
+Each of these counts as one Interaction Unit within the guardrails below:
 
-- One connected minute of a phone call, rounded up to the next minute.
-- One email received or sent up to 300 words.
-- One SMS message segment up to 160 characters.
-- One WhatsApp message up to 500 characters.
-- One website chat turn: one customer message plus LobbyTeam's response.
-- One unanswered outbound call attempt, including a voicemail attempt. An answered outbound call consumes its connected minutes instead of an additional attempt unit.
+- One connected phone minute. Phone time rounds up: 61 seconds is 2 units. A failed or misdialed call does not count.
+- One successfully processed email message.
+- One successfully processed text message. Customers are not billed by telecom segment.
+- One successfully processed WhatsApp message.
+- One website chat conversation, counted internally in deterministic 15-turn blocks. Turn 16 starts a new unit.
+
+Word, character, and segment limits are fair-use or provider-cost controls, not normal customer-meter inputs. They belong in the terms and internal cost accounting, not in the Interaction Unit definition.
 
 ### Cross-channel rule
 
@@ -140,11 +143,11 @@ For reliable economics, the public conversion table should be:
 
 | Channel | Included unit | Counting rule |
 |---|---|---|
-| Phone | 1 connected minute | Partial minutes round up. An unanswered outbound attempt counts as 1 unit; an answered call uses its connected minutes only. |
-| Email | 1 email up to 300 words | Each received or sent email counts separately. Every additional 300 words uses 1 more unit. |
-| SMS | 1 message segment | Each 160-character SMS segment counts as 1 unit. |
-| WhatsApp | 1 message up to 500 characters | Each received or sent message counts separately. Longer messages use additional units by 500-character block. |
-| Website chat | 1 chat turn | One customer message plus one LobbyTeam response counts as 1 unit. |
+| Phone | 1 connected minute | Partial minutes round up: 61 seconds is 2 units. Failed connections and misdials do not count. A completed voicemail or message counts only when successfully delivered. |
+| Email | 1 processed message | Each successfully processed received or sent email row counts as 1 unit. Word count is not part of the normal meter. |
+| SMS | 1 processed text message | Each successfully processed received or sent text-message row counts as 1 unit. Telecom segments are internal cost data. |
+| WhatsApp | 1 processed message | Each successfully processed received or sent message row counts as 1 unit. Character count is not part of the normal meter. |
+| Website chat | 1 conversation up to 15 turns | Turn 16 starts a new unit. The unit is counted when the conversation produces an answer, completed request, or owned next step. |
 
 Human handoff, routing, summarization, and recording the context do not create a second unit by themselves. The communication that caused the handoff is what counts.
 
@@ -174,7 +177,7 @@ Recommended starting posture:
 
 The public page should show the arithmetic plainly:
 
-> **LobbyTeam starts at $49/month. One phone minute, one short email, one SMS, one WhatsApp message, or one website chat turn uses one Interaction Unit.**
+> **LobbyTeam starts at $49/month. One handled customer interaction uses one Interaction Unit, whether it arrives by phone, email, text, WhatsApp, or website chat.**
 
 ## Alternative Included Volumes To Test
 
@@ -211,11 +214,11 @@ The three tiers are the working public structure. Validate the unit economics be
 - What is the actual cost of one connected phone minute?
 - Are inbound and outbound phone minutes priced the same?
 - Are automated reminders and follow-up messages counted as SMS, email, or WhatsApp units?
-- Are email word limits measured on inbound text, outbound text, or both?
+- When is an outbound message considered successfully processed for billing, and how are later bounces reversed?
 - What happens when an account reaches 100% usage?
 - What is the actual cost of 500 mixed units by channel?
 - Does the 14-day trial include a usage allowance and show a plain-language usage recap?
-- Which outcome should the pricing page measure: requests resolved, requests routed, appointments completed, or conversations handled?
+- Which handled outcome should the pricing page report: requests answered, requests resolved, appointments completed, or human handoffs owned?
 
 ## Recommendation
 
