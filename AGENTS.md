@@ -1,5 +1,7 @@
 # Agent Rules
 
+**Document version:** `2026-10-04 17:40 CDT` (`America/Chicago`, Central Time; UTC-05:00). Update this timestamp whenever `AGENTS.md` changes.
+
 Project-level instructions. Apply when using OpenAI Codex or other AI coding assistants.
 
 ## Repo Profile (paths — override per repo only)
@@ -75,6 +77,18 @@ When any work is **deferred**, **out of scope for current PR**, or **phased to a
 5. **Session end** — If you deferred anything this session, verify all three files above before closing.
 
 ## Communication And Output
+
+## Jira-Style Planning And Program Management
+
+- Every plan must be Jira-style: identify the initiative/epic, issue or track ID, summary, problem, goal, scope, owner, priority, status, dependencies, risks, acceptance criteria, estimate or size, and ordered implementation/QA tasks.
+- Checklist rows are executable tickets, not vague intentions. Each row must have a clear outcome and a status such as `Todo/ACTIVE`, `Todo/Deferred`, `Coded/Deploy-QA pending`, or `DONE`.
+- The agent owns plan hygiene. Keep the active feature plan, `plan_next_steps_for_this_codebase.md`, and `master_execution_plan.md` current, sequenced, and mutually consistent whenever work is added, completed, deferred, blocked, or reprioritized.
+- Act as the project/program manager for the work: select the next unblocked task from the authoritative queue, maintain dependencies and open/total counts, and surface blockers before starting lower-priority work.
+- When the user introduces a tangent, classify it against the current queue. If it is not the best next task, add it to the appropriate plan with priority, dependency, and sequence rather than silently interrupting the main progression. Interrupt the current sequence only for a blocker, a material risk, or an explicit priority change.
+- Do not lose user requests. Every tangent becomes a planned item, a documented decision, a deferred item synchronized to the MEP, or an explicit out-of-scope decision.
+- After each meaningful change, update the relevant Jira-style checklist and then align the MEP and next-steps queue. The MEP remains the program-level source of truth for what happens next.
+- Adopt this policy forward-only. Do not rewrite historical plans wholesale; normalize a plan when it is created or actively touched.
+
 - Be succinct and technical.
 - Do not include unnecessary explanatory prose unless the user asks "Why?".
 - Prefer minimal diffs or changed blocks over full-file dumps.

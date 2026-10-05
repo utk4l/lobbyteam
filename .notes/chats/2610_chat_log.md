@@ -26,3 +26,13 @@ status: active
 **Context:** Follow-up pricing guidance required a customer-facing menu and an internal counting recipe that reconcile to the same invoice number.
 **Outcome:** Added the Interaction Unit billing plan and internal counting specification. The proposed meter counts connected phone duration, successfully processed message rows, and deterministic 15-turn chat blocks; word, character, and telecom segment counts move out of normal customer billing.
 **Files:** `.notes/plans/TODO_lobbyteam_interaction_unit_billing_spec.md`, `.notes/docs/LobbyTeam Interaction Unit Counting Specification.md`, `.notes/pricing/LobbyTeam $299 pricing concept.md`, `.notes/docs/About this codebase.md`, `.notes/plans/master_execution_plan.md`, `.notes/plans/plan_next_steps_for_this_codebase.md`.
+
+## 2026-10-04T17:45:03-05:00 | branch=main | topic=agent-planning-governance
+
+**Timestamp:** 2026-10-04 17:45:03 CDT (`America/Chicago`)
+**Branch:** `main`
+**Type:** Implemented
+
+**Context:** Standardize planning behavior across SophiMind product repositories.
+**Outcome:** Updated `AGENTS.md` with Jira-style plan fields, ordered program-management responsibilities, tangent triage, and MEP synchronization rules while preserving the active pricing/spec worktree.
+**Files:** `AGENTS.md`.
