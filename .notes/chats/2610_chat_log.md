@@ -47,6 +47,16 @@ status: active
 **Outcome:** Confirmed LobbyTeam is the customer-facing product concept: a coordinated digital front door that answers, completes configured requests, routes exceptions to the right human with context, and preserves follow-through across channels. Documented repository boundaries: this repo is the public site/content runtime, with related web/backend and mobile repos.
 **Files:** `.notes/docs/About this codebase.md`.
 
+## 2026-10-20T14:20:32-05:00 | branch=main | topic=developer-ready-use-case-storyboards
+
+**Timestamp:** 2026-10-20 14:20:32 CDT (`America/Chicago`)
+**Branch:** `main`
+**Type:** Implemented
+
+**Context:** User requested a clear storyboard of LobbyTeam personas and use cases that can be handed to the development team.
+**Outcome:** Reworked the personas/use-cases document into a developer-ready product storyboard. It now defines the shared first-response loop, deployment modes, five personas, thirteen core storyboards, human boundaries, handoff payloads, cross-story requirements, failure paths, outcome measures, launch scope, and expansion order. Updated the B2B plan to make this storyboard the workflow-scope input.
+**Files:** `.notes/messaging/LobbyTeam personas and use cases.md`, `.notes/plans/TODO_lobbyteam_b2b_frontline_assistant.md`.
+
 ## 2026-10-20T12:52:00-05:00 | branch=main | topic=messaging-pitches-guideline-plan
 
 **Timestamp:** 2026-10-20 12:52:00 CDT (`America/Chicago`)
@@ -126,3 +136,13 @@ status: active
 **Context:** Clarified the long-term ownership of the product repositories.
 **Outcome:** `booth-team` remains the BoothTeam product’s web application/backend. `lobbyteam` is becoming the LobbyTeam product’s application/backend. `app-boothteam` remains the mobile app and will evolve to support LobbyTeam as well as BoothTeam.
 **Files:** `.notes/docs/About this codebase.md`.
+
+## 2026-10-20T14:18:55-05:00 | branch=main | topic=first-response-layer-positioning
+
+**Timestamp:** 2026-10-20 14:18:55 CDT (`America/Chicago`)
+**Branch:** `main`
+**Type:** Decision
+
+**Context:** Clarified that LobbyTeam must not be positioned as a missed-call-only product. A solopreneur may forward a cell phone when unavailable, while a small business may route its DID or VoIP line to LobbyTeam first.
+**Outcome:** Repositioned LobbyTeam as the business’s first-response layer and digital front desk. Immediate business-line answering is now central; missed-call recovery is one deployment mode. Updated the B2B plan, architecture anchor, and comprehensive messaging guide, including pitches, onboarding implications, workflow framing, and success measures.
+**Files:** `.notes/plans/TODO_lobbyteam_b2b_frontline_assistant.md`, `.notes/docs/About this codebase.md`, `.notes/messaging/LobbyTeam comprehensive messaging guide.md`.

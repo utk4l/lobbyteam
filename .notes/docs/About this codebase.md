@@ -21,7 +21,7 @@ This repository is becoming the LobbyTeam application/backend as the product mov
 
 ## B2B Frontline Product Direction
 
-The product direction adapts the inbound assistant loop visible in Equal AI’s public consumer product to B2B operations. LobbyTeam should answer the first request, apply business-defined intake and routing rules, alert the responsible operator, support human takeover where configured, and preserve a summary, transcript or message history, owner, and next action. The first wedge is solopreneurs and small appointment-driven or phone-dependent teams. The full capability sequence is tracked in the [B2B frontline assistant plan](../plans/TODO_lobbyteam_b2b_frontline_assistant.md) until the application/backend capability matrix is verified.
+The product direction adapts the inbound assistant loop visible in Equal AI’s public consumer product to B2B operations. LobbyTeam is the business’s first-response layer: a business DID, VoIP number, office line, or configured channel can route to LobbyTeam first so it answers immediately, applies business-defined intake and routing rules, alerts the responsible operator, supports human takeover where configured, and preserves a summary, transcript or message history, owner, and next action. Forwarding an owner’s cell when unavailable is one solopreneur deployment mode; it is not the category. The first wedge is solopreneurs and small teams with an inbound line, especially appointment-driven or phone-dependent teams. The full capability sequence is tracked in the [B2B frontline assistant plan](../plans/TODO_lobbyteam_b2b_frontline_assistant.md) until the application/backend capability matrix is verified.
 
 ## Public Messaging Work
 

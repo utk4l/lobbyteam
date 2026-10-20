@@ -1,309 +1,547 @@
 ---
-title: LobbyTeam personas and use cases
-tags: [lobbyteam, messaging, personas, use-cases, front-door]
-type: messaging-framework
+title: LobbyTeam personas and use-case storyboards
+tags: [lobbyteam, product, personas, use-cases, front-door, storyboards]
+type: product-storyboard
 status: working-draft
+parent: ../plans/master_execution_plan.md
+related:
+  - ../plans/TODO_lobbyteam_b2b_frontline_assistant.md
+  - LobbyTeam comprehensive messaging guide.md
 ---
 
-# LobbyTeam Personas And Use Cases
+# LobbyTeam Personas And Use-Case Storyboards
 
-## Working Position
+## Purpose
 
-LobbyTeam helps a business run its front door: the first contact through which a customer, prospect, visitor, patient, client, or partner arrives.
+This document gives the product and development team a shared picture of what LobbyTeam is supposed to do for real people.
 
-The useful promise is not “an AI receptionist” or “a chatbot.” It is:
+It is not a list of disconnected features. Every story describes the same product job:
 
-> **LobbyTeam turns first contact into progress: an answer, a completed request, a scheduled next step, or a useful handoff with clear ownership.**
+> **LobbyTeam is the first-response layer for a business. It answers where the customer arrives, understands what they need, completes safe defined work, and connects the request to the right human with useful context.**
 
-The channel may be a phone call, website chat, email, SMS, WhatsApp, or physical lobby. The business experiences one front door even when the customer arrives through different channels.
+For a business, the main DID, VoIP number, office line, service line, website, inbox, or visitor entry point can route to LobbyTeam first. For a solopreneur, a cell or business number can be forwarded to LobbyTeam when the owner is unavailable. Missed-call recovery is one deployment mode—not the product category.
 
-The important distinction is that LobbyTeam is not limited to taking a message. It can determine who should own the next step and route the interaction to the right human or team when the business has defined the routing rules.
+This storyboard should help the team decide:
 
-For an online business, LobbyTeam is also:
+- who the product serves;
+- what problem each person is trying to solve;
+- what LobbyTeam should do at each step;
+- when automation is allowed to act;
+- when a human must take over;
+- what context must survive the handoff;
+- what outcome proves the workflow worked.
 
-> **A digital decision team for your website.**
+## Product boundary
 
-It helps a visitor who is thinking “this could be useful” understand what the business offers, connect it to their own need, and choose the right next step. The visitor may receive an answer, a comparison, a resource, a booking path, or a human handoff with context.
+LobbyTeam is a business front door and first-response operating layer. It is not a generic chatbot, a voicemail replacement only, or an autonomous replacement for accountable staff.
 
-## Coordinated Digital Team Positioning
+The business defines:
 
-LobbyTeam is not just an AI receptionist. It is a coordinated team of digital agents that runs the business front door.
+- approved knowledge and answers;
+- intake questions and required information;
+- actions LobbyTeam may perform;
+- routing, hours, availability, and backup rules;
+- escalation thresholds;
+- consent, recording, and retention rules;
+- decisions that always require a person.
 
-One agent may be speaking with the customer, answering an email, or handling a message. Behind the scenes, specialized agents help interpret what the customer needs, check the business guidance, identify the appropriate next step, and prepare the interaction for the right human when needed.
+LobbyTeam applies those rules, makes progress where it is safe to do so, and makes uncertainty and ownership visible.
 
-This is useful for a solopreneur as well as a growing business. The customer gets progress, the owner or staff gets context, and someone has visibility into what should happen next.
+## The shared LobbyTeam loop
 
-Use this distinction publicly, but describe the authority boundary accurately:
+Every channel and persona should map to this operating loop:
 
-- The business defines the knowledge, workflows, routing rules, escalation rules, and approved actions.
-- The coordinated agents apply those rules and recommend or initiate the next step within the configured workflow.
-- Humans remain accountable for sensitive, technical, commercial, security, emergency, clinical, legal, or otherwise judgment-heavy decisions.
+1. **Arrive** — A customer, visitor, prospect, partner, or employee reaches a configured business entry point.
+2. **Welcome** — LobbyTeam responds promptly and identifies itself appropriately.
+3. **Understand** — It determines the person’s intent, urgency, context, and desired outcome.
+4. **Check** — It checks approved knowledge, business rules, permissions, schedules, and integrations.
+5. **Act** — It answers, collects information, books, reschedules, creates a request, or performs another configured safe action.
+6. **Route** — If a person is needed, it selects the right owner, team, location, shift, or backup path.
+7. **Handoff** — It gives the human a concise summary, relevant history, required information, and recommended next action.
+8. **Own** — The request has a status, owner, due or follow-up time, and visible next step.
+9. **Close the loop** — The business records whether the request was completed, transferred, called back, scheduled, or still needs work.
 
-Recommended short explanation:
+### Minimum interaction record
 
-> **Not just an AI receptionist. LobbyTeam is a coordinated digital front-door team. One agent engages the customer while specialized agents help interpret the request, apply your rules, and guide what happens next.**
+Every meaningful interaction should be able to produce, subject to channel and consent:
 
-Recommended outcome-led explanation:
+- customer or visitor identity and contact details when available;
+- channel and entry point;
+- intent and urgency;
+- relevant account, location, appointment, or order context;
+- what LobbyTeam said or did;
+- what information is still missing;
+- transcript, summary, or message history;
+- owner and backup owner;
+- status;
+- next action and time;
+- escalation or routing reason;
+- consent and recording state.
 
-> **Your customer gets progress. Your team gets context. Someone always knows what should happen next.**
+## Deployment modes
 
-## Confirmed Contexts
+The product loop is the same even though the phone setup differs.
 
-### 1. Brick-and-mortar office with an inbound front desk
+| Deployment | Entry point | What the customer experiences | Primary value |
+|---|---|---|---|
+| Business-first line | DID, VoIP number, office line, or service line routes to LobbyTeam first | LobbyTeam answers immediately before the request reaches a queue or voicemail | The business has a consistent first response |
+| Owner coverage | Solopreneur forwards a cell or business number when unavailable | LobbyTeam manages intake instead of carrier voicemail | The owner does not lose the request while busy |
+| Digital front door | Website chat, email, SMS, WhatsApp, or web form | LobbyTeam answers, gathers context, and starts the next step | The request does not stop at “we received your message” |
+| Physical reception | Kiosk, tablet, QR code, or reception device | LobbyTeam welcomes and directs the visitor | Visitors have a useful next step when staff are occupied |
 
-The business has a physical location and a receptionist or office coordinator who answers calls, takes messages, makes or reschedules appointments, and helps visitors reach the right person.
+## Personas
 
-Typical examples:
+### 1. Economic buyer — owner or founder
 
-- Medical, dental, therapy, and wellness offices
-- Legal, accounting, insurance, and other professional offices
-- Salons, spas, fitness studios, and appointment-based services
-- Property management, leasing, and real-estate offices
-- Local businesses with a public office and frequent inbound calls
+**Who they are:** A small-business owner, practice owner, founder, or partner accountable for revenue, customer experience, and operating cost.
 
-The story: the front desk should do more than answer. It should understand why someone is calling, complete the safe work it can, and leave the human team with enough context to act.
+**What they want:** More customers reach a useful next step without adding another full-time person or creating an opaque automation system.
 
-### 2. Brick-and-mortar office with outbound appointment operations
+**What frustrates them:** Calls arrive while they are serving someone else. Follow-up depends on memory. Staff repeat the same answers. The owner cannot tell which requests are still waiting.
 
-The business needs to call people back or reach out proactively to confirm, remind, reschedule, fill cancellations, reactivate, or follow up on appointments and requests.
+**What convinces them:** Simple setup, clear control, visible ownership, and measurable improvement in first response, completed work, bookings, or follow-through.
 
-The story: outbound work should not depend on a busy receptionist remembering every callback. LobbyTeam turns a list of required actions into consistent, trackable follow-through.
+**Product promise:** “Give your business a reliable first response and make every important next step visible.”
 
-### 3. Online business with an inbound digital front door
+### 2. Operational owner — office manager or team lead
 
-The business operates primarily online. LobbyTeam responds through website chat, email, or both, and may also handle phone, SMS, or WhatsApp conversations.
+**Who they are:** An office manager, receptionist lead, scheduling coordinator, support manager, sales coordinator, dispatcher, or workforce lead.
 
-The story: a form, email, or chat should not end at “we received your message.” LobbyTeam answers approved questions, gathers missing information, qualifies the request, books the next step, opens a ticket, or routes a useful handoff.
+**What they want:** To configure rules, protect staff time, see the queue, and make sure requests do not disappear.
 
-The stronger website story is decision support:
+**What frustrates them:** Setup is hard. Routing is unclear. Automation creates cleanup work. Alerts arrive without enough context or without a clear action.
 
-> **A website visitor should not have to decode your product map alone. LobbyTeam helps them explain what they are trying to accomplish, find what fits, and move forward.**
+**What convinces them:** Safe permissions, easy workflow configuration, clear queues, useful alerts, backup rules, and an audit trail.
 
-This is useful when visitors arrive with curiosity but are not ready to submit a formal contact request. LobbyTeam can ask one or two focused questions, connect the need to an approved product or service path, share a relevant resource, and offer a human conversation when the visitor needs expertise or reassurance.
+**Product promise:** “You decide what LobbyTeam can do, who owns each request, and what happens when the preferred person is unavailable.”
 
-## Missing Contexts To Consider
+### 3. Human escalation owner — receptionist, specialist, dispatcher, or advisor
 
-### 4. Physical visitor reception
+**Who they are:** The person who takes over when judgment, expertise, approval, or a sensitive decision is required.
 
-This is different from answering an office phone. A visitor arrives at the physical lobby of an office building, clinic, showroom, campus, or shared workspace and needs to be welcomed, oriented, checked in, directed, or connected to a person.
+**What they want:** The right request at the right time, with enough context to act without asking the customer to start over.
 
-LobbyTeam can be made available through:
+**What frustrates them:** Vague messages, duplicate calls, noisy alerts, missing details, and unclear ownership.
 
-- A kiosk
-- A tablet at the reception desk or entrance
-- A QR code on lobby signage or printed instructions
+**What convinces them:** A concise summary, live context or transfer when supported, clear reason for escalation, and a controlled way to accept or reject ownership.
 
-The visitor can ask a question, explain why they are there, request directions or assistance, start a voice interaction with a LobbyTeam agent, or ask to be connected to a human by phone. LobbyTeam can notify the intended host or route the request to the appropriate office, department, or support contact when those rules are configured.
+**Product promise:** “Receive the request with the customer’s goal, the information already collected, and the next action that needs you.”
 
-This is a front-desk and visitor-assistance use case, not a security function. LobbyTeam does not replace a security guard, physical access-control system, emergency response process, identity verification requirement, or building safety procedure. Security personnel and building management remain responsible for access decisions, safety, incidents, and restricted areas.
+### 4. Distributed support owner — regional or follow-the-sun lead
 
-Potential story:
+**Who they are:** A support leader coordinating people across countries, time zones, shifts, or specialist teams.
 
-> **Every visitor knows where to go next, even when the receptionist is helping someone else.**
+**What they want:** Predictable coverage and routing that considers expertise, availability, location, language, urgency, and customer ownership.
 
-Potential story:
+**What frustrates them:** Simple time-of-day rules send work to the wrong team. Overnight requests become unowned. Context is lost between regions.
 
-> **Give every visitor a useful way forward, even when the lobby team is helping someone else.**
+**What convinces them:** Explicit routing reasons, shift-aware fallback, consistent handoffs, and accountability across teams.
 
-Questions to settle: Can LobbyTeam notify the host? Can it start a voice interaction? Can it place or request a phone connection to a human? Can it handle visitor badges, delivery people, vendors, accessibility needs, and building-specific instructions without making security decisions?
+**Product promise:** “Route the request to the right human wherever that person is working, with one shared interaction history.”
 
-### 5. Field-service and mobile-workforce dispatch
+### 5. Customer, prospect, visitor, or partner
 
-HVAC, plumbing, electrical, appliance repair, cleaning, pest control, landscaping, home healthcare, and similar businesses have a front door but no receptionist sitting in one location.
+**Who they are:** Anyone arriving at the business’s front door through phone, chat, email, SMS, WhatsApp, a form, or a physical location.
 
-Potential story:
+**What they want:** To be understood quickly, get an answer or useful progress, and know what happens next.
 
-> **Turn an urgent request into the right technician, time window, and callback without making the customer repeat the problem.**
+**What frustrates them:** Voicemail, delayed replies, repeated explanations, unclear handoffs, and being sent to the wrong person.
 
-This may be one of the strongest adjacent use cases because the cost of a missed call is immediate and the next step is operationally clear.
+**What convinces them:** A prompt response, focused questions, a useful answer, a confirmed next step, and a human who already understands the situation.
 
-### 6. Appointment-driven customer operations
+**Product promise:** “You do not need to understand the company’s org chart to get to the right next step.”
 
-Appointment businesses need more than booking. They need intake, eligibility questions, reminders, confirmations, rescheduling, waitlists, cancellations, no-show recovery, and follow-up.
+## Storyboard format
 
-Potential story:
+Each storyboard below uses the same format so it can become a product requirement, workflow test, or customer-facing example.
 
-> **Keep the calendar moving and the customer informed without making the front desk carry every detail.**
+- **Context:** what is happening in the business;
+- **Primary persona:** who owns the problem;
+- **Entry point:** where the customer arrives;
+- **Trigger:** what starts the interaction;
+- **LobbyTeam behavior:** what the product should do;
+- **Human boundary:** what requires a person or approval;
+- **Handoff payload:** what must be passed forward;
+- **Successful outcome:** how the business and customer know it worked;
+- **Build notes:** capabilities, states, and failure paths the team should account for.
 
-This is a cross-cutting use case that can apply to both physical offices and online businesses.
+# Core storyboards
 
-### 7. Inbound sales and lead qualification
+## 1. Business line answered first
 
-A prospect arrives through a website, phone call, campaign response, referral, or email and needs to know whether the business is a fit and what happens next.
+**Context:** A small office has a main DID or VoIP number. The receptionist is already helping someone in person.
 
-Potential story:
+**Primary persona:** Office manager and front-desk team.
 
-> **Respond while intent is fresh, understand what the prospect needs, and move the right opportunities to a meeting or owner.**
+**Entry point:** Business DID, VoIP number, or office main line routed to LobbyTeam first.
 
-This is distinct from support because the desired next step may be qualification, demo booking, quote preparation, or a sales callback.
+**Trigger:** A customer calls and wants to book, reschedule, ask a routine question, or reach a specific person.
 
-### 8. Customer support and service triage
+**LobbyTeam behavior:** LobbyTeam answers immediately, identifies the reason for the call, checks approved knowledge and workflow rules, and completes the defined action when possible. It should not make the caller wait for voicemail simply because the receptionist is occupied.
 
-Customers need help with an order, account, delivery, return, billing issue, technical problem, or existing case.
+**Human boundary:** Sensitive, uncertain, technical, clinical, legal, financial, emergency, or policy-exception requests go to a human. A configured human may take over or accept the handoff.
 
-Potential story:
+**Handoff payload:** Caller identity and contact, reason for calling, relevant appointment or account details, questions already answered, missing information, urgency, routing reason, owner, and next action.
 
-> **Resolve the simple request, collect the right context for the hard one, and keep the customer from starting over.**
+**Successful outcome:** The caller gets an answer, completed action, live transfer, callback commitment, or clearly owned next step.
 
-This is likely central for online businesses, but it expands the message beyond “front desk” into customer operations.
+**Build notes:** Support line configuration, business hours, overflow behavior, live status, owner and backup routing, transfer or callback state, transcript/summary state, and failed-provider fallback.
 
-### 9. After-hours, overflow, and on-call coverage
+## 2. Solopreneur coverage instead of voicemail
 
-The normal team is closed, busy, on another call, at lunch, or outside the building. LobbyTeam provides a consistent first response and follows the business’s escalation rules.
+**Context:** An owner is driving, with another customer, on a job, or outside working hours.
 
-Potential story:
+**Primary persona:** Solopreneur or owner-operator.
 
-> **Your front door stays useful when your people are unavailable.**
+**Entry point:** Owner’s cell or business number forwarded to LobbyTeam when unavailable.
 
-This is not a standalone industry. It is a powerful operating condition shared by nearly every target segment.
+**Trigger:** A customer calls while the owner cannot answer.
 
-### 10. Multi-location or distributed operations
+**LobbyTeam behavior:** LobbyTeam explains that it can take the request, asks only the useful questions, answers approved basics, and creates an owned follow-up. It should make the owner’s availability visible without pretending to be the owner.
 
-A business has multiple offices, branches, clinics, stores, service areas, or departments. The challenge is not merely answering; it is determining which location, team, calendar, or owner should handle the request.
+**Human boundary:** The owner decides pricing exceptions, commitments, sensitive advice, urgent situations, and work outside configured authority.
 
-Potential story:
+**Handoff payload:** Customer identity, request, urgency, location or service details, preferred callback time, relevant history, and suggested next action.
 
-> **Understand the need once, then route it to the right location and owner.**
+**Successful outcome:** The owner receives a useful request instead of a voicemail or missed-call notification with no context.
 
-### 11. Recurring outreach and relationship maintenance
+**Build notes:** Forwarding/on-call setup, unavailable status, notification preferences, callback queue, owner acknowledgment, backup path, and status transitions from new to contacted to completed.
 
-The business needs to follow up after an interaction, confirm an appointment, request missing information, renew a service, check satisfaction, or reactivate a dormant customer.
+## 3. Appointment booking, confirmation, and rescheduling
 
-Potential story:
+**Context:** An appointment-driven business spends staff time handling routine calendar requests.
 
-> **Make the next conversation happen instead of leaving follow-through to memory.**
+**Primary persona:** Scheduler, office manager, or practice owner.
 
-### 12. Internal office help desk and employee front door
+**Entry point:** Phone, website, chat, email, SMS, or WhatsApp.
 
-Employees, vendors, candidates, delivery drivers, and partners may all arrive through a shared office number, inbox, lobby, or form.
+**Trigger:** A person wants to book, confirm, move, cancel, or join a waitlist.
 
-Potential story:
+**LobbyTeam behavior:** LobbyTeam identifies the request, asks required intake questions, checks permitted availability, and performs the configured calendar action or creates a complete request for staff.
 
-> **Give every internal or external arrival a clear path without interrupting the whole office.**
+**Human boundary:** Eligibility, clinical or professional judgment, exceptions, disputes, and calendar conflicts outside the configured rules require a human.
 
-This may be a later use case unless the product deliberately supports internal routing and access controls.
+**Handoff payload:** Customer details, appointment type, eligibility answers, preferred times, current appointment, requested change, constraints, and customer confirmation.
 
-### 13. Follow-the-sun support and intelligent human routing
+**Successful outcome:** The appointment is changed or a clearly owned scheduling task is created with a promised follow-up.
 
-A business may have people in different countries, time zones, shifts, or specialist teams. A customer calling from the United States at night should not be treated as an abandoned after-hours request if the business has an available support team in India or another region. During U.S. business hours, the same request may belong with the U.S. team.
+**Build notes:** Calendar permissions, idempotency, timezone handling, cancellation policy, confirmation state, waitlist state, and integration failure recovery.
 
-LobbyTeam can use agreed routing signals such as:
+## 4. Website visitor needs help choosing a path
 
-- Customer location and time zone
-- The business's current local time and support schedule
-- Human availability and shift status
-- Language or regional coverage
-- Request type and required expertise
-- Customer urgency or service level
-- Existing account, office, or relationship ownership
-- Escalation order and backup contacts
+**Context:** A visitor understands the problem they have but does not understand the business’s products, services, or next step.
 
-Potential story:
+**Primary persona:** Website owner, founder, or inbound-sales lead.
 
-> **Route every customer to the right human, wherever that person is working.**
+**Entry point:** Website chat, guided assistant, or contact flow.
 
-Example flow:
+**Trigger:** The visitor asks a question, compares options, or describes a desired outcome.
 
-1. A U.S. customer calls outside U.S. business hours.
-2. LobbyTeam identifies the request, urgency, customer context, and required expertise.
-3. It routes the call or creates a live handoff to the configured India support contact or team.
-4. During U.S. business hours, it routes the same type of request to the U.S. contact or team.
-5. If the preferred person is unavailable, it follows the configured backup path and preserves the conversation context.
+**LobbyTeam behavior:** LobbyTeam asks one or two focused questions, connects the need to approved products or services, shares a relevant resource, and offers booking or human help when needed.
 
-This is a core differentiator because the outcome is not “your message has been recorded.” The outcome is “your request reached the right human or was given a clearly owned next step.”
+**Human boundary:** Custom advice, commercial exceptions, complex requirements, and high-value opportunities may require a salesperson or specialist.
 
-## Buyer And Operator Personas
+**Handoff payload:** Visitor’s stated goal, needs, fit signals, questions, resources shown, requested next step, and consent to be contacted.
 
-The business context is not the same thing as the buyer. Messaging should distinguish who buys LobbyTeam from who operates it and who experiences it.
+**Successful outcome:** The visitor can choose a useful next step instead of abandoning the site or submitting an empty form.
 
-### Economic buyer
+**Build notes:** Approved content sources, qualification fields, lead consent, source attribution, conversation context in CRM, and clear distinction between education and sales advice.
 
-- Small-business owner or founder
-- Practice owner or office owner
-- Operations director
-- Customer-support or contact-center leader
-- Revenue or sales leader for inbound qualification
+## 5. Customer support and service triage
 
-Their concern: missed opportunities, staff load, inconsistent service, and whether the system creates measurable progress rather than another inbox.
+**Context:** Existing customers need help with an order, account, delivery, billing issue, technical problem, or open case.
 
-### Operational owner
+**Primary persona:** Support lead or service manager.
 
-- Office manager
-- Front-desk or reception lead
-- Scheduling coordinator
-- Customer-support manager
-- Sales development or inside-sales manager
-- Service dispatcher
-- Global support or follow-the-sun manager
-- Workforce or shift coordinator
+**Entry point:** Phone, email, chat, SMS, WhatsApp, or support form.
 
-Their concern: setup effort, safe permissions, calendars, routing, escalation, visibility, and not having to clean up an opaque automation system.
+**Trigger:** A customer asks for help or reports a problem.
 
-### Human escalation owner
+**LobbyTeam behavior:** LobbyTeam identifies the customer and issue, checks approved account or case context, resolves simple requests, gathers the details needed for a harder request, and routes it to the correct queue or person.
 
-- Receptionist or coordinator
-- Nurse, clinician, attorney, advisor, or specialist
-- Sales representative
-- Technician or dispatcher
-- On-call manager
-- Regional support specialist
+**Human boundary:** Refund exceptions, account-security decisions, disputes, technical judgment, and policy exceptions require authorized staff.
 
-Their concern: receiving the right context at the right time, not being flooded with low-value alerts, and being able to take over without making the customer repeat everything.
+**Handoff payload:** Customer/account identity, issue category, affected order or case, reproduction or delivery details, prior steps, urgency, and requested outcome.
 
-### Distributed support owner
+**Successful outcome:** The issue is resolved, placed with the correct owner, or given a clear response and follow-up time. The customer does not repeat the story.
 
-- Customer-support leader with teams in multiple countries
-- Business-process-outsourcing or outsourced-support manager
-- Operations leader coordinating regional coverage
+**Build notes:** Authentication boundary, ticket state, duplicate detection, priority rules, SLA clock, escalation reason, and customer-visible status.
 
-Their concern: making coverage predictable, avoiding unnecessary overnight queues, routing by expertise instead of simple time-of-day rules, and preserving accountability across handoffs.
+## 6. Field-service request becomes dispatch work
 
-### End customer or visitor
+**Context:** A plumbing, HVAC, electrical, cleaning, pest-control, landscaping, repair, or home-care business has no receptionist sitting at a desk.
 
-- Caller
-- Website visitor
-- Email sender
-- Chat visitor
-- SMS or WhatsApp participant
-- Walk-in visitor
-- Existing customer with a support need
+**Primary persona:** Dispatcher or owner-operator.
 
-Their concern: being understood quickly, getting a useful answer, knowing what happens next, and not repeating the same story.
+**Entry point:** Service line, website, SMS, or after-hours call.
 
-## Recommended Messaging Architecture
+**Trigger:** A customer reports a new job, urgent problem, quote request, or follow-up need.
 
-Do not lead with three disconnected product modes:
+**LobbyTeam behavior:** LobbyTeam collects location, service type, urgency, access details, customer contact, and preferred time. It checks the service area and configured urgency rules, then books, requests dispatch, or escalates.
 
-- Office receptionist
-- Outbound caller
-- Website chatbot
+**Human boundary:** Safety, emergency classification, diagnosis, pricing exceptions, and technician assignment outside rules require a human.
 
-Lead with the shared job:
+**Handoff payload:** Address, problem description, urgency, access constraints, customer history, photos or links when available, and requested time window.
 
-> **LobbyTeam is the front door for your business. It helps every arrival get understood, handled, or moved to a clearly owned next step.**
+**Successful outcome:** The customer receives a service window, callback commitment, or clearly owned dispatch task.
 
-Then show the contexts:
+**Build notes:** Location validation, service-area rules, urgent escalation, technician availability, dispatch queue, SMS updates, and backup contact behavior.
 
-1. **At the office:** welcome visitors, answer calls, schedule work, and connect people to the right human.
-2. **On the phone:** handle inbound calls and complete defined outbound confirmations, reminders, callbacks, and rescheduling.
-3. **On the website:** respond through chat and email, answer questions, collect context, qualify requests, and start the next step.
-4. **Across the operation:** keep context, ownership, and follow-through visible after the first contact.
+## 7. Inbound lead is qualified while intent is fresh
 
-The routing promise should be explicit:
+**Context:** A prospect arrives from a website, campaign, referral, phone call, or email. The team does not want to lose the opportunity while deciding who should respond.
 
-> **LobbyTeam does not just collect the request. It uses your business rules to decide who should handle it now, who should handle it next, and what happens if that person is unavailable.**
+**Primary persona:** Founder, sales lead, or sales coordinator.
 
-## Questions Before Site Messaging
+**Entry point:** Website, phone, email, SMS, or campaign response.
 
-- Which two contexts are the launch wedge: appointment-driven offices, service businesses, online support, or inbound sales?
-- Is physical visitor reception truly a product capability, or only a future story?
-- Are outbound calls available at launch, or are they part of the roadmap?
-- Which channels are live now: phone, email, website chat, SMS, and WhatsApp?
-- Can LobbyTeam book, reschedule, cancel, and waitlist appointments, or only request human action?
-- Can it create tickets and route to a person or team with context?
-- Can it route live calls, or does it only create an asynchronous handoff?
-- Can routing rules use time zone, business hours, shift schedules, availability, expertise, urgency, and customer ownership?
-- Can a U.S. team hand off to an India-based or other regional team without losing the conversation context?
-- What happens when the preferred human does not answer: backup contact, queue, callback, ticket, or message?
-- What industries have approved workflows and knowledge templates first?
-- What is the strongest measurable outcome: fewer missed calls, more completed bookings, faster response, lower staff interruption, or more qualified opportunities?
+**Trigger:** A prospect asks whether the business can help and wants information, a quote, demo, consultation, or meeting.
+
+**LobbyTeam behavior:** LobbyTeam identifies the desired outcome, asks approved qualification questions, answers basic product/service questions, and books or routes the opportunity.
+
+**Human boundary:** Pricing negotiation, contractual commitments, solution design, and high-value judgment require a salesperson or owner.
+
+**Handoff payload:** Need, fit signals, company or account context, timing, budget signals when appropriate, questions, source, and requested next step.
+
+**Successful outcome:** The right opportunity reaches the right person with enough context to continue the conversation.
+
+**Build notes:** Lead status, consent, CRM ownership, duplicate contact handling, response SLA, and qualification confidence.
+
+## 8. Physical visitor reception
+
+**Context:** A visitor arrives at an office, clinic, showroom, campus, shared workspace, or building while reception is busy or unattended.
+
+**Primary persona:** Office manager, building manager, or host.
+
+**Entry point:** Kiosk, tablet, QR code, or reception device.
+
+**Trigger:** A visitor needs directions, check-in, a host, accessibility assistance, delivery instructions, or general help.
+
+**LobbyTeam behavior:** LobbyTeam welcomes the visitor, asks why they are there, gives approved directions or instructions, and notifies or routes to the host or responsible team.
+
+**Human boundary:** LobbyTeam is not a security guard and does not make access, identity, safety, emergency, or restricted-area decisions.
+
+**Handoff payload:** Visitor name, reason for visit, host or department, arrival time, accessibility or delivery detail, and notification status.
+
+**Successful outcome:** The visitor knows where to go or has a clearly notified human contact.
+
+**Build notes:** Host directory, notification acknowledgement, visitor status, accessibility options, device availability, privacy, and physical-security integration boundary.
+
+## 9. After-hours and overflow coverage
+
+**Context:** The normal team is closed, on another call, at lunch, on a job, or handling a surge.
+
+**Primary persona:** Owner, operations lead, or on-call manager.
+
+**Entry point:** Any configured channel with hours or capacity rules.
+
+**Trigger:** A request arrives outside normal coverage or while the team is at capacity.
+
+**LobbyTeam behavior:** LobbyTeam responds consistently, determines urgency, completes safe defined work, and follows the configured after-hours or overflow path.
+
+**Human boundary:** Emergency, safety, high-risk, or urgent requests use the business’s explicit escalation process. LobbyTeam must not invent an emergency response.
+
+**Handoff payload:** Request, urgency, time received, customer context, attempts made, escalation path, and response deadline.
+
+**Successful outcome:** The customer receives immediate useful guidance or a clear committed next step; the business knows who owns the follow-up.
+
+**Build notes:** Hours, holidays, capacity state, on-call schedule, escalation timers, acknowledgements, retry behavior, and customer-visible expectations.
+
+## 10. Multi-location and distributed routing
+
+**Context:** A business has several offices, clinics, stores, service areas, departments, or regional teams.
+
+**Primary persona:** Operations lead or regional support lead.
+
+**Entry point:** Shared number, website, inbox, or location-specific channel.
+
+**Trigger:** A customer needs a location, service, specialist, or regional team.
+
+**LobbyTeam behavior:** LobbyTeam understands the request once, checks location, ownership, hours, availability, expertise, language, urgency, and account context, then routes to the correct destination.
+
+**Human boundary:** Exceptions to ownership or service policy require an authorized operator.
+
+**Handoff payload:** Customer and account, requested service, location, routing signals, reason for destination, prior interaction, and fallback path.
+
+**Successful outcome:** The request reaches the right location or owner without the customer repeating the story.
+
+**Build notes:** Location directory, timezone, schedules, skills, queues, routing explanation, backup order, and cross-location visibility.
+
+## 11. Follow-the-sun support
+
+**Context:** A business has teams in different countries or shifts. A U.S. request arrives outside U.S. hours while a configured regional team is available.
+
+**Primary persona:** Global support or operations lead.
+
+**Entry point:** Shared phone, chat, email, or service channel.
+
+**Trigger:** A request arrives when the preferred regional team is closed or unavailable.
+
+**LobbyTeam behavior:** LobbyTeam identifies the customer’s location, request type, urgency, language, current coverage, and expertise requirement. It routes to the available configured team or creates an owned follow-up if no live team is appropriate.
+
+**Human boundary:** LobbyTeam follows configured routing policy; it does not make unsupported assumptions about regional responsibility or urgency.
+
+**Handoff payload:** Full interaction context, routing signals, customer ownership, time received, region selected, and fallback reason.
+
+**Successful outcome:** The customer reaches the right available human or receives a clear owned follow-up with no context loss.
+
+**Build notes:** Timezone and shift data, regional queues, language, skills, service level, routing audit, translation boundary, and transfer failure handling.
+
+## 12. Recurring outreach and follow-through
+
+**Context:** The business needs to confirm an appointment, request missing information, fill a cancellation, reactivate a customer, renew a service, or check satisfaction.
+
+**Primary persona:** Operations owner, scheduler, account manager, or support lead.
+
+**Entry point:** A follow-up task created by an earlier interaction or a configured business list.
+
+**Trigger:** A due follow-up, appointment event, missing field, cancellation, renewal date, or customer request.
+
+**LobbyTeam behavior:** LobbyTeam sends or places the configured follow-up through an approved channel, identifies the response, updates the record, and routes exceptions.
+
+**Human boundary:** Complaints, disputes, sensitive information, pricing, cancellation exceptions, and judgment-heavy conversations require a person.
+
+**Handoff payload:** Original request, reason for outreach, response, attempt history, consent, requested action, owner, and next due time.
+
+**Successful outcome:** The next conversation happens, the record is updated, and unresolved work is visible.
+
+**Build notes:** Consent, quiet hours, retry limits, idempotency, opt-out, attempt history, and task ownership.
+
+## 13. Internal office, vendor, or partner front door
+
+**Context:** Employees, candidates, vendors, delivery drivers, and partners arrive through a shared office number, inbox, form, or lobby.
+
+**Primary persona:** Office operations or people operations lead.
+
+**Entry point:** Shared internal/external channel or physical reception.
+
+**Trigger:** A person needs a department, host, delivery instruction, candidate coordinator, or internal service.
+
+**LobbyTeam behavior:** LobbyTeam identifies the purpose, gives approved information, and routes to the responsible internal owner.
+
+**Human boundary:** Access, identity, HR, security, and confidential internal decisions require authorized staff.
+
+**Handoff payload:** Person, organization, purpose, host or department, arrival details, and required action.
+
+**Successful outcome:** The arrival reaches the right internal contact without interrupting unrelated staff.
+
+**Build notes:** Separate internal policies and permissions, directory sync, privacy boundary, security integration, and audience-specific knowledge.
+
+## Cross-story requirements
+
+### Configuration
+
+The operator must be able to configure, per business and per entry point:
+
+- channels and phone numbers;
+- business hours, holidays, and overflow rules;
+- knowledge sources and approved answers;
+- intake questions and required fields;
+- allowed actions and integrations;
+- owners, teams, locations, skills, and backups;
+- transfer, callback, queue, and escalation behavior;
+- human-only decisions;
+- consent, recording, transcript, and retention behavior;
+- notification preferences and acknowledgement rules.
+
+### Interaction states
+
+At minimum, the system should distinguish:
+
+`new` → `engaged` → `gathering-information` → `in-progress` → `waiting-on-customer` → `waiting-on-human` → `scheduled` / `transferred` / `completed` / `cancelled` / `escalated`.
+
+The exact state model is an engineering decision, but the customer and operator should always be able to answer: What happened? Who owns it? What happens next? When?
+
+### Handoff quality bar
+
+A handoff is not complete merely because a message was sent. A useful handoff includes:
+
+1. the customer’s desired outcome;
+2. what LobbyTeam already understood;
+3. what was answered or attempted;
+4. what remains unknown;
+5. why this person or team received it;
+6. what action is requested;
+7. when the action is due;
+8. what happens if the recipient is unavailable.
+
+### Failure and fallback behavior
+
+Every workflow needs an explicit path for:
+
+- no answer from the preferred human;
+- no available backup;
+- failed phone, calendar, CRM, or notification integration;
+- missing required information;
+- contradictory business rules;
+- customer opt-out or consent refusal;
+- urgent or unsafe language;
+- unsupported request;
+- duplicate or repeated interaction;
+- customer asks for a human immediately.
+
+The fallback should preserve the interaction record and make ownership visible. It should never silently claim completion.
+
+## Outcome measures
+
+Use workflow outcomes rather than conversation volume as the primary proof:
+
+- time to first response;
+- defined requests completed;
+- correct routing rate;
+- handoff completeness;
+- human takeover or callback response time;
+- appointments booked, confirmed, rescheduled, or recovered;
+- service requests dispatched;
+- follow-up completion;
+- customer repetition reduced;
+- staff interruption reduced;
+- unresolved or abandoned requests;
+- time to first successful workflow;
+- gross margin per handled interaction.
+
+## Launch recommendation
+
+The story should be broad enough to describe the product and narrow enough to build and sell.
+
+### Initial product wedge
+
+Start with one inbound business line or customer-entry channel for solopreneurs and small teams, especially appointment-driven and phone-dependent businesses.
+
+The first pilot should support:
+
+1. one configured entry point;
+2. one primary owner;
+3. one backup path;
+4. one defined workflow;
+5. one human escalation rule;
+6. one interaction record;
+7. one measurable outcome.
+
+The entry point may be a business DID/VoIP line routed to LobbyTeam first or an owner’s phone forwarded when unavailable. The first workflow may be appointment intake, service request intake, routine front-desk questions, or managed callback intake.
+
+### Expansion order
+
+1. More inbound phone workflows and business-line routing.
+2. Appointment, service, support, and sales workflow templates.
+3. Operator mobile notifications, live context, takeover, and follow-up.
+4. Website chat, email, SMS, WhatsApp, and shared interaction history.
+5. Outbound confirmations, reminders, callbacks, and reactivation.
+6. Multi-location, distributed teams, integrations, analytics, and vertical templates.
+7. Physical visitor reception and internal/partner front-door workflows where the safety and access boundaries are explicitly supported.
+
+## Product decisions still requiring verification
+
+Before a storyboard becomes a promised capability, verify:
+
+- Which phone providers and DID/VoIP forwarding paths are supported?
+- Can LobbyTeam answer first, transfer live, or only create an asynchronous handoff?
+- Which channels are live today: phone, email, chat, SMS, and WhatsApp?
+- Can it book, reschedule, cancel, and waitlist, or only request human action?
+- Can it create tickets and assign them to a person or team?
+- Can routing use timezone, hours, shifts, availability, expertise, urgency, and account ownership?
+- What recording, transcript, consent, retention, export, and deletion controls exist?
+- What happens when the preferred human does not answer?
+- Which integrations and vertical workflows are available at launch?
+
+Until a capability is verified in the application/backend and its provider path, describe it as configured, planned, or a workflow to prove—not as a universally available feature.

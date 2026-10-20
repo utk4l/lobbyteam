@@ -8,6 +8,7 @@ track_id: lobbyteam-b2b-frontline-assistant
 related:
   - ../messaging/LobbyTeam%20comprehensive%20messaging%20guide.md
   - ../messaging/LobbyTeam%20personas%20and%20use%20cases.md
+  - ../messaging/LobbyTeam%20personas%20and%20use%20cases.md
   - ../docs/About%20this%20codebase.md
 ---
 
@@ -17,12 +18,12 @@ related:
 
 - **Initiative:** LobbyTeam application/backend product buildout
 - **Track ID:** `lobbyteam-b2b-frontline-assistant`
-- **Summary:** Build the B2B version of the inbound call-and-request assistant pattern: answer, understand, monitor, take over, route, summarize, notify, and follow through.
+- **Summary:** Build the B2B first-response layer for business phone and customer-entry channels: answer, understand, monitor, take over, route, summarize, notify, and follow through.
 - **Owner:** SophiMind product and engineering
 - **Priority:** High
 - **Status:** Todo/ACTIVE
 - **Dependencies:** LobbyTeam application/backend foundation; evolving `app-boothteam` mobile client; verified telephony, recording, consent, routing, and notification capabilities.
-- **Launch wedge:** Solopreneurs and small appointment-driven or phone-dependent teams.
+- **Launch wedge:** Solopreneurs and small teams with an inbound business line, especially appointment-driven or phone-dependent teams.
 
 ## Product Insight From Equal AI
 
@@ -39,7 +40,12 @@ Equal is B2C and protects an individual’s time. LobbyTeam should adapt the sam
 
 ## Product Thesis
 
-LobbyTeam should become the business’s digital frontline, not only a website or content surface. For a small business, that frontline should be able to receive an inbound request, understand the need, complete safe defined work, show the responsible person what is happening, and transfer control with context when human judgment is needed.
+LobbyTeam should become the business’s first-response layer: the digital front desk that answers a configured inbound line or channel before the request disappears into voicemail, a queue, or an unowned inbox. For a small business, that frontline should be able to receive an inbound request immediately, understand the need, complete safe defined work, show the responsible person what is happening, and transfer control with context when human judgment is needed.
+
+There are two deployment modes for the same product loop:
+
+1. **Business-first routing:** A business DID, VoIP number, office line, or service line routes to LobbyTeam first. LobbyTeam answers immediately, handles configured requests, and routes or transfers the rest to the right person.
+2. **Owner-coverage routing:** A solopreneur forwards a cell or business number to LobbyTeam when unavailable. LobbyTeam turns an otherwise missed call into managed intake and owned follow-up instead of carrier voicemail.
 
 The B2B promise:
 
@@ -108,10 +114,10 @@ The B2B promise:
 
 ## First Workflow Recommendation
 
-Start with **missed-call intake and owned follow-up** for appointment-driven small offices:
+Start with **inbound front-door coverage** for one business line or customer-entry channel. The line may be an office main number, business DID, VoIP service line, appointment line, or an owner’s forwarded phone. Missed-call recovery is one useful deployment mode, not the product category.
 
-1. A customer calls while the owner or front desk is busy.
-2. LobbyTeam answers and asks the minimum useful questions.
+1. A customer calls the configured business line or entry point.
+2. LobbyTeam answers immediately and asks the minimum useful questions.
 3. It answers approved basics or collects appointment/service details.
 4. It creates a concise interaction record.
 5. The owner or staff member receives a notification.
@@ -133,8 +139,8 @@ Start with **missed-call intake and owned follow-up** for appointment-driven sma
 
 ## Ordered Implementation / QA Tasks
 
-1. **Todo/ACTIVE — Capability matrix:** Verify which inbound channels, telephony actions, recording, transcript, notification, takeover, routing, and mobile actions exist today.
-2. **Todo/ACTIVE — First workflow:** Define the smallest missed-call intake and owned-follow-up workflow with one owner, one backup, one fallback, and one success metric.
+1. **Todo/ACTIVE — Capability matrix:** Verify which inbound channels, DID/VoIP/cell forwarding, telephony actions, recording, transcript, notification, takeover, routing, and mobile actions exist today.
+2. **Todo/ACTIVE — Storyboard and workflow scope:** Use the personas and use-case storyboards to select the smallest inbound front-door workflow with one line, one owner, one backup, one fallback, and one success metric; include missed-call recovery as a deployment option.
 3. **Todo/ACTIVE — Backend contract:** Define interaction, participant, workflow state, owner, escalation, transcript, summary, consent, and next-action contracts in `lobbyteam`.
 4. **Todo/ACTIVE — Operator experience:** Design the web/mobile surfaces for alert, live context, takeover, handoff acceptance, and follow-up.
 5. **Todo/ACTIVE — Safety and consent:** Define recording, transcript, contact capture, retention, access, opt-out, and human-only boundaries.
@@ -145,6 +151,6 @@ Start with **missed-call intake and owned follow-up** for appointment-driven sma
 
 - LobbyTeam is the B2B product application/backend; `booth-team` remains the separate BoothTeam application/backend.
 - `app-boothteam` evolves as the mobile operator surface for both products.
-- Solopreneurs and small teams are the sweet spot; appointment-driven and phone-dependent teams are the first wedge.
+- Solopreneurs and small teams with an inbound line are the sweet spot; appointment-driven and phone-dependent teams are the first wedge.
 - Equal AI is a reference for the interaction loop and operator control, not a model to copy as a consumer call-screening product.
 - The first product milestone is an owned inbound workflow, not a complete omnichannel platform.
