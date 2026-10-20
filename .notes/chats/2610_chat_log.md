@@ -97,6 +97,16 @@ status: active
 **Outcome:** Added this as a planned later-phase capability, not a Phase 1 promise. The feature must use approved content blocks and metadata, preserve provenance and visitor context, support text and voice over the same guided-tour state, protect privacy and accessibility, and fall back safely to normal navigation when confidence or content coverage is insufficient.
 **Files:** `.notes/messaging/LobbyTeam personas and use cases.md`, `.notes/messaging/LobbyTeam comprehensive messaging guide.md`, `.notes/plans/TODO_lobbyteam_b2b_frontline_assistant.md`, `.notes/docs/About this codebase.md`.
 
+## 2026-10-20T17:42:00-05:00 | branch=main | topic=guided-tour-route-and-cobrowse
+
+**Timestamp:** 2026-10-20 17:42:00 CDT (`America/Chicago`)
+**Branch:** `main`
+**Type:** Decision
+
+**Context:** Refined the planned guided website-tour idea into a concrete interaction: a Talk to the LobbyTeam button opens `/lobby-team`, where the visitor chats or speaks with LobbyTeam while receiving a personalized, co-browsable view of approved website content.
+**Outcome:** Added the route, CTA, text/voice continuity, co-browsing behavior, source-site context, content provenance, accessibility, privacy, and safe-fallback requirements. Kept the feature explicitly later phase, not a Phase 1 claim.
+**Files:** `.notes/messaging/LobbyTeam personas and use cases.md`, `.notes/messaging/LobbyTeam comprehensive messaging guide.md`, `.notes/plans/TODO_lobbyteam_b2b_frontline_assistant.md`, `.notes/docs/About this codebase.md`.
+
 ## 2026-10-20T12:52:00-05:00 | branch=main | topic=messaging-pitches-guideline-plan
 
 **Timestamp:** 2026-10-20 12:52:00 CDT (`America/Chicago`)

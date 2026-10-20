@@ -29,6 +29,8 @@ The canonical messaging guide now positions LobbyTeam as a request-to-resolution
 
 The product roadmap also includes a later-phase guided website-tour capability. A visitor can explain who they are and what they need, and LobbyTeam can present an approved, dynamically relevant path through the website using text or voice. This is not a Phase 1 promise; it requires content provenance, accessibility, privacy, safe fallback, and preservation of the visitor’s request context.
 
+The intended interaction is a visible **Talk to the LobbyTeam** button that opens `/lobby-team`. The visitor can chat or speak with LobbyTeam while it presents a co-browsable, dynamically composed view from approved site content. The route must preserve source-site context and show the content being discussed; it must not generate unsupported claims or arbitrary unreviewed pages.
+
 - Working persona and use-case map: [LobbyTeam personas and use cases](../messaging/LobbyTeam%20personas%20and%20use%20cases.md)
 - Product design source: [product-design.md](../../product-design.md)
 - Presentation: `https://show.iqwyk.com/sophimind/lobbyteam-by-sophimind`

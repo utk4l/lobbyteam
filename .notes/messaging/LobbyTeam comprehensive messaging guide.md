@@ -48,7 +48,9 @@ Planned website experience:
 
 > **A personal tour of the business, shaped around what the visitor is trying to accomplish.**
 
-In a later phase, LobbyTeam may ask who a visitor is and what brought them to the site, then present an approved, dynamic path through relevant pages, services, products, and resources. The visitor may use text or voice over the same guided-tour context. This is a planned capability, not a current universal promise: recommendations must come from approved content, show clear provenance, protect visitor privacy, and fall back to normal website navigation when confidence or content coverage is insufficient.
+In a later phase, a visible **Talk to the LobbyTeam** button may open a dedicated `/lobby-team` experience. LobbyTeam can ask who the visitor is and what brought them to the site, then present an approved, dynamic path through relevant pages, services, products, and resources. The visitor may chat or speak with the team while co-browsing the guided view. This should feel like a personal tour of the business, not another search box.
+
+This is a planned capability, not a current universal promise: generated views must use approved content blocks and page metadata, show clear provenance, preserve the visitor’s request context, protect privacy and accessibility, and fall back to normal website navigation when confidence or content coverage is insufficient.
 
 LobbyTeam works across the channels through which people arrive:
 

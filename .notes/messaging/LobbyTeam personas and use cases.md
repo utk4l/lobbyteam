@@ -273,11 +273,11 @@ Each storyboard below uses the same format so it can become a product requiremen
 
 **Primary persona:** Website owner, founder, marketing lead, or product/service owner.
 
-**Entry point:** Website LobbyTeam experience, with optional text or voice interaction.
+**Entry point:** A visible **Talk to the LobbyTeam** button that opens a dedicated experience at `/lobby-team`, with optional text or voice interaction.
 
 **Trigger:** The visitor explains who they are, what they are trying to accomplish, or what problem brought them to the site.
 
-**LobbyTeam behavior:** LobbyTeam asks a small number of focused questions, identifies the visitor’s stated goal and relevant context, and presents a dynamic, personalized view of approved website content. It may highlight relevant pages, group approved content, explain why each path matters, and guide the visitor through a personal tour of the business.
+**LobbyTeam behavior:** LobbyTeam asks a small number of focused questions, identifies the visitor’s stated goal and relevant context, and presents a dynamic, personalized view of approved website content inside the `/lobby-team` experience. It may highlight relevant pages, group approved content, explain why each path matters, show a generated guided view, and let the visitor co-browse while chatting or speaking with the team. The visitor should feel as though someone knowledgeable is personally touring them through the business.
 
 **Human boundary:** LobbyTeam must not invent products, claims, prices, availability, eligibility, testimonials, or guarantees. It must distinguish visitor-provided information from verified business information and route complex, high-value, or uncertain questions to a human.
 
@@ -285,7 +285,7 @@ Each storyboard below uses the same format so it can become a product requiremen
 
 **Successful outcome:** The visitor reaches a relevant answer, product/service path, resource, booking flow, or human conversation with a clear record of how they arrived there.
 
-**Build notes:** Treat this as a later-phase capability. Use approved content blocks and page metadata, not unrestricted page rewriting. Preserve the visitor’s context in the request/work item. Support text and voice as two interaction modes over the same guided-tour state. Add preview, content provenance, accessibility, privacy, analytics, and safe fallback to normal website navigation.
+**Build notes:** Treat this as a later-phase capability. The button should open a stable `/lobby-team` route with the visitor’s session and source-site context. Use approved content blocks and page metadata, not unrestricted page rewriting. Preserve the visitor’s context in the request/work item. Support text and voice as two interaction modes over the same guided-tour state. Co-browsing should show which approved page or content block is being discussed and allow the visitor to return to the original site. Add preview, content provenance, accessibility, privacy, analytics, consent, and safe fallback to normal website navigation.
 
 ## 5. Customer support and service triage
 

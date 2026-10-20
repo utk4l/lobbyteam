@@ -83,7 +83,7 @@ The B2B promise:
 ### Phase 3 — Business Front-Door Expansion
 
 - Additional website chat, WhatsApp, kiosk, tablet, and QR entry points.
-- Planned guided website tours: LobbyTeam asks who the visitor is and what they need, then presents approved website content in a dynamic path relevant to that visitor. Text and voice are interaction modes over the same request context.
+- Planned guided website tours: a **Talk to the LobbyTeam** button opens `/lobby-team`, where LobbyTeam asks who the visitor is and what they need, then presents approved website content in a dynamic, co-browsable path relevant to that visitor. Text and voice are interaction modes over the same request context.
 - Multi-location and follow-the-sun coverage.
 - CRM, calendar, ticketing, and service-management integrations.
 - Customer progress updates, outbound callbacks, and approved follow-up workflows.
@@ -158,3 +158,4 @@ Start with one **request-to-resolution workflow across the inbound channels the 
 - The first product milestone is one multi-channel request-to-resolution workflow, not a collection of channel-specific bots.
 - The product invariant is: every request has durable context, a next action, accountable ownership or an explicit open queue, customer-visible progress, and verified closure or an explicit unresolved state.
 - Guided personal website tours are a planned later-phase capability, not a Phase 1 promise. The experience must use approved content and preserve provenance, accessibility, visitor privacy, and a safe fallback to normal navigation.
+- The guided-tour route must preserve source-site context, show the page or content block being discussed, support return to normal navigation, and never generate unsupported claims or arbitrary unreviewed page content.
