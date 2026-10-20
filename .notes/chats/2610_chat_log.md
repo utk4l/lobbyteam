@@ -87,6 +87,16 @@ status: active
 **Outcome:** Pushed the LobbyTeam messaging commit and safely pushed `.DS_Store` ignore/index cleanup across `sophimind`, `lobbyteam`, `booth-team`, and `safetyteam`. Competitor review is waiting for the approved one-time local browser fallback setup.
 **Files:** `.gitignore` files in the affected repositories; `.notes/messaging/LobbyTeam comprehensive messaging guide.md`.
 
+## 2026-10-20T14:15:15-05:00 | branch=main | topic=equal-ai-b2b-product-direction
+
+**Timestamp:** 2026-10-20 14:15:15 CDT (`America/Chicago`)
+**Branch:** `main`
+**Type:** Decision
+
+**Context:** Reviewed Equal AI’s public consumer call assistant as a reference for the next LobbyTeam product capability.
+**Outcome:** Adapted the reference pattern into a B2B plan: inbound answer, configurable intake, operator notification, live context, human takeover where configured, summary/transcript/history, routing, ownership, and next action. Chose solopreneurs and small appointment-driven or phone-dependent teams as the first wedge, beginning with missed-call intake and owned follow-up.
+**Files:** `.notes/plans/TODO_lobbyteam_b2b_frontline_assistant.md`, `.notes/docs/About this codebase.md`, `.notes/plans/master_execution_plan.md`, `.notes/plans/plan_next_steps_for_this_codebase.md`.
+
 ## 2026-10-20T12:50:21-05:00 | branch=main | topic=digital-team-frontline-definition
 
 **Timestamp:** 2026-10-20 12:50:21 CDT (`America/Chicago`)

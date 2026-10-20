@@ -19,6 +19,10 @@ LobbyTeam is a digital team that becomes the intake and frontline wherever a bus
 
 This repository is becoming the LobbyTeam application/backend as the product moves from public-site work into operational product work. The current `/app` route is still a presentation/demo surface while that application/backend evolves. `/Users/deepesh/code/booth-team` is the separate BoothTeam product’s web application/backend. `/Users/deepesh/code/app-boothteam` is the mobile application, which will evolve to support both BoothTeam and LobbyTeam. The repository remote is named `frontdesk`, which is an implementation/repository name rather than the customer-facing product name.
 
+## B2B Frontline Product Direction
+
+The product direction adapts the inbound assistant loop visible in Equal AI’s public consumer product to B2B operations. LobbyTeam should answer the first request, apply business-defined intake and routing rules, alert the responsible operator, support human takeover where configured, and preserve a summary, transcript or message history, owner, and next action. The first wedge is solopreneurs and small appointment-driven or phone-dependent teams. The full capability sequence is tracked in the [B2B frontline assistant plan](../plans/TODO_lobbyteam_b2b_frontline_assistant.md) until the application/backend capability matrix is verified.
+
 ## Public Messaging Work
 
 The canonical messaging guide now uses a narrow launch wedge—appointment-driven small offices and lean teams—while retaining the broader business-front-door category for expansion. Its pitch ladder leads with the concrete “digital front desk” outcome, then explains configured workflows, human handoffs, channels, and coordinated specialist automation as supporting proof. Investor messaging describes expansion and defensibility as hypotheses to prove through workflow and outcome data, not established traction.
