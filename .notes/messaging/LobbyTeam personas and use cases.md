@@ -17,9 +17,9 @@ This document gives the product and development team a shared picture of what Lo
 
 It is not a list of disconnected features. Every story describes the same product job:
 
-> **LobbyTeam is the first-response layer for a business. It answers where the customer arrives, understands what they need, completes safe defined work, and connects the request to the right human with useful context.**
+> **LobbyTeam is the request-to-resolution layer for a business. It receives inbound work from every configured channel, handles safe work, coordinates human handoffs, keeps the customer informed, and follows the open request until closure.**
 
-For a business, the main DID, VoIP number, office line, service line, website, inbox, or visitor entry point can route to LobbyTeam first. For a solopreneur, a cell or business number can be forwarded to LobbyTeam when the owner is unavailable. Missed-call recovery is one deployment mode—not the product category.
+For a business, phone, email, website, SMS, and physical-office QR entry points can feed the same LobbyTeam request lifecycle. A DID, VoIP number, office line, or service line can route to LobbyTeam, and a solopreneur can forward a cell or business number when unavailable. Missed-call recovery is one deployment mode—not the product category.
 
 This storyboard should help the team decide:
 
@@ -29,11 +29,12 @@ This storyboard should help the team decide:
 - when automation is allowed to act;
 - when a human must take over;
 - what context must survive the handoff;
-- what outcome proves the workflow worked.
+- what outcome proves the workflow worked;
+- what evidence allows the system to say that the work is resolved.
 
 ## Product boundary
 
-LobbyTeam is a business front door and first-response operating layer. It is not a generic chatbot, a voicemail replacement only, or an autonomous replacement for accountable staff.
+LobbyTeam is a multi-channel inbound work orchestration and request-to-resolution layer. It is not a generic chatbot, a voicemail replacement only, or an autonomous replacement for accountable staff. It may handle the work itself, hand it to one or more humans, or create and track an open ticket when work remains.
 
 The business defines:
 
@@ -45,23 +46,38 @@ The business defines:
 - consent, recording, and retention rules;
 - decisions that always require a person.
 
-LobbyTeam applies those rules, makes progress where it is safe to do so, and makes uncertainty and ownership visible.
+LobbyTeam applies those rules, makes progress where it is safe to do so, and makes uncertainty, ownership, handoff history, customer updates, and closure evidence visible.
 
 ## The shared LobbyTeam loop
 
 Every channel and persona should map to this operating loop:
 
-1. **Arrive** — A customer, visitor, prospect, partner, or employee reaches a configured business entry point.
-2. **Welcome** — LobbyTeam responds promptly and identifies itself appropriately.
-3. **Understand** — It determines the person’s intent, urgency, context, and desired outcome.
-4. **Check** — It checks approved knowledge, business rules, permissions, schedules, and integrations.
-5. **Act** — It answers, collects information, books, reschedules, creates a request, or performs another configured safe action.
-6. **Route** — If a person is needed, it selects the right owner, team, location, shift, or backup path.
-7. **Handoff** — It gives the human a concise summary, relevant history, required information, and recommended next action.
-8. **Own** — The request has a status, owner, due or follow-up time, and visible next step.
-9. **Close the loop** — The business records whether the request was completed, transferred, called back, scheduled, or still needs work.
+1. **Arrive** — A customer, visitor, prospect, partner, or employee reaches a configured phone, email, website, SMS, or QR entry point.
+2. **Create or attach** — LobbyTeam creates one durable request/work item or attaches the new channel session to the existing request.
+3. **Understand** — It determines the person’s intent, urgency, context, desired outcome, and missing information.
+4. **Check** — It checks approved knowledge, business rules, permissions, schedules, integrations, and human-only boundaries.
+5. **Act** — It answers, collects information, books, reschedules, creates a task, or performs another configured safe action.
+6. **Decide** — LobbyTeam determines whether it can complete the work, needs a human, or must open/keep an asynchronous ticket.
+7. **Handoff** — It offers the work to the right owner or queue with a concise summary, relevant history, required information, due time, and routing reason.
+8. **Acknowledge** — A human or queue accepts responsibility. Delivery of a notification is not ownership.
+9. **Bird-dog** — LobbyTeam tracks each handoff, watches deadlines, follows the backup path, records progress, and updates the customer with factual status.
+10. **Resolve or explicitly leave unresolved** — The request closes only with evidence appropriate to the workflow. If no resolution is proven, it remains open or is marked unresolved with a reason and customer-visible status.
 
-### Minimum interaction record
+### Canonical request model
+
+Do not treat one phone call, email, or chat session as the whole case. Keep these concepts separate:
+
+- **Contact:** the customer, visitor, or organization;
+- **Request/work item:** the durable business problem or desired outcome;
+- **Conversation:** the customer-facing history across one or more channels;
+- **Channel session:** a specific call, email thread, web session, SMS exchange, or QR interaction;
+- **Assignment:** an owner or queue responsible for the next action;
+- **Handoff:** an auditable transfer of responsibility between LobbyTeam, a queue, and a human;
+- **Commitment:** what was promised, to whom, by when, and whether it was confirmed;
+- **External action:** a booking, ticket write, callback, transfer, or other provider operation;
+- **Closure evidence:** the proof that the requested work was completed or why it remains unresolved.
+
+### Minimum request record
 
 Every meaningful interaction should be able to produce, subject to channel and consent:
 
@@ -72,13 +88,17 @@ Every meaningful interaction should be able to produce, subject to channel and c
 - what LobbyTeam said or did;
 - what information is still missing;
 - transcript, summary, or message history;
-- owner and backup owner;
-- status;
-- next action and time;
+- current owner or queue and backup path;
+- lifecycle state and assignment state;
+- next action, due time, and customer-visible commitment;
+- handoff history and acknowledgement state;
+- customer-update history and delivery state;
+- external action status and provider IDs;
 - escalation or routing reason;
-- consent and recording state.
+- consent and recording state;
+- closure evidence, unresolved reason, and reopen state.
 
-## Deployment modes
+## Inbound channels and deployment modes
 
 The product loop is the same even though the phone setup differs.
 
@@ -86,8 +106,8 @@ The product loop is the same even though the phone setup differs.
 |---|---|---|---|
 | Business-first line | DID, VoIP number, office line, or service line routes to LobbyTeam first | LobbyTeam answers immediately before the request reaches a queue or voicemail | The business has a consistent first response |
 | Owner coverage | Solopreneur forwards a cell or business number when unavailable | LobbyTeam manages intake instead of carrier voicemail | The owner does not lose the request while busy |
-| Digital front door | Website chat, email, SMS, WhatsApp, or web form | LobbyTeam answers, gathers context, and starts the next step | The request does not stop at “we received your message” |
-| Physical reception | Kiosk, tablet, QR code, or reception device | LobbyTeam welcomes and directs the visitor | Visitors have a useful next step when staff are occupied |
+| Digital front door | Website, email, SMS, or web form | LobbyTeam answers, gathers context, and keeps the request moving | The request does not stop at “we received your message” |
+| Physical reception | QR code leading to text or voice chat | LobbyTeam uses location and entry-point context to welcome, guide, or create a request | The visitor gets a tracked next step without waiting at an unattended desk |
 
 ## Personas
 
@@ -446,11 +466,16 @@ The operator must be able to configure, per business and per entry point:
 
 ### Interaction states
 
-At minimum, the system should distinguish:
+At minimum, separate these dimensions rather than mixing them into one status:
 
-`new` → `engaged` → `gathering-information` → `in-progress` → `waiting-on-customer` → `waiting-on-human` → `scheduled` / `transferred` / `completed` / `cancelled` / `escalated`.
+- **Request lifecycle:** `new`, `triaged`, `in-progress`, `waiting-on-customer`, `waiting-on-business`, `resolved`, `closed`, `unresolved-expired`, `reopened`;
+- **Assignment:** `unassigned`, `offered`, `delivered`, `acknowledged`, `accepted`, `rejected`, `expired`, `reassigned`;
+- **Commitment:** `none`, `provisional`, `confirmed`, `due`, `overdue`, `fulfilled`, `breached`;
+- **Channel session:** `active`, `ended`, `transferred`, `dropped`, `failed`;
+- **External action:** `requested`, `processing`, `succeeded`, `failed`, `reconciling`;
+- **Customer update:** `drafted`, `sent`, `delivered`, `read`, `acknowledged` where supported.
 
-The exact state model is an engineering decision, but the customer and operator should always be able to answer: What happened? Who owns it? What happens next? When?
+The exact state model is an engineering decision, but no request should be represented as resolved merely because a response was generated, a ticket was created, or a notification was delivered. The customer and operator should always be able to answer: What happened? Who owns it? What happens next? When? What proves it is done?
 
 ### Handoff quality bar
 
@@ -464,6 +489,8 @@ A handoff is not complete merely because a message was sent. A useful handoff in
 6. what action is requested;
 7. when the action is due;
 8. what happens if the recipient is unavailable.
+
+The system must record `offered`, `delivered`, `viewed`, `accepted`, `rejected`, `expired`, and `reassigned` where the channel supports those signals. A notification delivery receipt must never be treated as human ownership.
 
 ### Failure and fallback behavior
 
@@ -482,23 +509,48 @@ Every workflow needs an explicit path for:
 
 The fallback should preserve the interaction record and make ownership visible. It should never silently claim completion.
 
+### Customer progress updates
+
+Customer updates must describe facts, not reassurance. Each update should state:
+
+1. what actually happened;
+2. who or what owns the next action;
+3. what happens next;
+4. the expected time or deadline;
+5. what the customer should do if that time passes.
+
+Track generated, sent, delivered, read, and acknowledged separately where supported. Never tell the customer that a human is working on the request until a human or queue has accepted responsibility.
+
+### Closure evidence
+
+The product must distinguish:
+
+- `acknowledged`: request received;
+- `routed`: destination selected;
+- `delivered`: destination received the work;
+- `accepted`: a human or queue assumed responsibility;
+- `action-completed`: the requested action executed;
+- `customer-confirmed`: the customer accepted the result where required;
+- `closed`: no further action is expected, with a reason;
+- `unresolved-expired`: administratively closed without proof of resolution.
+
+“No response” must never be represented as “resolved.” A closure record needs evidence appropriate to the workflow, such as a verified external write, human resolution note, successful callback outcome, customer confirmation, or documented unresolved reason.
+
 ## Outcome measures
 
-Use workflow outcomes rather than conversation volume as the primary proof:
+Use request-to-resolution outcomes rather than conversation volume as the primary proof:
 
-- time to first response;
-- defined requests completed;
-- correct routing rate;
-- handoff completeness;
-- human takeover or callback response time;
-- appointments booked, confirmed, rescheduled, or recovered;
-- service requests dispatched;
-- follow-up completion;
+- percentage of qualified requests with an acknowledged owner;
+- time to first owner;
+- handoff acknowledgement and expiry rate;
+- customer-update compliance;
+- time to resolution;
+- verified completion rate;
+- reopen rate;
+- unresolved and overdue aging;
 - customer repetition reduced;
 - staff interruption reduced;
-- unresolved or abandoned requests;
-- time to first successful workflow;
-- gross margin per handled interaction.
+- fully loaded cost per successfully advanced request.
 
 ## Launch recommendation
 
@@ -506,19 +558,21 @@ The story should be broad enough to describe the product and narrow enough to bu
 
 ### Initial product wedge
 
-Start with one inbound business line or customer-entry channel for solopreneurs and small teams, especially appointment-driven and phone-dependent businesses.
+Start with one request-to-resolution workflow across the inbound channels the customer already uses. The initial channel set may include phone, email, website, SMS, and a location-specific QR entry point, but every channel must create or attach to the same durable request and closure model.
 
 The first pilot should support:
 
-1. one configured entry point;
-2. one primary owner;
-3. one backup path;
-4. one defined workflow;
+1. one defined request type;
+2. the supported inbound channels for that request;
+3. one primary owner or queue;
+4. one backup path;
 5. one human escalation rule;
-6. one interaction record;
-7. one measurable outcome.
+6. one durable request/work item with channel sessions attached;
+7. customer progress updates;
+8. verified closure or an explicit unresolved state;
+9. one measurable outcome.
 
-The entry point may be a business DID/VoIP line routed to LobbyTeam first or an owner’s phone forwarded when unavailable. The first workflow may be appointment intake, service request intake, routine front-desk questions, or managed callback intake.
+The first workflow may be appointment intake, service request intake, routine front-desk questions, or managed callback intake. The decision is not “which channel do we support?” but “which request can LobbyTeam reliably carry from arrival to closure across the channels customers use?”
 
 ### Expansion order
 

@@ -8,7 +8,6 @@ track_id: lobbyteam-b2b-frontline-assistant
 related:
   - ../messaging/LobbyTeam%20comprehensive%20messaging%20guide.md
   - ../messaging/LobbyTeam%20personas%20and%20use%20cases.md
-  - ../messaging/LobbyTeam%20personas%20and%20use%20cases.md
   - ../docs/About%20this%20codebase.md
 ---
 
@@ -18,12 +17,12 @@ related:
 
 - **Initiative:** LobbyTeam application/backend product buildout
 - **Track ID:** `lobbyteam-b2b-frontline-assistant`
-- **Summary:** Build the B2B first-response layer for business phone and customer-entry channels: answer, understand, monitor, take over, route, summarize, notify, and follow through.
+- **Summary:** Build the B2B multi-channel inbound request-to-resolution layer: receive, understand, handle, hand off, ticket, update, follow through, and verify closure.
 - **Owner:** SophiMind product and engineering
 - **Priority:** High
 - **Status:** Todo/ACTIVE
 - **Dependencies:** LobbyTeam application/backend foundation; evolving `app-boothteam` mobile client; verified telephony, recording, consent, routing, and notification capabilities.
-- **Launch wedge:** Solopreneurs and small teams with an inbound business line, especially appointment-driven or phone-dependent teams.
+- **Launch wedge:** Solopreneurs and small teams where inbound requests arrive through multiple channels and are frequently lost between people, inboxes, and systems.
 
 ## Product Insight From Equal AI
 
@@ -40,7 +39,7 @@ Equal is B2C and protects an individual’s time. LobbyTeam should adapt the sam
 
 ## Product Thesis
 
-LobbyTeam should become the business’s first-response layer: the digital front desk that answers a configured inbound line or channel before the request disappears into voicemail, a queue, or an unowned inbox. For a small business, that frontline should be able to receive an inbound request immediately, understand the need, complete safe defined work, show the responsible person what is happening, and transfer control with context when human judgment is needed.
+LobbyTeam should become the business’s request-to-resolution layer: a digital team that receives inbound work from phone, email, website, SMS, and physical-office QR entry points; decides whether it can handle the work, needs a human, or must open a ticket; preserves context across one or more human handoffs; keeps the customer informed; and follows the open loop until closure is verified or explicitly marked unresolved.
 
 There are two deployment modes for the same product loop:
 
@@ -49,7 +48,7 @@ There are two deployment modes for the same product loop:
 
 The B2B promise:
 
-> **LobbyTeam handles the first customer request, keeps your team in control, and turns the interaction into completed work or clearly owned follow-up.**
+> **LobbyTeam makes sure every inbound request has context, an accountable next action, visible progress, and a path to verified closure.**
 
 ## Target Users
 
@@ -60,32 +59,33 @@ The B2B promise:
 
 ## Proposed Capability Set
 
-### Phase 1 — Inbound Frontline Loop
+### Phase 1 — Multi-channel Request Lifecycle
 
-- Business phone or configured inbound channel receives the request.
-- LobbyTeam identifies intent, urgency, customer context, and required workflow.
-- Business owner configures approved questions, answers, actions, and escalation rules.
-- Operator receives an alert when a request needs attention.
-- Operator can view the live interaction where supported.
-- Operator can take over or accept the handoff where supported.
-- Interaction creates a summary, transcript or message history, owner, status, and next action.
+- Phone, email, website, SMS, or physical-office QR entry point receives the request.
+- LobbyTeam creates or attaches to one durable request/work item across channel sessions.
+- LobbyTeam identifies intent, urgency, customer context, required workflow, and human-only boundaries.
+- LobbyTeam handles safe configured work or decides that human work/ticketing is required.
+- Operator receives an auditable handoff with context, routing reason, next action, and due time.
+- Human or queue acknowledgement is recorded separately from notification delivery.
+- LobbyTeam tracks the request through one or more handoffs, customer updates, retries, and overdue escalation.
+- Closure requires evidence; otherwise the request remains open or is explicitly marked unresolved.
 
 ### Phase 2 — Small-Team Operations
 
 - Routing by request type, expertise, location, hours, availability, and ownership.
 - Primary and backup contacts.
 - Callback, appointment, rescheduling, and reminder workflows where configured.
-- Team inbox or work queue that shows unowned, active, waiting, and completed requests.
+- Team inbox or work queue that shows unowned, active, waiting, overdue, resolved, closed, and unresolved requests.
 - Mobile notifications and operator actions in `app-boothteam`.
 - Human-readable reason for routing and escalation.
-- Contact and conversation history across configured channels.
+- Contact, conversation, request, assignment, handoff, commitment, and closure history across configured channels.
 
 ### Phase 3 — Business Front-Door Expansion
 
-- Website chat, email, SMS, WhatsApp, kiosk, tablet, and QR entry points.
+- Additional website chat, WhatsApp, kiosk, tablet, and QR entry points.
 - Multi-location and follow-the-sun coverage.
 - CRM, calendar, ticketing, and service-management integrations.
-- Outbound callbacks and approved follow-up workflows.
+- Customer progress updates, outbound callbacks, and approved follow-up workflows.
 - Outcome analytics: response time, completion, handoff quality, owner response, and follow-up completion.
 - Vertical workflow templates for appointment-heavy offices, field service, and support teams.
 
@@ -114,43 +114,45 @@ The B2B promise:
 
 ## First Workflow Recommendation
 
-Start with **inbound front-door coverage** for one business line or customer-entry channel. The line may be an office main number, business DID, VoIP service line, appointment line, or an owner’s forwarded phone. Missed-call recovery is one useful deployment mode, not the product category.
+Start with one **request-to-resolution workflow across the inbound channels the customer already uses**. The initial channel set may include phone, email, website, SMS, and a location-specific QR entry point. The product milestone is not answering one channel; it is carrying one request across channels and people until closure.
 
-1. A customer calls the configured business line or entry point.
-2. LobbyTeam answers immediately and asks the minimum useful questions.
-3. It answers approved basics or collects appointment/service details.
-4. It creates a concise interaction record.
-5. The owner or staff member receives a notification.
-6. The responsible person monitors, takes over, calls back, schedules, or routes the request.
-7. The system records the owner and next action.
+1. A customer calls, emails, uses the website, sends an SMS, or scans a location QR code.
+2. LobbyTeam creates or attaches to one durable request/work item.
+3. It asks the minimum useful questions and checks approved policy and workflow rules.
+4. It handles safe defined work or offers the request to the right human or queue.
+5. The handoff records delivery, acknowledgement, owner, next action, due time, and routing reason.
+6. If work remains open, LobbyTeam follows the backup path, watches deadlines, and updates the customer with factual progress.
+7. The request closes only with evidence, or remains open/explicitly unresolved with a reason.
 
 ## Success Measures
 
-- First-response time
-- Percentage of defined requests with an owner
-- Handoff completeness
-- Human takeover or callback response time
-- Appointments booked, confirmed, rescheduled, or recovered
-- Requests completed without unnecessary escalation
-- Staff interruption reduced
+- Percentage of qualified requests with an acknowledged owner
+- Time to first owner
+- Handoff acknowledgement and expiry rate
+- Customer-update compliance
+- Time to resolution
+- Verified completion rate
+- Reopen rate
+- Unresolved and overdue aging
 - Customer repetition reduced
-- Follow-up completion
-- Gross margin per handled interaction
+- Fully loaded cost per successfully advanced request
 
 ## Ordered Implementation / QA Tasks
 
-1. **Todo/ACTIVE — Capability matrix:** Verify which inbound channels, DID/VoIP/cell forwarding, telephony actions, recording, transcript, notification, takeover, routing, and mobile actions exist today.
-2. **Todo/ACTIVE — Storyboard and workflow scope:** Use the personas and use-case storyboards to select the smallest inbound front-door workflow with one line, one owner, one backup, one fallback, and one success metric; include missed-call recovery as a deployment option.
-3. **Todo/ACTIVE — Backend contract:** Define interaction, participant, workflow state, owner, escalation, transcript, summary, consent, and next-action contracts in `lobbyteam`.
-4. **Todo/ACTIVE — Operator experience:** Design the web/mobile surfaces for alert, live context, takeover, handoff acceptance, and follow-up.
-5. **Todo/ACTIVE — Safety and consent:** Define recording, transcript, contact capture, retention, access, opt-out, and human-only boundaries.
-6. **Todo/ACTIVE — Pilot QA:** Test routine, incomplete, urgent, unknown, unavailable-owner, failed-integration, and human-takeover scenarios.
-7. **Todo/ACTIVE — Outcome evidence:** Measure the first workflow against a customer baseline before expanding to more channels or industries.
+1. **Todo/ACTIVE — Capability matrix:** Verify phone, email, website, SMS, QR/text/voice entry, forwarding, provider events, notification, handoff, ticketing, customer updates, and mobile actions.
+2. **Todo/ACTIVE — Storyboard and workflow scope:** Select one request type that can be carried across supported channels from intake to closure, with one owner/queue, one backup, one fallback, and one success metric.
+3. **Todo/ACTIVE — Canonical work model:** Define contact, request/work item, conversation, channel session, assignment, handoff, commitment, external action, customer update, and closure evidence contracts in `lobbyteam`.
+4. **Todo/ACTIVE — Lifecycle and handoff state machines:** Define legal transitions, acknowledgement, deadlines, retries, reassignment, reopen, unresolved expiry, idempotency, and reconciliation.
+5. **Todo/ACTIVE — Operator experience:** Design web/mobile surfaces for queue visibility, context, accept/reject, takeover, reassignment, customer updates, overdue work, and closure evidence.
+6. **Todo/ACTIVE — Safety and consent:** Define AI disclosure, recording, transcript, contact capture, retention, access, opt-out, identity, sensitive-request, emergency, and human-only boundaries.
+7. **Todo/ACTIVE — Pilot QA:** Test routine, incomplete, urgent, unknown, duplicate, abandonment, unavailable-owner, failed-integration, failed-handoff, provider-outage, customer-update, and closure scenarios.
+8. **Todo/ACTIVE — Outcome evidence:** Measure verified request advancement, time to owner, time to resolution, unresolved aging, reopen rate, customer-update compliance, and fully loaded cost against a baseline.
 
 ## Decisions
 
 - LobbyTeam is the B2B product application/backend; `booth-team` remains the separate BoothTeam application/backend.
 - `app-boothteam` evolves as the mobile operator surface for both products.
-- Solopreneurs and small teams with an inbound line are the sweet spot; appointment-driven and phone-dependent teams are the first wedge.
+- Solopreneurs and small teams with fragmented inbound work are the sweet spot; appointment-driven, service, support, and phone-dependent workflows are candidate wedges.
 - Equal AI is a reference for the interaction loop and operator control, not a model to copy as a consumer call-screening product.
-- The first product milestone is an owned inbound workflow, not a complete omnichannel platform.
+- The first product milestone is one multi-channel request-to-resolution workflow, not a collection of channel-specific bots.
+- The product invariant is: every request has durable context, a next action, accountable ownership or an explicit open queue, customer-visible progress, and verified closure or an explicit unresolved state.

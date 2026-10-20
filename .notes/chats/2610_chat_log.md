@@ -57,6 +57,36 @@ status: active
 **Outcome:** Reworked the personas/use-cases document into a developer-ready product storyboard. It now defines the shared first-response loop, deployment modes, five personas, thirteen core storyboards, human boundaries, handoff payloads, cross-story requirements, failure paths, outcome measures, launch scope, and expansion order. Updated the B2B plan to make this storyboard the workflow-scope input.
 **Files:** `.notes/messaging/LobbyTeam personas and use cases.md`, `.notes/plans/TODO_lobbyteam_b2b_frontline_assistant.md`.
 
+## 2026-10-20T14:27:00-05:00 | branch=main | topic=personas-storyboard-council-review
+
+**Timestamp:** 2026-10-20 14:27:00 CDT (`America/Chicago`)
+**Branch:** `main`
+**Type:** Investigation
+
+**Context:** User asked the council and co-founder perspective on the developer-ready personas and use-case storyboard.
+**Outcome:** Council agreed the storyboard is a strong platform vision but not yet a focused launch specification. The primary recommendations are one ICP, one entry point, one workflow, one success metric, explicit work-item and handoff state models, provider-backed telephony verification, and enforceable safety/consent boundaries. Co-founder recommendation: preserve the broad storyboard as the platform narrative, but create a separate launch brief centered on phone-first inbound intake and a verifiable owned callback or next step. Home services is a strong wedge hypothesis, not yet a proven company-wide commitment.
+**Files:** `.notes/messaging/LobbyTeam personas and use cases.md`.
+
+## 2026-10-20T14:35:00-05:00 | branch=main | topic=multi-entry-front-door-positioning
+
+**Timestamp:** 2026-10-20 14:35:00 CDT (`America/Chicago`)
+**Branch:** `main`
+**Type:** Decision
+
+**Context:** User clarified that LobbyTeam must support phone, website, SMS, and physical-office QR entry to text or voice chat, rather than being framed as an AI receptionist.
+**Outcome:** Council validated the correction. LobbyTeam should be positioned as a managed digital front door and shared first-response/handoff layer. Channels are delivery modes; the product outcome is turning first contact into progress and a verified owned next step. The cross-channel product primitive is a persistent conversation/work item with location and entry-point context, structured actions, channel continuity, and human handoff.
+**Files:** `.notes/messaging/LobbyTeam personas and use cases.md` pending refinement; no product scope changes implemented yet.
+
+## 2026-10-20T14:42:00-05:00 | branch=main | topic=inbound-request-to-resolution-orchestration
+
+**Timestamp:** 2026-10-20 14:42:00 CDT (`America/Chicago`)
+**Branch:** `main`
+**Type:** Decision
+
+**Context:** User clarified that LobbyTeam receives inbound work from phone, email, website, SMS, and other channels; decides whether to handle it, hand it to one or more humans, or ticket it; preserves full context; and follows the request through closure while updating the customer.
+**Outcome:** Reframed LobbyTeam as a multi-channel inbound request-to-resolution coordination layer, not an AI receptionist. The product invariant is that every request has context, a next action, an accountable owner or queue, a tracked handoff chain, customer-visible progress, and verified closure or explicit reopen state.
+**Files:** No product documents changed during this review.
+
 ## 2026-10-20T12:52:00-05:00 | branch=main | topic=messaging-pitches-guideline-plan
 
 **Timestamp:** 2026-10-20 12:52:00 CDT (`America/Chicago`)
