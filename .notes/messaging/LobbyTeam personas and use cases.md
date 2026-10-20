@@ -267,6 +267,26 @@ Each storyboard below uses the same format so it can become a product requiremen
 
 **Build notes:** Approved content sources, qualification fields, lead consent, source attribution, conversation context in CRM, and clear distinction between education and sales advice.
 
+## 4A. Guided personal tour of the business website — planned capability
+
+**Context:** A visitor arrives at a business website but does not know which pages, products, services, or explanations are relevant to them. They should not have to understand the company’s navigation or product map before they can get help.
+
+**Primary persona:** Website owner, founder, marketing lead, or product/service owner.
+
+**Entry point:** Website LobbyTeam experience, with optional text or voice interaction.
+
+**Trigger:** The visitor explains who they are, what they are trying to accomplish, or what problem brought them to the site.
+
+**LobbyTeam behavior:** LobbyTeam asks a small number of focused questions, identifies the visitor’s stated goal and relevant context, and presents a dynamic, personalized view of approved website content. It may highlight relevant pages, group approved content, explain why each path matters, and guide the visitor through a personal tour of the business.
+
+**Human boundary:** LobbyTeam must not invent products, claims, prices, availability, eligibility, testimonials, or guarantees. It must distinguish visitor-provided information from verified business information and route complex, high-value, or uncertain questions to a human.
+
+**Handoff payload:** Visitor’s stated identity or role, goal, questions, pages/content shown, paths selected or skipped, uncertainty, requested next step, and consent to follow up.
+
+**Successful outcome:** The visitor reaches a relevant answer, product/service path, resource, booking flow, or human conversation with a clear record of how they arrived there.
+
+**Build notes:** Treat this as a later-phase capability. Use approved content blocks and page metadata, not unrestricted page rewriting. Preserve the visitor’s context in the request/work item. Support text and voice as two interaction modes over the same guided-tour state. Add preview, content provenance, accessibility, privacy, analytics, and safe fallback to normal website navigation.
+
 ## 5. Customer support and service triage
 
 **Context:** Existing customers need help with an order, account, delivery, billing issue, technical problem, or open case.
@@ -581,8 +601,9 @@ The first workflow may be appointment intake, service request intake, routine fr
 3. Operator mobile notifications, live context, takeover, and follow-up.
 4. Website chat, email, SMS, WhatsApp, and shared interaction history.
 5. Outbound confirmations, reminders, callbacks, and reactivation.
-6. Multi-location, distributed teams, integrations, analytics, and vertical templates.
-7. Physical visitor reception and internal/partner front-door workflows where the safety and access boundaries are explicitly supported.
+6. Guided personal website tours that adapt approved content to the visitor’s stated role and goal, with text and voice modes.
+7. Multi-location, distributed teams, integrations, analytics, and vertical templates.
+8. Physical visitor reception and internal/partner front-door workflows where the safety and access boundaries are explicitly supported.
 
 ## Product decisions still requiring verification
 
@@ -597,5 +618,8 @@ Before a storyboard becomes a promised capability, verify:
 - What recording, transcript, consent, retention, export, and deletion controls exist?
 - What happens when the preferred human does not answer?
 - Which integrations and vertical workflows are available at launch?
+- Can the website tour use approved content blocks and metadata without inventing or rewriting unsupported claims?
+- Can a visitor switch between text and voice while preserving the same request and tour context?
+- Can the visitor see why a page or path was recommended and return to standard website navigation?
 
 Until a capability is verified in the application/backend and its provider path, describe it as configured, planned, or a workflow to prove—not as a universally available feature.

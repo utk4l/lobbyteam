@@ -27,6 +27,8 @@ The product direction adapts the inbound assistant loop visible in Equal AI’s 
 
 The canonical messaging guide now positions LobbyTeam as a request-to-resolution layer rather than an AI receptionist. Its pitch ladder leads with the outcome that inbound work receives context, ownership, progress, and verified closure across channels. The personas/storyboards document is the product narrative; the B2B plan defines the one multi-channel workflow to prove before broadening the category.
 
+The product roadmap also includes a later-phase guided website-tour capability. A visitor can explain who they are and what they need, and LobbyTeam can present an approved, dynamically relevant path through the website using text or voice. This is not a Phase 1 promise; it requires content provenance, accessibility, privacy, safe fallback, and preservation of the visitor’s request context.
+
 - Working persona and use-case map: [LobbyTeam personas and use cases](../messaging/LobbyTeam%20personas%20and%20use%20cases.md)
 - Product design source: [product-design.md](../../product-design.md)
 - Presentation: `https://show.iqwyk.com/sophimind/lobbyteam-by-sophimind`

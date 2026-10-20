@@ -87,6 +87,16 @@ status: active
 **Outcome:** Reframed LobbyTeam as a multi-channel inbound request-to-resolution coordination layer, not an AI receptionist. The product invariant is that every request has context, a next action, an accountable owner or queue, a tracked handoff chain, customer-visible progress, and verified closure or explicit reopen state.
 **Files:** No product documents changed during this review.
 
+## 2026-10-20T17:34:20-05:00 | branch=main | topic=guided-website-tour-capability
+
+**Timestamp:** 2026-10-20 17:34:20 CDT (`America/Chicago`)
+**Branch:** `main`
+**Type:** Decision
+
+**Context:** User proposed a future LobbyTeam experience where a website visitor explains who they are and what they need, then receives a personalized, dynamic tour of the business website through relevant content and paths.
+**Outcome:** Added this as a planned later-phase capability, not a Phase 1 promise. The feature must use approved content blocks and metadata, preserve provenance and visitor context, support text and voice over the same guided-tour state, protect privacy and accessibility, and fall back safely to normal navigation when confidence or content coverage is insufficient.
+**Files:** `.notes/messaging/LobbyTeam personas and use cases.md`, `.notes/messaging/LobbyTeam comprehensive messaging guide.md`, `.notes/plans/TODO_lobbyteam_b2b_frontline_assistant.md`, `.notes/docs/About this codebase.md`.
+
 ## 2026-10-20T12:52:00-05:00 | branch=main | topic=messaging-pitches-guideline-plan
 
 **Timestamp:** 2026-10-20 12:52:00 CDT (`America/Chicago`)

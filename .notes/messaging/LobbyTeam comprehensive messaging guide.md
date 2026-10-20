@@ -44,6 +44,12 @@ Website-specific category:
 
 When a visitor arrives with a broad question, LobbyTeam helps them understand what the business offers, find what fits, and choose a useful next step. It can ask a clarifying question, compare approved paths, share a relevant resource, schedule or request a conversation, and bring in the right human with context.
 
+Planned website experience:
+
+> **A personal tour of the business, shaped around what the visitor is trying to accomplish.**
+
+In a later phase, LobbyTeam may ask who a visitor is and what brought them to the site, then present an approved, dynamic path through relevant pages, services, products, and resources. The visitor may use text or voice over the same guided-tour context. This is a planned capability, not a current universal promise: recommendations must come from approved content, show clear provenance, protect visitor privacy, and fall back to normal website navigation when confidence or content coverage is insufficient.
+
 LobbyTeam works across the channels through which people arrive:
 
 - Phone
