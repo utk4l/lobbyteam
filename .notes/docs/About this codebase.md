@@ -13,9 +13,15 @@ status: active
 
 ## Current Product Direction
 
-LobbyTeam is an AI-native support and sales front door for phone, website chat, email, SMS, and WhatsApp interactions. It is intended to move beyond message-taking by routing requests to the right human or team using business rules such as time zone, business hours, availability, expertise, urgency, and account ownership. The current messaging work is defining the target business contexts and personas before changing the public site.
+LobbyTeam is a digital team that becomes the intake and frontline wherever a business's customers or visitors arrive: phone, website chat, email, SMS, WhatsApp, or configured physical-lobby experiences. It receives the initial request, helps the person get an answer or complete the intended task, and connects them to the right person in the business when human help, judgment, or ownership is needed. It is intended to move beyond message-taking by routing requests using business rules such as time zone, business hours, availability, expertise, urgency, and account ownership.
+
+## Repository Boundaries
+
+This repository is becoming the LobbyTeam application/backend as the product moves from public-site work into operational product work. The current `/app` route is still a presentation/demo surface while that application/backend evolves. `/Users/deepesh/code/booth-team` is the separate BoothTeam product’s web application/backend. `/Users/deepesh/code/app-boothteam` is the mobile application, which will evolve to support both BoothTeam and LobbyTeam. The repository remote is named `frontdesk`, which is an implementation/repository name rather than the customer-facing product name.
 
 ## Public Messaging Work
+
+The canonical messaging guide now uses a narrow launch wedge—appointment-driven small offices and lean teams—while retaining the broader business-front-door category for expansion. Its pitch ladder leads with the concrete “digital front desk” outcome, then explains configured workflows, human handoffs, channels, and coordinated specialist automation as supporting proof. Investor messaging describes expansion and defensibility as hypotheses to prove through workflow and outcome data, not established traction.
 
 - Working persona and use-case map: [LobbyTeam personas and use cases](../messaging/LobbyTeam%20personas%20and%20use%20cases.md)
 - Product design source: [product-design.md](../../product-design.md)

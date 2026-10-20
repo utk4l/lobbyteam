@@ -19,11 +19,18 @@ The guide answers:
 - How is it different from an AI receptionist?
 - How does the coordinated agent team work?
 - What should we say in 30, 60, and 90 seconds?
+- How should we explain LobbyTeam to investors and target customers?
 - What should we say, and what should we avoid promising?
 
 ## Core Position
 
-> **LobbyTeam is a coordinated digital front-door team for your business. It helps every customer reach an answer, a completed request, or the right human next step.**
+> **LobbyTeam is the digital front desk that turns defined customer requests into a clear next step.**
+
+The broader category explanation is:
+
+> **LobbyTeam is a coordinated digital front-door team for your business. It helps customers reach an approved answer, a completed configured request, or the right human next step.**
+
+The launch wedge is appointment-driven small offices and lean teams where missed calls, repetitive questions, confirmations, rescheduling, and unclear follow-up create measurable loss. Field-service, online support, sales qualification, physical visitor assistance, and distributed after-hours routing are expansion contexts—not reasons to make the opening message broad.
 
 Umbrella website headline:
 
@@ -48,7 +55,7 @@ LobbyTeam works across the channels through which people arrive:
 
 The channel is not the product. The outcome is the product:
 
-> **Every arrival gets understood, handled, or moved to a clearly owned next step.**
+> **A defined arrival gets understood, handled, or moved to a clearly owned next step.**
 
 ## The Problem We Solve
 
@@ -319,33 +326,65 @@ Core message:
 
 > **Give every visitor a useful way forward, even when the lobby team is helping someone else.**
 
-## The 30-Second Pitch
+## Pitch Ladder
 
-> **LobbyTeam is a coordinated digital front-door team for your business. It answers calls and messages, understands what people need, handles the requests you define, and routes the rest to the right human with useful context. One agent may be speaking with the customer, while specialized agents work behind the scenes to interpret the request and guide the next step. It works for a solopreneur as well as a growing business.**
+Use the shortest pitch that fits the moment. Lead with the buyer’s operating problem and desired outcome. Explain the digital team, channels, and agent model only after the listener understands what LobbyTeam does for the business.
 
-Shorter version:
+### The 30-Second Pitch — fast introduction
 
-> **LobbyTeam helps every customer reach an answer, a completed request, or the right human next step. It is more than an AI receptionist: it is a coordinated digital team that engages the customer, applies your business rules, and keeps the next action visible.**
+> **LobbyTeam is a digital front desk for busy offices and lean teams. It answers approved questions, handles defined appointment and customer-request workflows, collects the details your team needs, and routes anything requiring judgment to the right person with context. Customers get a clear next step, while staff spend less time repeating information or chasing callbacks.**
 
-## The 60-Second Pitch
+### The 60-Second Pitch — problem and product explanation
 
-> **Every business has a front door. It might be a receptionist, a phone line, a website, an inbox, a WhatsApp number, or a physical lobby. The problem is that first contact often stops at a voicemail, a form receipt, or a message nobody clearly owns. LobbyTeam turns that first contact into progress.**
+> **A busy office does not lose work because customers lack intent. It loses work because calls, messages, cancellations, and rescheduling requests arrive while the team is already helping someone else. LobbyTeam acts as a digital front desk for those moments. It answers approved questions, handles predictable work when the required workflow is configured, collects missing information, and routes exceptions to the right person with the conversation attached. Your team remains accountable for sensitive decisions, while routine first-contact work stops depending on memory or voicemail.**
+
+### The 90-Second Pitch — fuller product and differentiation explanation
+
+> **LobbyTeam helps a business run its front door: the first place a customer, prospect, visitor, or caller arrives. It is especially useful for appointment-driven offices and lean teams where missed calls, repetitive questions, phone-tagged rescheduling, and unclear follow-up create measurable loss.**
 >
-> **It uses a coordinated digital team: one agent engages the customer while specialized agents help understand the request, check your approved guidance, determine what can be handled, and route the rest to the right person or team. LobbyTeam can support appointments, customer questions, inbound sales, service requests, after-hours coverage, and physical visitor assistance when configured.**
+> **LobbyTeam receives the request through a configured channel, understands what the person needs, checks the business’s approved knowledge and workflow rules, and either handles the defined task or routes the exception to the right human. The handoff is designed to include what the customer wants, what has already happened, and what should happen next.**
 >
-> **The result is simple: your customer gets a useful next step, and your team receives the context needed to take over without starting from zero.**
+> **That makes LobbyTeam more than a chatbot, voicemail replacement, or narrow AI receptionist. It is a managed digital frontline: the business defines what it may answer, change, schedule, route, and escalate, while specialized automation works behind the interaction to apply those rules. When judgment is required, a person remains accountable.**
+>
+> **Start with one painful workflow—such as missed-call intake, appointment rescheduling, or after-hours support—and measure completed next steps, handoff quality, response time, and staff interruption. Expand to more channels and workflows only after the first operating result is clear.**
 
-## The 90-Second Pitch
+### Long-Form Investor Pitch — category, wedge, and expansion
 
-> **LobbyTeam is the front door for your business, whether you are a solo operator, a small office, an online business, a field-service company, or a distributed support team.**
+> **Small businesses and lean teams lose customer work at the front door. Calls arrive while staff are busy, appointment changes turn into phone tag, messages have no clear owner, and handoffs lose the context needed to act. The cost is not just a missed conversation. It is lost bookings, delayed service, repeated staff effort, and customers who have to start over.**
 >
-> **Customers and visitors do not care which department owns the answer or which channel they used. They want to be understood and helped forward. But businesses lose momentum when calls are missed, messages sit unanswered, appointments require phone tag, after-hours requests reach the wrong region, or human handoffs lose the original context.**
+> **LobbyTeam is the digital front desk for that problem. It handles defined first-contact workflows: answering approved questions, collecting the information needed to understand a request, completing configured actions such as booking or callback intake, and routing exceptions to the right person with context. The initial wedge is appointment-driven small offices and other phone-dependent teams where the pain is frequent, operationally clear, and measurable.**
 >
-> **LobbyTeam solves that by providing a coordinated digital team. One agent may be speaking on the phone, answering chat, handling email, or guiding a visitor. Behind the interaction, specialized agents help interpret the request, identify intent and urgency, check the business guidance, determine the right workflow, and route the request to the correct human, team, location, or region.**
+> **The product is differentiated by its operating model, not by claiming that “multiple agents” are a moat. LobbyTeam combines a customer-facing interaction with business-specific workflow rules, routing and escalation logic, context-preserving handoffs, and visible ownership of the next action. It can work across configured phone, chat, email, SMS, WhatsApp, and visitor entry points, but the outcome—not the channel list—is the product.**
 >
-> **The business defines the knowledge, approved actions, routing rules, escalation rules, and boundaries. LobbyTeam applies those rules and keeps the outcome visible. It can help answer questions, complete configured requests, schedule or reschedule appointments, gather information, support inbound sales, route service needs, provide after-hours coverage, and connect physical-lobby visitors to the right human when available.**
+> **The business controls the knowledge, approved actions, schedules, routing rules, consent language, and human-only decisions. LobbyTeam applies those rules within the configured workflow and makes uncertainty visible instead of inventing certainty. This control model is important because customer operations require accountability: the product should extend a team’s capacity without pretending to replace professional, commercial, security, clinical, legal, or emergency judgment.**
 >
-> **LobbyTeam does not replace accountable people or make sensitive decisions on its own. It helps the right request reach the right person with the right context. The result is a front door that moves people forward instead of stopping at hello.**
+> **The expansion path is deliberate: start with missed-call recovery and appointment workflows; add broader front-desk questions, callbacks, reminders, and rescheduling; extend into phone, chat, email, SMS, and WhatsApp history; then deepen calendar, CRM, service-management, multi-location, analytics, quality, and vertical-template capabilities. Over time, defensibility should come from the business-specific workflow and policy configuration, structured interaction history, outcome data, integration depth, and operational ownership—not from generic agent architecture alone.**
+>
+> **The proof standard is measurable operating improvement, not conversation volume. Early evidence should track unanswered calls recovered, defined requests completed, appointment and callback completion, correct handoff rate, handoff completeness, follow-up completion, staff interruption, retention, time to first successful workflow, and margin per handled interaction. Until those measures are established across real accounts, LobbyTeam should describe them as proof to earn, not traction to imply.**
+
+### Long-Form Outcome-Oriented Target-Customer Pitch — buyer story
+
+> **LobbyTeam is for the owner, office manager, receptionist, dispatcher, or support lead who is responsible for the first customer response while also trying to keep the business moving. It is especially useful when calls arrive during busy periods, appointments require repeated confirmation or rescheduling, website and inbox requests have no clear owner, or customers repeat their story every time a request changes hands.**
+>
+> **Your customer does not experience your org chart. They experience one business. But the first contact often stops at voicemail, a delayed reply, a form receipt, or an unclear handoff. A request may be simple, but it still becomes lost work, an empty appointment slot, a delayed service response, or another interruption for your team.**
+>
+> **LobbyTeam gives your business a dependable first response and a clear next step. It can answer approved questions, collect the information needed to understand the request, complete defined work when the required channel and integration are configured, and route exceptions to the right human with the conversation context attached. Your customer gets progress instead of silence. Your team gets context instead of another vague message. The next action has an owner.**
+>
+> **A typical workflow looks like this: a customer calls while your front desk or field team is busy; LobbyTeam asks what they need, collects the relevant details, answers what it is approved to answer, and books or requests the next step when that workflow is configured. If a person needs to take over, the request goes to the right owner, dispatcher, office, or support contact with a concise summary. If that person is unavailable, the configured backup path keeps the request visible rather than leaving it in an unowned queue.**
+>
+> **You remain in control. You decide what LobbyTeam may say, what it may do, who owns each type of request, what requires approval, and what should happen when information is missing. LobbyTeam should not invent answers or make sensitive clinical, legal, financial, commercial, security, emergency, or other judgment-heavy decisions. It works alongside your people; it does not replace accountable staff.**
+>
+> **Start with one painful, measurable workflow—missed-call intake and owned follow-up, appointment rescheduling, repetitive front-desk questions, or after-hours support. Measure the result against your baseline: faster first response, more completed bookings, fewer abandoned requests, better handoff context, less repeated explanation, and clearer follow-through. Expand only after the first workflow proves useful.**
+
+### How to choose the pitch
+
+| Situation | Use | Lead with |
+|---|---|---|
+| Casual introduction | 30 seconds | Digital front desk and clear next step |
+| Buyer wants to understand the problem | 60 seconds | Busy staff, stalled requests, owned handoff |
+| Sales conversation or presentation | 90 seconds | Workflow, control, human boundary, measurable start |
+| Investor or strategic partner conversation | Investor pitch | Narrow wedge, operating model, expansion, proof to earn |
+| Target customer discovery or sales call | Customer pitch | Their front-door pain, first workflow, baseline outcome |
 
 ## How It Works
 
@@ -523,7 +562,7 @@ LobbyTeam uses business rules to help determine:
 
 Use this order in public messaging:
 
-1. **Outcome:** every customer gets a useful outcome or a clearly owned next step.
+1. **Outcome:** each defined customer request gets a useful outcome or a clearly owned next step.
 2. **Problem:** missed calls, unanswered messages, repetitive work, and unclear ownership.
 3. **Product category:** a coordinated digital front-door team.
 4. **How it works:** one agent engages while specialists interpret, check, route, and preserve context.
@@ -649,7 +688,19 @@ or:
 
 ## One-Sentence Definition
 
-> **LobbyTeam is a coordinated digital front-door team that helps every customer reach an answer, a completed request, or the right human next step.**
+> **LobbyTeam is a digital front desk that handles defined customer requests and routes exceptions to the right human with useful context.**
+
+## Product-Management Decision
+
+The launch message should be narrow enough to buy and broad enough to grow:
+
+- **Primary wedge:** appointment-driven small offices and lean teams with missed calls, repetitive questions, scheduling work, and unclear follow-up.
+- **Core promise:** turn predictable first-contact work into completed work or clearly owned follow-up.
+- **Category metaphor:** business front door / digital frontline.
+- **Supporting proof:** configured channels, coordinated specialist automation, routing, context preservation, and visible ownership.
+- **Expansion contexts:** field service, online support, inbound sales, physical visitor assistance, after-hours coverage, and multi-location routing.
+
+Do not lead with all channels, industries, or agent architecture at once. Use those as proof and expansion language after the buyer recognizes the operating problem.
 
 ## Final Brand Test
 

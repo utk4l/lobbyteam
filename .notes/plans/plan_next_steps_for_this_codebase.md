@@ -17,6 +17,7 @@ status: active
 | D | Pricing validation and Interaction Unit billing | Active | TODO_1_OF_5_lobbyteam_pricing_concept.md; TODO_lobbyteam_interaction_unit_billing_spec.md |
 | E | Multi-channel outcome animation | Done | DONE_lobbyteam_outcome-in-motion.md |
 | F | Website decision team positioning | Done | DONE_lobbyteam_website-decision-team.md |
+| G | Messaging pitch system | Done | DONE_lobbyteam_messaging_pitches_guideline.md |
 
 ## Ordered Actions
 
@@ -36,3 +37,4 @@ status: active
 14. [DONE] Publish and verify the seven-article Appointment Operations Without Phone Tag series; prepare Series 5 next.
 15. [DONE] Fix stale empty browser cache behavior on `/blog` and verify the live WordPress content endpoint.
 16. [DONE] Remove duplicate WordPress series text from LobbyTeam article rendering and verify the live article route.
+17. [DONE] Draft and approve the five-pitch LobbyTeam messaging guideline in the canonical comprehensive messaging guide.

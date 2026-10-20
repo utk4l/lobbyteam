@@ -22,6 +22,7 @@ Bring LobbyTeam to a coherent, discoverable, outcome-led public launch while pre
 | E | Pricing validation and Interaction Unit billing | Active | TODO_1_OF_5_lobbyteam_pricing_concept.md; TODO_lobbyteam_interaction_unit_billing_spec.md |
 | F | Multi-channel outcome animation | Done | DONE_lobbyteam_outcome-in-motion.md |
 | G | Website decision team positioning | Done | DONE_lobbyteam_website-decision-team.md |
+| H | Messaging pitch system | Done | DONE_lobbyteam_messaging_pitches_guideline.md |
 
 ## Current Product Truth
 
@@ -70,6 +71,7 @@ Bring LobbyTeam to a coherent, discoverable, outcome-led public launch while pre
 - Blog display cache fix shipped in `fa13d3d`: browser cache namespace versioned and contradictory empty post responses retried; Manas blog content endpoint and production build verified.
 - Blog series rendering cleanup shipped in `7788ec9`: generated WordPress series markup is removed from article summaries and bodies while the native LobbyTeam series dropdown remains visible once.
 - Multi-channel hero demo showing callback, human routing, and interaction logging, pending deployment verification.
+- Refined canonical LobbyTeam pitch system with 30/60/90-second, investor, and outcome-oriented target-customer narratives.
 
 ## Deferred Or Open Work
 
@@ -77,6 +79,7 @@ Bring LobbyTeam to a coherent, discoverable, outcome-led public launch while pre
 - Prerendered HTML for public marketing routes if crawl testing shows client rendering is insufficient.
 - Production verification of every public capability claim.
 - Final pricing validation against real channel economics.
+- Consolidate 30/60/90-second, investor, and outcome-oriented target-customer pitches in the canonical messaging guide.
 - Publish and maintain the remaining editorial program batches; Series 5 is next.
 - Add analytics and conversion measurement for intent progression.
 - Decide whether the legacy routes should be noindex at the server or document level.
