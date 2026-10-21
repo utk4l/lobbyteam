@@ -19,6 +19,7 @@ status: active
 | F | Website decision team positioning | Done | DONE_lobbyteam_website-decision-team.md |
 | G | Messaging pitch system | Done | DONE_lobbyteam_messaging_pitches_guideline.md |
 | H | B2B frontline assistant | Active | TODO_lobbyteam_b2b_frontline_assistant.md |
+| I | Guided website tour | Active, later phase | TODO_lobbyteam_guided_website_tour.md |
 
 ## Ordered Actions
 
@@ -40,3 +41,4 @@ status: active
 16. [DONE] Remove duplicate WordPress series text from LobbyTeam article rendering and verify the live article route.
 17. [DONE] Draft and approve the five-pitch LobbyTeam messaging guideline in the canonical comprehensive messaging guide.
 18. Define the verified capability matrix and first missed-call intake workflow for the B2B frontline assistant.
+19. [ACTIVE] Define the guided website tour contract, content model, `/lobby-team` route, and first measurable text prototype; keep implementation behind the B2B request-to-resolution foundation.

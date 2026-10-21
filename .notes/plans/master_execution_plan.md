@@ -24,6 +24,7 @@ Bring LobbyTeam to a coherent, discoverable, outcome-led public launch while pre
 | G | Website decision team positioning | Done | DONE_lobbyteam_website-decision-team.md |
 | H | Messaging pitch system | Done | DONE_lobbyteam_messaging_pitches_guideline.md |
 | I | B2B frontline assistant | Active | TODO_lobbyteam_b2b_frontline_assistant.md |
+| J | Guided website tour | Active, later phase | TODO_lobbyteam_guided_website_tour.md |
 
 ## Current Product Truth
 

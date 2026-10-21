@@ -87,6 +87,16 @@ status: active
 **Outcome:** Reframed LobbyTeam as a multi-channel inbound request-to-resolution coordination layer, not an AI receptionist. The product invariant is that every request has context, a next action, an accountable owner or queue, a tracked handoff chain, customer-visible progress, and verified closure or explicit reopen state.
 **Files:** No product documents changed during this review.
 
+## 2026-10-20T19:34:23-05:00 | branch=main | topic=guided-website-tour-implementation-plan
+
+**Timestamp:** 2026-10-20 19:34:23 CDT (`America/Chicago`)
+**Branch:** `main`
+**Type:** Implemented
+
+**Context:** User requested an implementation plan and an in-depth team-ready definition for the guided `/lobby-team` website tour and co-browsing feature.
+**Outcome:** Created the guided website tour implementation plan and detailed feature specification. Defined the visitor journey, route/session behavior, content block model, typed guided-view contract, co-browsing boundary, text/voice continuity, request handoff, privacy, accessibility, analytics, APIs, lifecycle states, acceptance criteria, QA scenarios, rollout phases, and go/no-go gate. Added the track to the master and next-steps plans as a later-phase capability.
+**Files:** `.notes/plans/TODO_lobbyteam_guided_website_tour.md`, `.notes/docs/LobbyTeam guided website tour feature specification.md`, `.notes/plans/master_execution_plan.md`, `.notes/plans/plan_next_steps_for_this_codebase.md`.
+
 ## 2026-10-20T17:34:20-05:00 | branch=main | topic=guided-website-tour-capability
 
 **Timestamp:** 2026-10-20 17:34:20 CDT (`America/Chicago`)
@@ -96,6 +106,16 @@ status: active
 **Context:** User proposed a future LobbyTeam experience where a website visitor explains who they are and what they need, then receives a personalized, dynamic tour of the business website through relevant content and paths.
 **Outcome:** Added this as a planned later-phase capability, not a Phase 1 promise. The feature must use approved content blocks and metadata, preserve provenance and visitor context, support text and voice over the same guided-tour state, protect privacy and accessibility, and fall back safely to normal navigation when confidence or content coverage is insufficient.
 **Files:** `.notes/messaging/LobbyTeam personas and use cases.md`, `.notes/messaging/LobbyTeam comprehensive messaging guide.md`, `.notes/plans/TODO_lobbyteam_b2b_frontline_assistant.md`, `.notes/docs/About this codebase.md`.
+
+## 2026-10-20T17:36:27-05:00 | branch=main | topic=guided-tour-cofounder-review
+
+**Timestamp:** 2026-10-20 17:36:27 CDT (`America/Chicago`)
+**Branch:** `main`
+**Type:** Investigation
+
+**Context:** User asked for a co-founder assessment of the planned Talk to the LobbyTeam `/lobby-team` co-browsing website-tour experience.
+**Outcome:** The feature is potentially a powerful experiential wedge because it turns a static website into a guided relevance and request-capture layer. The product bet is not dynamic page generation; it is reducing visitor confusion, preserving intent, and advancing the visitor to an owned next step. The recommended shape is a composed guided view from approved content blocks, with text/voice, co-browsing, human handoff, and measurable progression. The main risk is a visually impressive but low-value demo that does not improve visitor outcomes.
+**Files:** No product documents changed during this review.
 
 ## 2026-10-20T17:42:00-05:00 | branch=main | topic=guided-tour-route-and-cobrowse
 
