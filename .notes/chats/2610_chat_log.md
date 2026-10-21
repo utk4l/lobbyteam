@@ -107,6 +107,26 @@ status: active
 **Outcome:** Sequenced the work explicitly: first verify the multi-channel capability/provider matrix; then prove one request-to-resolution workflow with durable work item, human acknowledgement, customer updates, backup escalation, and verified closure; then define the canonical work model before implementing the guided website tour. The tour remains later phase and should become a high-value channel into the request-resolution engine.
 **Files:** `.notes/plans/plan_next_steps_for_this_codebase.md`.
 
+## 2026-10-21T09:10:00-05:00 | branch=main | topic=pitch-messaging-check
+
+**Timestamp:** 2026-10-21 09:10:00 CDT (`America/Chicago`)
+**Branch:** `main`
+**Type:** Decision
+
+**Context:** User asked whether the pitch messaging needs another update after the request-to-resolution positioning and guided website-tour concept were defined.
+**Outcome:** Core messaging is directionally current and should not be rewritten around the planned website tour. Tighten the short pitch around inbound ownership, multi-human handoffs, customer-visible progress, and verified closure. Add the guided website tour as a separate website-specific story and later-phase expansion example, clearly marked as planned rather than available capability.
+**Files:** `.notes/messaging/LobbyTeam comprehensive messaging guide.md` reviewed; no messaging edits made in this review.
+
+## 2026-10-21T09:18:00-05:00 | branch=main | topic=update-pitch-messaging
+
+**Timestamp:** 2026-10-21 09:18:00 CDT (`America/Chicago`)
+**Branch:** `main`
+**Type:** Implemented
+
+**Context:** User asked to update the pitch messaging after the request-to-resolution positioning and guided website-tour concept were defined.
+**Outcome:** Tightened the 30-second and 60-second pitches around inbound work ownership, multi-human handoffs, customer-visible progress, and verified closure. Added the guided `/lobby-team` website-tour experience as a clearly marked planned expansion and strengthened the AI-receptionist differentiation and objection response.
+**Files:** `.notes/messaging/LobbyTeam comprehensive messaging guide.md`.
+
 ## 2026-10-20T17:34:20-05:00 | branch=main | topic=guided-website-tour-capability
 
 **Timestamp:** 2026-10-20 17:34:20 CDT (`America/Chicago`)

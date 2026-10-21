@@ -44,6 +44,8 @@ Website-specific category:
 
 When a visitor arrives with a broad question, LobbyTeam helps them understand what the business offers, find what fits, and choose a useful next step. It can ask a clarifying question, compare approved paths, share a relevant resource, schedule or request a conversation, and bring in the right human with context.
 
+The future website experience makes this concrete: a **Talk to the LobbyTeam** button can open a personalized `/lobby-team` experience where the visitor explains who they are and what they need, then receives a guided path through the parts of the business that matter to them. This remains a planned capability, not a current universal claim.
+
 Planned website experience:
 
 > **A personal tour of the business, shaped around what the visitor is trying to accomplish.**
@@ -340,11 +342,11 @@ Use the shortest pitch that fits the moment. Lead with the buyer’s operating p
 
 ### The 30-Second Pitch — fast introduction
 
-> **LobbyTeam is the inbound work layer for busy offices and lean teams. It receives calls, emails, website requests, texts, and office QR interactions, then handles the safe work, hands off the rest with full context, and tracks the request until closure. Your team sees the owner, next action, and progress. Your customer is not left wondering whether anyone is working on it.**
+> **LobbyTeam is the inbound work team for busy offices and lean teams. It receives requests from phone, email, website, SMS, and physical entry points, handles what it can, coordinates human handoffs with full context, and keeps every open request moving until it is resolved. Your team sees the owner, next action, and progress. Your customer is not left wondering whether anyone is working on it.**
 
 ### The 60-Second Pitch — problem and product explanation
 
-> **A busy office does not lose work because customers lack intent. It loses work because requests arrive through different channels, move between people, and stop without a clear owner. LobbyTeam receives the request, understands what needs to happen, handles the configured work, or routes it to one or more humans with the context attached. If no human is immediately available, it creates an open ticket, keeps the customer informed, and follows the work until there is verified completion or an explicit unresolved outcome.**
+> **A busy office does not lose work because customers lack intent. It loses work because requests arrive through different channels, move between people, and stop without a clear owner. LobbyTeam receives the request, understands what needs to happen, handles the configured work, or routes it to one or more humans with the context attached. If no human is immediately available, it keeps the request open, keeps the customer informed, and follows the work until there is verified completion or an explicit unresolved outcome.**
 
 ### The 90-Second Pitch — fuller product and differentiation explanation
 
@@ -369,6 +371,8 @@ Use the shortest pitch that fits the moment. Lead with the buyer’s operating p
 > **The expansion path is deliberate: start with one request-to-resolution workflow across the channels that matter to that customer; add more human handoff paths, customer updates, follow-up actions, and workflow templates; then deepen calendar, CRM, ticketing, service-management, multi-location, analytics, quality, and vertical capabilities. Over time, defensibility should come from the business-specific workflow and policy configuration, structured work and handoff history, closure evidence, outcome data, integration depth, and operational ownership—not from generic agent architecture alone.**
 >
 > **The proof standard is verified work advancement, not conversation volume. Early evidence should track owned next-step rate, handoff acknowledgement, time to first owner, customer-update compliance, time to resolution, reopen rate, unresolved aging, closure evidence, staff interruption, retention, onboarding effort, and fully loaded cost per successfully advanced request. Until those measures are established across real accounts, LobbyTeam should describe them as proof to earn, not traction to imply.**
+
+> **The later website-tour expansion gives the same system a more helpful front door: a visitor can explain who they are and what they need, and LobbyTeam can guide them through approved, relevant business content before turning the interaction into a qualified next step. It is an extension of the request-to-resolution model, not a separate tour product.**
 
 ### Long-Form Outcome-Oriented Target-Customer Pitch — buyer story
 
@@ -523,6 +527,10 @@ LobbyTeam adds:
 - Business-specific routing and workflow rules
 - Clear next-step selection
 - Context-rich human handoffs
+- Open-ticket tracking and customer progress updates
+- Multi-human handoff history
+- Verified closure or an explicit unresolved outcome
+- A future guided website experience that helps visitors find relevance before they create a request
 - After-hours and multi-region routing
 - Support for multiple front-door channels
 - Visibility into ownership and follow-through
@@ -614,7 +622,7 @@ Do not reverse this order by leading with agents, models, orchestration, or auto
 
 ### “Is this just an AI receptionist?”
 
-> No. An AI receptionist usually describes one system that answers a call or message. LobbyTeam is a coordinated digital team: one agent engages the customer while specialized agents help interpret the request, apply your business rules, and guide the next step.
+> No. An AI receptionist usually describes one system that answers a call or message. LobbyTeam receives inbound work across channels, decides whether it can handle the request or needs people, preserves context across handoffs, keeps the customer updated, and follows the work through closure. The planned website tour is one way LobbyTeam can help a visitor reach the right request or next step.
 
 ### “Will this replace my receptionist?”
 
