@@ -97,6 +97,16 @@ status: active
 **Outcome:** Created the guided website tour implementation plan and detailed feature specification. Defined the visitor journey, route/session behavior, content block model, typed guided-view contract, co-browsing boundary, text/voice continuity, request handoff, privacy, accessibility, analytics, APIs, lifecycle states, acceptance criteria, QA scenarios, rollout phases, and go/no-go gate. Added the track to the master and next-steps plans as a later-phase capability.
 **Files:** `.notes/plans/TODO_lobbyteam_guided_website_tour.md`, `.notes/docs/LobbyTeam guided website tour feature specification.md`, `.notes/plans/master_execution_plan.md`, `.notes/plans/plan_next_steps_for_this_codebase.md`.
 
+## 2026-10-21T09:00:00-05:00 | branch=main | topic=next-product-sequence
+
+**Timestamp:** 2026-10-21 09:00:00 CDT (`America/Chicago`)
+**Branch:** `main`
+**Type:** Decision
+
+**Context:** User asked what should happen next after the LobbyTeam messaging, request-to-resolution model, and guided website-tour specification were completed.
+**Outcome:** Sequenced the work explicitly: first verify the multi-channel capability/provider matrix; then prove one request-to-resolution workflow with durable work item, human acknowledgement, customer updates, backup escalation, and verified closure; then define the canonical work model before implementing the guided website tour. The tour remains later phase and should become a high-value channel into the request-resolution engine.
+**Files:** `.notes/plans/plan_next_steps_for_this_codebase.md`.
+
 ## 2026-10-20T17:34:20-05:00 | branch=main | topic=guided-website-tour-capability
 
 **Timestamp:** 2026-10-20 17:34:20 CDT (`America/Chicago`)

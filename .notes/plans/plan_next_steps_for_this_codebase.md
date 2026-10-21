@@ -21,6 +21,16 @@ status: active
 | H | B2B frontline assistant | Active | TODO_lobbyteam_b2b_frontline_assistant.md |
 | I | Guided website tour | Active, later phase | TODO_lobbyteam_guided_website_tour.md |
 
+## Immediate
+
+The authoritative execution queue remains the master plan. For the product work, execute these in order:
+
+1. **B2B capability matrix:** Verify the real phone, email, website, SMS, QR, ticketing, notification, handoff, and mobile capabilities before designing generic contracts.
+2. **One request-to-resolution workflow:** Select one request type and carry it from multi-channel intake through triage, human acknowledgement, customer updates, backup escalation, and verified closure.
+3. **Canonical work model:** Define request/work item, conversation, channel session, assignment, handoff, commitment, external action, customer update, and closure evidence before building the guided website tour.
+
+The guided website tour remains a later-phase experience. Its next preparatory work is the content contract and text prototype, but implementation should wait until the request/work-item and handoff foundations are stable.
+
 ## Ordered Actions
 
 1. Verify FAQ answers against the capability matrix.
