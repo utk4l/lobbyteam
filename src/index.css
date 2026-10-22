@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --canvas-bg: #F5F5F7;
+  --hairline-color: #E5E5EA;
+  --hairline-dark: #D1D1D6;
+  --ink-primary: #1D1D1F;
+  --ink-muted: #6E6E73;
+  --signal-emerald: #10B981;
+  --signal-apple: #34C759;
+}
+
+body {
+  background-color: #F5F5F7;
+  color: #1D1D1F;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Cal.com architectural exposed crosshairs and grid lines */
+.grid-crosshair {
+  position: relative;
+}
+
+.grid-crosshair::before,
+.grid-crosshair::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+}
+
+/* Apple Frosted Glass */
+.apple-glass {
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.apple-glass-card {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid #E5E5EA;
+}
+
+.apple-glass-subtle {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(229, 229, 234, 0.8);
+}
+
+/* Cal.com hairline borders */
+.bento-border {
+  border: 1px solid #E5E5EA;
+}
+
+/* Tabular figures for pricing and stats */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Subtle architectural dot grid */
+.dot-grid {
+  background-image: radial-gradient(rgba(0, 0, 0, 0.06) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
