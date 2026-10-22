@@ -1,0 +1,20 @@
+node_modules/
+.DS_Store
+dist/
+design/
+
+# Local Netlify folder
+.netlify
+
+# Local env / secrets (keep .env.example tracked)
+.env
+.docs/
+
+# Huge files / archives / media
+*.zip
+*.dmg
+*.mp4
+*.mov
+*.tar
+*.tar.gz
+*.tgz
