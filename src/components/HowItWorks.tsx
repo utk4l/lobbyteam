@@ -21,76 +21,76 @@ const steps: Step[] = [
     id: 'understand',
     num: '01',
     title: 'Understand',
-    short: 'Reads intent across channels',
-    desc: 'LobbyTeam reads what the person actually needs, not just which channel they arrived from. It separates routine questions from urgent requests requiring human judgment.',
+    short: 'Identifies the true intent',
+    desc: 'LobbyTeam reads or listens to what the customer actually wants. It immediately separates routine questions about hours or parking from urgent matters that require your staff.',
     icon: Brain,
     badge: 'INTENT PARSING',
     payload: {
-      label: 'Request Classification Output',
+      label: 'Request Classification Summary',
       details: [
-        { key: 'Detected Channel', val: 'Inbound Phone (+1 415-890-1209)' },
-        { key: 'Customer Intent', val: 'Rescheduling + Preparation Q' },
-        { key: 'Urgency Score', val: 'Elevated (< 24 Hours)' },
-        { key: 'Assigned Category', val: 'Tier 1 Operations' },
+        { key: 'Arrival Channel', val: 'Inbound Phone (+1 415-890-1209)' },
+        { key: 'Customer Intent', val: 'Reschedule booking + Preparation Q' },
+        { key: 'Urgency Level', val: 'Time sensitive (Booking < 24 Hours)' },
+        { key: 'Assigned Category', val: 'Appointment Operations' },
       ],
-      callout: 'Understands intent regardless of accents, formatting, or channel differences.',
+      callout: 'Understands customer intent regardless of phone accents or typing shortcuts.',
     },
   },
   {
     id: 'act',
     num: '02',
     title: 'Act',
-    short: 'Enforces tenant-defined rules',
-    desc: 'It follows the operating rules you define for answers, appointments, resources, and requests. If an approved answer or workflow exists, it completes the work without human intervention.',
+    short: 'Completes tasks on the spot',
+    desc: 'It checks your live calendar, references your approved facts, and completes the booking or question immediately. No waiting on hold, no phone tag.',
     icon: Cpu,
-    badge: 'TENANT POLICY',
+    badge: 'OFFICE RULES',
     payload: {
-      label: 'Automated Action Protocol',
+      label: 'Verified Action Log',
       details: [
-        { key: 'Knowledge Base', val: 'Match: Pre-appointment rules' },
-        { key: 'Calendar API', val: 'Queried Google Calendar / Clio DB' },
-        { key: 'Slots Offered', val: 'Thu 10:00 AM / Fri 2:30 PM' },
-        { key: 'Hallucination Check', val: 'Zero guess tolerance · Passed' },
+        { key: 'Knowledge Base', val: 'Match: Pre-appointment preparation rules' },
+        { key: 'Calendar Connection', val: 'Queried Google Calendar & Office DB' },
+        { key: 'Offered Windows', val: 'Thu 10:00 AM / Fri 2:30 PM' },
+        { key: 'Policy Check', val: 'Strict adherence · Zero hallucination' },
       ],
-      callout: 'Executes verified actions inside your business boundaries. Never improvises policy.',
+      callout: 'Executes verified actions inside your boundaries. It never improvises or promises what you cannot deliver.',
     },
   },
   {
     id: 'escalate',
     num: '03',
-    title: 'Escalate',
-    short: 'Context-rich handoff',
-    desc: 'When a human matters, it routes to the right person with the full conversation attached. The receptionist, dispatcher, or specialist gets the complete picture before they say hello.',
+    title: 'Route',
+    short: 'Hands off with full context',
+    desc: 'When a customer has a unique question or requires human care, LobbyTeam transfers to the right person with the full conversation summary on screen.',
     icon: ArrowUpRight,
-    badge: 'NO BLIND TRANSFERS',
+    badge: 'WARM TRANSFERS',
     payload: {
-      label: 'Handoff Dossier',
+      label: 'Staff Handoff Summary',
       details: [
-        { key: 'Target Specialist', val: 'Sarah Jenkins (Coordinator)' },
-        { key: 'Escalation Trigger', val: 'Specialist review requested' },
-        { key: 'Handoff Medium', val: 'Warm Phone Transfer + Alert' },
-        { key: 'Context Preserved', val: '100% transcripts attached' },
+        { key: 'Target Team Member', val: 'Sarah Jenkins (Coordinator)' },
+        { key: 'Escalation Reason', val: 'Specialist medical review requested' },
+        { key: 'Delivery Method', val: 'Warm Phone Transfer + Slack alert' },
+        { key: 'Context Preserved', val: 'Full transcript & details attached' },
       ],
-      callout: 'Customer never has to start over or re-explain their situation.',
+      callout: 'Your teammate picks up the phone already knowing who is calling and what they need.',
     },
   },
   {
     id: 'remember',
     num: '04',
     title: 'Remember',
-    short: 'State travels with the customer',
-    desc: 'The next person sees what happened, what matters, and what should happen next. If the customer calls back, emails, or walks in tomorrow, the thread continues seamlessly.',
+    short: 'Keeps one continuous thread',
+    desc: 'If a customer calls today, texts tomorrow, and walks in on Friday, your team sees one unified history. The customer never has to re-explain their situation.',
     icon: History,
-    badge: 'UNIFIED STATE',
+    badge: 'SHARED MEMORY',
     payload: {
-      label: 'Audit & Continuity Record',
+      label: 'Customer Thread Record',
       details: [
-        { key: 'Thread ID', val: 'LT-ORD-2026-9041' },
-        { key: 'Recorded Action', val: 'Rescheduled slot saved' },
-        { key: 'Ownership', val: 'Assigned to Sarah for check' },
-        { key: 'Next Trigger', val: 'SMS confirmation 2h prior' },
+        { key: 'Conversation ID', val: 'LT-ORD-2026-9041' },
+        { key: 'Recorded Action', val: 'Rescheduled slot saved; prep emailed' },
+        { key: 'Assigned Owner', val: 'Sarah Jenkins (Follow-up assigned)' },
+        { key: 'Upcoming Step', val: 'Automated SMS reminder 2h prior' },
       ],
-      callout: 'All interactions across phone, chat, and office visits sync to one thread.',
+      callout: 'Phone calls, WhatsApp messages, and lobby visits all sync to the same customer profile.',
     },
   },
 ];
@@ -107,15 +107,15 @@ export const HowItWorks: React.FC = () => {
         {/* Section Header */}
         <div className="max-w-3xl mb-10 sm:mb-16">
           <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-white border border-[#E5E5EA] shadow-apple-subtle mb-4">
-            <span className="font-mono text-[10px] tracking-channelTag uppercase font-semibold text-[#6E6E73]">
-              COORDINATED SYSTEM ARCHITECTURE
+            <span className="text-[10px] uppercase tracking-wider font-semibold text-[#6E6E73]">
+              How an interaction flows
             </span>
           </div>
-          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-semibold tracking-tighterHeading text-[#1D1D1F] leading-tight mb-4">
+          <h2 className="font-heading text-2xl sm:text-4xl lg:text-5xl font-semibold tracking-tighterHeading text-[#1D1D1F] leading-tight mb-4">
             The conversation moves forward. Your people stay in control.
           </h2>
-          <p className="text-sm sm:text-base lg:text-lg text-[#515154] leading-relaxed">
-            LobbyTeam does not rely on an unrestricted autonomous model. Coordinated agents work inside your tenant-defined business policies to produce dependable operational outcomes.
+          <p className="font-subheading text-sm sm:text-base lg:text-lg text-[#515154] leading-relaxed">
+            LobbyTeam never guesses or makes things up. It only answers questions you have approved and only books slots you have opened. If something falls outside your rules, it hands off cleanly to your staff.
           </p>
         </div>
 
@@ -138,7 +138,7 @@ export const HowItWorks: React.FC = () => {
                   }`}
                 >
                   <div className="flex items-center justify-between mb-1.5 sm:mb-2">
-                    <span className="font-mono text-[11px] sm:text-xs font-bold text-[#86868B]">
+                    <span className="text-[11px] sm:text-xs font-bold text-[#86868B]">
                       {st.num}
                     </span>
                     <div
@@ -151,7 +151,7 @@ export const HowItWorks: React.FC = () => {
                       <StepIcon className="h-3 w-3 sm:h-3.5 sm:w-3.5" />
                     </div>
                   </div>
-                  <h4 className="text-sm sm:text-base font-semibold text-[#1D1D1F] tracking-tight">
+                  <h4 className="font-heading text-sm sm:text-base font-semibold text-[#1D1D1F] tracking-tight">
                     {st.title}
                   </h4>
                   <span className="block text-[10px] sm:text-[11px] text-[#6E6E73] truncate mt-0.5">
@@ -167,22 +167,22 @@ export const HowItWorks: React.FC = () => {
             
             {/* Step Prose (Left) */}
             <div className="lg:col-span-5">
-              <div className="inline-flex items-center space-x-1.5 px-2.5 py-1 rounded-[6px] bg-[#10B981]/10 text-[#047857] border border-[#10B981]/20 font-mono text-[9px] sm:text-[10px] font-semibold uppercase tracking-channelTag mb-3">
+              <div className="inline-flex items-center space-x-1.5 px-2.5 py-1 rounded-[6px] bg-[#10B981]/10 text-[#047857] border border-[#10B981]/20 text-[9px] sm:text-[10px] font-semibold uppercase tracking-wider mb-3">
                 <span className="h-1.5 w-1.5 rounded-full bg-[#10B981]" />
                 <span>STEP {current.num} · {current.badge}</span>
               </div>
 
-              <h3 className="text-xl sm:text-2xl lg:text-3xl font-semibold text-[#1D1D1F] tracking-tight mb-3 sm:mb-4">
+              <h3 className="font-heading text-xl sm:text-2xl lg:text-3xl font-semibold text-[#1D1D1F] tracking-tight mb-3 sm:mb-4">
                 {current.title}
               </h3>
 
-              <p className="text-xs sm:text-sm lg:text-base text-[#515154] leading-relaxed mb-4 sm:mb-6">
+              <p className="font-subheading text-xs sm:text-sm lg:text-base text-[#515154] leading-relaxed mb-4 sm:mb-6">
                 {current.desc}
               </p>
 
               <div className="p-3.5 sm:p-4 rounded-[14px] sm:rounded-[16px] bg-[#F5F5F7] border border-[#E5E5EA]">
-                <span className="font-mono text-[9px] sm:text-[10px] uppercase tracking-wider text-[#86868B] block mb-1 font-semibold">
-                  Why It Matters
+                <span className="text-[9px] sm:text-[10px] uppercase tracking-wider text-[#86868B] block mb-1 font-semibold">
+                  Why this helps you
                 </span>
                 <p className="text-xs text-[#1D1D1F] font-medium leading-relaxed">
                   {current.payload.callout}
@@ -194,14 +194,14 @@ export const HowItWorks: React.FC = () => {
                 <button
                   disabled={activeStep === 0}
                   onClick={() => setActiveStep((prev) => Math.max(0, prev - 1))}
-                  className="px-3 py-1.5 rounded-[10px] bg-white border border-[#E5E5EA] text-xs font-mono text-[#515154] disabled:opacity-40 hover:bg-[#F5F5F7]"
+                  className="px-3 py-1.5 rounded-[10px] bg-white border border-[#E5E5EA] text-xs text-[#515154] disabled:opacity-40 hover:bg-[#F5F5F7]"
                 >
                   ← PREV
                 </button>
                 <button
                   disabled={activeStep === steps.length - 1}
                   onClick={() => setActiveStep((prev) => Math.min(steps.length - 1, prev + 1))}
-                  className="px-3 py-1.5 rounded-[10px] bg-[#1D1D1F] text-white text-xs font-mono disabled:opacity-40 hover:bg-black"
+                  className="px-3 py-1.5 rounded-[10px] bg-[#1D1D1F] text-white text-xs disabled:opacity-40 hover:bg-black"
                 >
                   NEXT STEP →
                 </button>
@@ -214,16 +214,16 @@ export const HowItWorks: React.FC = () => {
                 <div className="flex items-center justify-between pb-3 mb-3 sm:mb-4 border-b border-[#E5E5EA]">
                   <div className="flex items-center space-x-2">
                     <span className="h-2 w-2 rounded-full bg-[#10B981] shrink-0" />
-                    <span className="font-mono text-[10px] sm:text-[11px] font-semibold text-[#1D1D1F] uppercase tracking-channelTag truncate">
+                    <span className="text-[10px] sm:text-[11px] font-semibold text-[#1D1D1F] uppercase tracking-wider truncate">
                       {current.payload.label}
                     </span>
                   </div>
-                  <span className="font-mono text-[9px] sm:text-[10px] text-[#6E6E73] bg-white px-2 py-0.5 rounded border border-[#E5E5EA] shrink-0">
-                    ENFORCED
+                  <span className="text-[9px] sm:text-[10px] text-[#6E6E73] bg-white px-2 py-0.5 rounded border border-[#E5E5EA] shrink-0">
+                    APPROVED RULES
                   </span>
                 </div>
 
-                <div className="space-y-2 sm:space-y-2.5 font-mono text-xs">
+                <div className="space-y-2 sm:space-y-2.5 text-xs">
                   {current.payload.details.map((item, idx) => (
                     <div
                       key={idx}
@@ -239,9 +239,9 @@ export const HowItWorks: React.FC = () => {
                   ))}
                 </div>
 
-                <div className="mt-3.5 pt-2.5 sm:mt-4 sm:pt-3 border-t border-[#E5E5EA] flex items-center justify-between text-[10px] sm:text-[11px] font-mono text-[#6E6E73]">
-                  <span>LATENCY: &lt;140ms</span>
-                  <span className="text-[#10B981] font-semibold">ZERO LEAKAGE</span>
+                <div className="mt-3.5 pt-2.5 sm:mt-4 sm:pt-3 border-t border-[#E5E5EA] flex items-center justify-between text-[10px] sm:text-[11px] text-[#6E6E73]">
+                  <span>SPEED: &lt;140ms</span>
+                  <span className="text-[#10B981] font-semibold">100% PRIVATE</span>
                 </div>
               </div>
             </div>
