@@ -59,18 +59,18 @@ export const MagneticGlassSwitchboard: React.FC = () => {
             <span className="relative inline-flex rounded-full h-2 w-2 bg-[#10B981]"></span>
           </span>
           <span className="font-mono text-[10px] sm:text-[11px] font-medium tracking-channelTag uppercase text-[#1D1D1F] truncate">
-            MAGNETIC SWITCHBOARD · TELEMETRY
+            LIVE DESK ROUTING · INTERACTIVE DEMO
           </span>
         </div>
         <div className="flex items-center space-x-3 text-[10px] sm:text-[11px] font-mono text-[#6E6E73]">
           <span className="hidden sm:inline-block">
-            LATENCY: <span className="tabular-nums font-semibold text-[#1D1D1F]">38ms</span>
+            RESPONSE TIME: <span className="tabular-nums font-semibold text-[#1D1D1F]">Under 1s</span>
           </span>
           <span className="text-[10px] sm:text-[11px]">
-            ACTIVE: <span className="font-semibold text-[#10B981]">{activeChannel.label}</span>
+            ACTIVE CHANNEL: <span className="font-semibold text-[#10B981]">{activeChannel.label}</span>
           </span>
           <span className="text-[#86868B]">
-            THREAD: <span className="tabular-nums font-semibold text-[#1D1D1F]">#LT-8942</span>
+            VISITOR: <span className="tabular-nums font-semibold text-[#1D1D1F]">#LT-8942</span>
           </span>
         </div>
       </div>
@@ -172,7 +172,7 @@ export const MagneticGlassSwitchboard: React.FC = () => {
                 />
               </div>
               <span className="block text-[9px] text-[#6E6E73] leading-tight">
-                Intent Parsed
+                Listens & clarifies
               </span>
             </div>
 
@@ -193,7 +193,7 @@ export const MagneticGlassSwitchboard: React.FC = () => {
                 />
               </div>
               <span className="block text-[9px] text-[#6E6E73] leading-tight">
-                Policy Checked
+                Checks your schedule
               </span>
             </div>
 
@@ -214,7 +214,7 @@ export const MagneticGlassSwitchboard: React.FC = () => {
                 />
               </div>
               <span className="block text-[9px] text-[#6E6E73] leading-tight">
-                Context Bound
+                Hands off notes
               </span>
             </div>
           </div>
@@ -223,7 +223,7 @@ export const MagneticGlassSwitchboard: React.FC = () => {
           <div className="mt-3 flex flex-wrap items-center justify-center gap-1.5">
             <span className="font-mono text-[9px] bg-[#10B981]/10 text-[#047857] border border-[#10B981]/20 px-2 py-0.5 rounded-full font-medium inline-flex items-center space-x-1">
               <CheckCircle2 className="h-2.5 w-2.5 text-[#10B981]" />
-              <span>Policy verified</span>
+              <span>Office rules verified</span>
             </span>
             <span className="font-mono text-[9px] bg-[#10B981]/10 text-[#047857] border border-[#10B981]/20 px-2 py-0.5 rounded-full font-medium inline-flex items-center space-x-1">
               <CheckCircle2 className="h-2.5 w-2.5 text-[#10B981]" />
@@ -231,7 +231,7 @@ export const MagneticGlassSwitchboard: React.FC = () => {
             </span>
             <span className="font-mono text-[9px] bg-[#10B981]/10 text-[#047857] border border-[#10B981]/20 px-2 py-0.5 rounded-full font-medium inline-flex items-center space-x-1">
               <CheckCircle2 className="h-2.5 w-2.5 text-[#10B981]" />
-              <span>Context bound</span>
+              <span>Full summary attached</span>
             </span>
           </div>
         </div>
@@ -458,10 +458,10 @@ export const MagneticGlassSwitchboard: React.FC = () => {
           <div className="col-span-5 flex flex-col items-center justify-center px-2 py-4">
             <div className="mb-4 text-center">
               <span className="font-mono text-[10px] tracking-channelTag uppercase text-[#6E6E73] font-semibold">
-                02 · COORDINATED DIGITAL TEAM
+                02 · AUTOMATED DESK ENGINE
               </span>
               <p className="text-xs text-[#86868B] mt-0.5">
-                Specialized agents interpret, check policy, and route
+                Reads requests, checks your rules, and briefs your staff
               </p>
             </div>
 
@@ -486,11 +486,11 @@ export const MagneticGlassSwitchboard: React.FC = () => {
                   />
                 </div>
                 <div className="text-[11px] text-[#515154] leading-tight mb-2.5">
-                  Reads intent across channel boundaries
+                  Reads intent and extracts details
                 </div>
                 <div className="inline-flex items-center space-x-1 px-1.5 py-0.5 rounded-[6px] bg-[#F5F5F7] border border-[#E5E5EA] text-[10px] font-mono text-[#1D1D1F]">
                   <CheckCircle2 className="h-3 w-3 text-[#10B981]" />
-                  <span>Intent parsed</span>
+                  <span>Request parsed</span>
                 </div>
               </div>
 
@@ -513,11 +513,11 @@ export const MagneticGlassSwitchboard: React.FC = () => {
                   />
                 </div>
                 <div className="text-[11px] text-[#515154] leading-tight mb-2.5">
-                  Applies tenant operating policy
+                  Follows your office calendar & rules
                 </div>
                 <div className="inline-flex items-center space-x-1 px-1.5 py-0.5 rounded-[6px] bg-[#F5F5F7] border border-[#E5E5EA] text-[10px] font-mono text-[#1D1D1F]">
                   <ShieldCheck className="h-3 w-3 text-[#10B981]" />
-                  <span>Policy checked</span>
+                  <span>Rules checked</span>
                 </div>
               </div>
 
@@ -540,11 +540,11 @@ export const MagneticGlassSwitchboard: React.FC = () => {
                   />
                 </div>
                 <div className="text-[11px] text-[#515154] leading-tight mb-2.5">
-                  Prepares context-rich handoff
+                  Sends full briefing to the team
                 </div>
                 <div className="inline-flex items-center space-x-1 px-1.5 py-0.5 rounded-[6px] bg-[#F5F5F7] border border-[#E5E5EA] text-[10px] font-mono text-[#1D1D1F]">
                   <CalendarCheck className="h-3 w-3 text-[#10B981]" />
-                  <span>Context bound</span>
+                  <span>Briefing ready</span>
                 </div>
               </div>
             </div>
@@ -561,7 +561,7 @@ export const MagneticGlassSwitchboard: React.FC = () => {
                 >
                   <span className="font-mono text-[10px] bg-[#10B981]/10 text-[#047857] border border-[#10B981]/20 px-2 py-0.5 rounded-full inline-flex items-center space-x-1 font-medium">
                     <CheckCircle2 className="h-3 w-3 text-[#10B981]" />
-                    <span>✓ Policy approved</span>
+                    <span>✓ Office rules respected</span>
                   </span>
                   <span className="font-mono text-[10px] bg-[#10B981]/10 text-[#047857] border border-[#10B981]/20 px-2 py-0.5 rounded-full inline-flex items-center space-x-1 font-medium">
                     <CheckCircle2 className="h-3 w-3 text-[#10B981]" />
@@ -569,7 +569,7 @@ export const MagneticGlassSwitchboard: React.FC = () => {
                   </span>
                   <span className="font-mono text-[10px] bg-[#10B981]/10 text-[#047857] border border-[#10B981]/20 px-2 py-0.5 rounded-full inline-flex items-center space-x-1 font-medium">
                     <CheckCircle2 className="h-3 w-3 text-[#10B981]" />
-                    <span>✓ Context attached</span>
+                    <span>✓ Context briefed</span>
                   </span>
                 </motion.div>
               </AnimatePresence>
@@ -657,11 +657,11 @@ export const MagneticGlassSwitchboard: React.FC = () => {
           <div className="flex items-center space-x-2">
             <span className="h-1.5 w-1.5 rounded-full bg-[#10B981]" />
             <span className="font-mono text-[11px] uppercase">
-              Current thread: <strong className="text-[#1D1D1F]">{activeChannel.label}</strong> → Verified against tenant policy → Scheduled next step
+              Current thread: <strong className="text-[#1D1D1F]">{activeChannel.label}</strong> → Checked against office calendar → Briefing sent to Derek Hastings
             </span>
           </div>
           <span className="font-mono text-[10px] text-[#86868B]">
-            WORKS ALONGSIDE YOUR PEOPLE · ZERO HALLUCINATION POLICY
+            TRAINED ON YOUR OFFICE RULES · ZERO GUESSWORK · WARM HANDOFF
           </span>
         </div>
       </div>

@@ -12,6 +12,19 @@
   --signal-apple: #34C759;
 }
 
+/* STRICT TWO-FONT SYSTEM ONLY:
+   1. Helvetica (All Headings, Section Titles, Large Numbers)
+   2. SF Pro (HTML, Body, Subheadings, Paragraphs, Buttons, Badges, Tags, Telemetry, UI)
+*/
+*, html, body, p, span, div, a, li, button, input, textarea, select, label, text, .font-body, .font-sans, .subheading, .font-subheading, code, kbd, samp, pre, .font-mono {
+  font-family: "SF Pro Display", "SF Pro Text", -apple-system, BlinkMacSystemFont, sans-serif !important;
+}
+
+h1, h2, h3, h4, h5, h6, .font-heading {
+  font-family: "Helvetica Neue", Helvetica, sans-serif !important;
+  letter-spacing: -0.025em;
+}
+
 body {
   background-color: #F5F5F7;
   color: #1D1D1F;

@@ -32,23 +32,24 @@ export default {
         }
       },
       fontFamily: {
+        heading: [
+          '"Helvetica Neue"',
+          'Helvetica',
+          'sans-serif'
+        ],
         sans: [
-          "-apple-system",
-          "BlinkMacSystemFont",
-          "SF Pro Display",
-          "SF Pro Text",
-          "Inter",
-          "Segoe UI",
-          "Helvetica Neue",
-          "sans-serif"
+          '"SF Pro Display"',
+          '"SF Pro Text"',
+          '-apple-system',
+          'BlinkMacSystemFont',
+          'sans-serif'
         ],
         mono: [
-          "SF Mono",
-          "JetBrains Mono",
-          "ui-monospace",
-          "Menlo",
-          "Monaco",
-          "monospace"
+          '"SF Pro Text"',
+          '"SF Pro Display"',
+          '-apple-system',
+          'BlinkMacSystemFont',
+          'sans-serif'
         ]
       },
       letterSpacing: {
